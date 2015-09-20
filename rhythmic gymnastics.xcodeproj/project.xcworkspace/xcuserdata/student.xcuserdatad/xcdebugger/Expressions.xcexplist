@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CardPDFViewController.productsRequest (Rhythmic_Gymnastics.CardPDFViewController)(Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.SKProductsRequest&gt;, didReceiveResponse : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.SKProductsResponse&gt;) -&gt; ():CardPDFViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CardEditorViewController.editingValueInCellDidEnd (Rhythmic_Gymnastics.CardEditorViewController)(Rhythmic_Gymnastics.MainCardTVCell, value : Swift.Double) -&gt; ():CardEditorViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cardTableView.indexPathForCell(cell)!.row">
+            </PersistentString>
+            <PersistentString
+               value = "allCardContent.content[cardTableView.indexPathForCell(cell)!.row].totalVal">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CardsViewController.touchChooseButton (Rhythmic_Gymnastics.CardsViewController)(Swift.AnyObject) -&gt; ():CardsViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CardEditorViewController.dragElementInElValCell (Rhythmic_Gymnastics.CardEditorViewController)(ObjectiveC.UIPanGestureRecognizer, currElement : Rhythmic_Gymnastics.SimpleCellElement, cell : Rhythmic_Gymnastics.MainCardTVCell) -&gt; ():CardEditorViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "draggingView.tag">
+            </PersistentString>
+            <PersistentString
+               value = "currentCell.elements.row">
+            </PersistentString>
+            <PersistentString
+               value = "choosenElem">
+            </PersistentString>
+            <PersistentString
+               value = "allCardContent.content[cardTableView.indexPathForCell(currentCell)!.row].row">
+            </PersistentString>
+            <PersistentString
+               value = "currentCell.elements.row[imView.tag] == choosenElem">
+            </PersistentString>
+            <PersistentString
+               value = "imView.highlighted">
+            </PersistentString>
+            <PersistentString
+               value = "imView.image != nil">
+            </PersistentString>
+            <PersistentString
+               value = "imView.tag">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.MainCardTVCell.loadElements (Rhythmic_Gymnastics.MainCardTVCell)(Rhythmic_Gymnastics.CardRow) -&gt; ():MainCardTVCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "myImageView.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CreateCardViewController.subjectButTouch (Rhythmic_Gymnastics.CreateCardViewController)(ObjectiveC.UIButton) -&gt; ():CreateCardViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "button.selected">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CardEditorViewController.longPressGestureRecognized (Rhythmic_Gymnastics.CardEditorViewController)(ObjectiveC.UIGestureRecognizer) -&gt; ():CardEditorViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath!.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CardsViewController.touchDeleteSelected (Rhythmic_Gymnastics.CardsViewController)(Swift.AnyObject) -&gt; ():CardsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationItem">
+            </PersistentString>
+            <PersistentString
+               value = "editButtonItem()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CreateCardViewController.createButtonTouch (Rhythmic_Gymnastics.CreateCardViewController)(ObjectiveC.UIButton) -&gt; ():CreateCardViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "birthTextField.backgroundColor">
+            </PersistentString>
+            <PersistentString
+               value = "birthTextField">
+            </PersistentString>
+            <PersistentString
+               value = "subject">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.MainCardTVCell.addElement (Rhythmic_Gymnastics.MainCardTVCell)(Rhythmic_Gymnastics.SimpleCellElement) -&gt; ():MainCardTVCell.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CardEditorViewController.tableView (Rhythmic_Gymnastics.CardEditorViewController)(ObjectiveC.UITableView, cellForRowAtIndexPath : ObjectiveC.NSIndexPath) -&gt; ObjectiveC.UITableViewCell:CardEditorViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "allCardContent.content[indexPath.row].totalValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CardEditorViewController.doubleClickToElementInElValCell (Rhythmic_Gymnastics.CardEditorViewController)(Rhythmic_Gymnastics.SimpleCellElement) -&gt; ():CardEditorViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "allCardContent.content[indexPath!.row]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CardPDFViewController.(drawCard in _891FF894DA63A11F38AAD9DD143FEDD8) (Rhythmic_Gymnastics.CardPDFViewController)() -&gt; ():CardPDFViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "elem.imageForCard">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.MainCardTVCell.addElement (Rhythmic_Gymnastics.MainCardTVCell)(Rhythmic_Gymnastics.SimpleCellElement) -&gt; Swift.Bool:MainCardTVCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "drawingImage.size.width">
+            </PersistentString>
+            <PersistentString
+               value = "elements.count()">
+            </PersistentString>
+            <PersistentString
+               value = "(Double)(preImageView.frame.minX + preImageView.frame.width) + imageWidth">
+            </PersistentString>
+            <PersistentString
+               value = "preImageView.tag">
+            </PersistentString>
+            <PersistentString
+               value = "imageWidth">
+            </PersistentString>
+            <PersistentString
+               value = "imageView.tag">
+            </PersistentString>
+            <PersistentString
+               value = "preImageView.frame.minX">
+            </PersistentString>
+            <PersistentString
+               value = "imageView.image">
+            </PersistentString>
+            <PersistentString
+               value = "element.imageForCard.size.width">
+            </PersistentString>
+            <PersistentString
+               value = "preImageView.frame.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.MainCardTVCell.reload (Rhythmic_Gymnastics.MainCardTVCell)(Rhythmic_Gymnastics.CardRow, viewTag : Swift.Int, rect : C.CGRect) -&gt; ():MainCardTVCell.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CardEditorViewController.dragElementInElValCell (Rhythmic_Gymnastics.CardEditorViewController)(ObjectiveC.UIPanGestureRecognizer, currElement : Rhythmic_Gymnastics.SimpleCellElement) -&gt; ():CardEditorViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentCell">
+            </PersistentString>
+            <PersistentString
+               value = "currentCell.elements.row[imView.tag] == choosenElem">
+            </PersistentString>
+            <PersistentString
+               value = "choosenElem">
+            </PersistentString>
+            <PersistentString
+               value = "currentCell.elements.row">
+            </PersistentString>
+            <PersistentString
+               value = "cardTableView.visibleCells()[0]">
+            </PersistentString>
+            <PersistentString
+               value = "cardTableView.visibleCells()[0].imageViews[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.MainCardTVCell.elements.didset : Swift.ImplicitlyUnwrappedOptional&lt;Rhythmic_Gymnastics.CardRow&gt;:MainCardTVCell.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CardPDFViewController.requestProductData (Rhythmic_Gymnastics.CardPDFViewController)() -&gt; ():CardPDFViewController.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

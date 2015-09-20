@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CardEditorViewController.doubleClickToElementInElValCell (Rhythmic_Gymnastics.CardEditorViewController)(Rhythmic_Gymnastics.SimpleCellElement) -&gt; ():CardEditorViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentCell">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CardPDFViewController.(drawCard in _891FF894DA63A11F38AAD9DD143FEDD8) (Rhythmic_Gymnastics.CardPDFViewController)() -&gt; ():CardPDFViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "pdfFilePath">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CardEditorViewController.tableView (Rhythmic_Gymnastics.CardEditorViewController)(ObjectiveC.UITableView, moveRowAtIndexPath : ObjectiveC.NSIndexPath, toIndexPath : ObjectiveC.NSIndexPath) -&gt; ():CardEditorViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.MainCardTVCell.addElement (Rhythmic_Gymnastics.MainCardTVCell)(Rhythmic_Gymnastics.SimpleCellElement) -&gt; ():MainCardTVCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "myImageView.tag ">
+            </PersistentString>
+            <PersistentString
+               value = "imageViews[0].image">
+            </PersistentString>
+            <PersistentString
+               value = "imageView.frame">
+            </PersistentString>
+            <PersistentString
+               value = "preImageView.tag">
+            </PersistentString>
+            <PersistentString
+               value = "elements.count - 1">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.MainCardTVCell.(remove in _659DD093CF10C7681F02410CCD72C318) (Rhythmic_Gymnastics.MainCardTVCell)(Swift.Int) -&gt; ():MainCardTVCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "elements.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CardEditorViewController.singleClickToElement (Rhythmic_Gymnastics.CardEditorViewController)(Rhythmic_Gymnastics.SimpleCellElement) -&gt; ():CardEditorViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tableView.headerViewForSection(0)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CardEditorViewController.doubleClickToElement (Rhythmic_Gymnastics.CardEditorViewController)(Rhythmic_Gymnastics.SimpleCellElement) -&gt; ():CardEditorViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cardTableView.visibleCells()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CardPDFViewController.viewDidLoad (Rhythmic_Gymnastics.CardPDFViewController)() -&gt; ():CardPDFViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "NSUserDefaults.standardUserDefaults().arrayForKey(names) as! [String]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CardsViewController.collectionView (Rhythmic_Gymnastics.CardsViewController)(ObjectiveC.UICollectionView, cellForItemAtIndexPath : ObjectiveC.NSIndexPath) -&gt; ObjectiveC.UICollectionViewCell:CardsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "subject.rawValue.description">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CardEditorViewController.tableView (Rhythmic_Gymnastics.CardEditorViewController)(ObjectiveC.UITableView, cellForRowAtIndexPath : ObjectiveC.NSIndexPath) -&gt; ObjectiveC.UITableViewCell:CardEditorViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

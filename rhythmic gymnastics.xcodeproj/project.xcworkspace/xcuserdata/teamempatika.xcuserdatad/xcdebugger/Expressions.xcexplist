@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CardEditorViewController.dragElementInElValCell (Rhythmic_Gymnastics.CardEditorViewController)(ObjectiveC.UIPanGestureRecognizer, currElement : Rhythmic_Gymnastics.SimpleCellElement) -&gt; ():CardEditorViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "view.center">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CardEditorViewController.dragElementInElValCell (Rhythmic_Gymnastics.CardEditorViewController)(CoreGraphics.CGFloat, beginY : CoreGraphics.CGFloat, recognizer : ObjectiveC.UIPanGestureRecognizer, currElement : Rhythmic_Gymnastics.SimpleCellElement) -&gt; ():CardEditorViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "CGPointZero">
+            </PersistentString>
+            <PersistentString
+               value = "recognizer.view!.center">
+            </PersistentString>
+            <PersistentString
+               value = "view.center">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.ElementsValuesTVCell.awakeFromNib (Rhythmic_Gymnastics.ElementsValuesTVCell)() -&gt; ():ElementsValuesTVCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.window">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

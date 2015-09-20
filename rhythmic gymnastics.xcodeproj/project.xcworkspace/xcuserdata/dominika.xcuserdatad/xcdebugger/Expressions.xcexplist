@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CardEditorViewController.loadDifficulty (Rhythmic_Gymnastics.CardEditorViewController)(Swift.String) -&gt; Swift.Array&lt;Swift.Array&lt;Swift.Array&lt;Rhythmic_Gymnastics.SimpleCellElement&gt;&gt;&gt;:CardEditorViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "imageName[4] + s">
+            </PersistentString>
+            <PersistentString
+               value = "imName[0] + &quot;_pic.png&quot;">
+            </PersistentString>
+            <PersistentString
+               value = "imName[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CardEditorViewController.tableView (Rhythmic_Gymnastics.CardEditorViewController)(ObjectiveC.UITableView, cellForRowAtIndexPath : ObjectiveC.NSIndexPath) -&gt; ObjectiveC.UITableViewCell:CardEditorViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.section">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CardEditorViewController.tableView (Rhythmic_Gymnastics.CardEditorViewController)(ObjectiveC.UITableView, numberOfRowsInSection : Swift.Int) -&gt; Swift.Int:CardEditorViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.CardEditorViewController.tableView (Rhythmic_Gymnastics.CardEditorViewController)(ObjectiveC.UITableView, viewForHeaderInSection : Swift.Int) -&gt; Swift.Optional&lt;ObjectiveC.UIView&gt;:CardEditorViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "sectionHeaders()[supportSegmentedControl.selectedSegmentIndex][section]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Rhythmic_Gymnastics.ElementsValuesTVCell.elements.didset : Swift.ImplicitlyUnwrappedOptional&lt;Swift.Array&lt;Rhythmic_Gymnastics.SimpleCellElement&gt;&gt;:ElementsValuesTVCell.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
