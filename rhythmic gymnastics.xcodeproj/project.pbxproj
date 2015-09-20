@@ -606,7 +606,6 @@
 		3F037D5B1B4EA40800E45F63 /* rota7_0_04_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F037D011B4EA40800E45F63 /* rota7_0_04_pic.png */; };
 		3F037D5C1B4EA40800E45F63 /* rota7_1_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F037D021B4EA40800E45F63 /* rota7_1_03.png */; };
 		3F037D5D1B4EA40800E45F63 /* rota7_1_03_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F037D031B4EA40800E45F63 /* rota7_1_03_pic.png */; };
-		3F11F74B1AEFCBDA001DE097 /* empty.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3F11F74A1AEFCBDA001DE097 /* empty.pdf */; };
 		3F162B251AAF578A00F796F0 /* CardEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F162B241AAF578A00F796F0 /* CardEditorViewController.swift */; };
 		3F162B281AAF5CBE00F796F0 /* ElementsValuesTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F162B271AAF5CBE00F796F0 /* ElementsValuesTVCell.swift */; };
 		3FA024031AE69C8D00606864 /* UIImageTint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA024021AE69C8D00606864 /* UIImageTint.swift */; };
@@ -1244,7 +1243,6 @@
 		3F037D011B4EA40800E45F63 /* rota7_0_04_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rota7_0_04_pic.png; sourceTree = "<group>"; };
 		3F037D021B4EA40800E45F63 /* rota7_1_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rota7_1_03.png; sourceTree = "<group>"; };
 		3F037D031B4EA40800E45F63 /* rota7_1_03_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rota7_1_03_pic.png; sourceTree = "<group>"; };
-		3F11F74A1AEFCBDA001DE097 /* empty.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = empty.pdf; sourceTree = "<group>"; };
 		3F162B241AAF578A00F796F0 /* CardEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardEditorViewController.swift; sourceTree = "<group>"; };
 		3F162B271AAF5CBE00F796F0 /* ElementsValuesTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementsValuesTVCell.swift; sourceTree = "<group>"; };
 		3FA024021AE69C8D00606864 /* UIImageTint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageTint.swift; sourceTree = "<group>"; };
@@ -1968,7 +1966,6 @@
 			isa = PBXGroup;
 			children = (
 				F169FDB61B0BF10700117CAB /* Main.storyboard */,
-				3F11F74A1AEFCBDA001DE097 /* empty.pdf */,
 				D59BF6151B0DF3EB008F2AE1 /* empty.png */,
 				D5B143E61AB6786500F1A4D0 /* Images */,
 				3FB9FF821A9CE986003FE2F2 /* Model */,
@@ -2422,7 +2419,6 @@
 				3F037C201B4EA3FA00E45F63 /* leap1_2_02_pic.png in Resources */,
 				3F037C411B4EA3FA00E45F63 /* leap4_0_06.png in Resources */,
 				348D7D4F1B5178F600234FF0 /* DER_2_5.png in Resources */,
-				3F11F74B1AEFCBDA001DE097 /* empty.pdf in Resources */,
 				348D7DB01B5178F600234FF0 /* sub_5_3_N.png in Resources */,
 				348D7D281B5178F600234FF0 /* add_0_3.png in Resources */,
 				3F037C891B4EA3FA00E45F63 /* leap9_1_06.png in Resources */,
