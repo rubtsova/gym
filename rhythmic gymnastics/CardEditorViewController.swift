@@ -631,7 +631,7 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
         allCardContent.content[cardTableView.indexPathForCell(currentCell)!.row].addElement(element)
         currentCell.value += 0.3
         cardPropertiesView.setM(++cardPropertiesView.countMaster)
-        GA.screen("editor:masterPush")
+        GA.event("masterPush")
     }
     
 
@@ -643,9 +643,7 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
         allCardContent.countDER = cardPropertiesView.countDer
         allCardContent.countM = cardPropertiesView.countMaster
         
-        let documentsUrl = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
-        let fileAbsoluteUrl = documentsUrl.URLByAppendingPathComponent(allCardContent.getName() + ".card")
-        NSKeyedArchiver.archiveRootObject(allCardContent, toFile: fileAbsoluteUrl.path!)
+        allCardContent.save()
         
         let cardsNames = NSUserDefaults.standardUserDefaults()
         var namesArr = cardsNames.arrayForKey(names) as! [String]
@@ -653,6 +651,7 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
             namesArr.append(allCardContent.getName())
         }
         cardsNames.setObject(namesArr, forKey: names)
+        cardsNames.synchronize()
         
         checkRules()
         
@@ -695,14 +694,14 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
                 if let controller = segue.destinationViewController as? CardPDFViewController {
                     controller.cardContent = sender as! CardContent
                     controller.openedFromEditor = true
-                    GA.screen("editor->pdf")
+                    GA.event("editor_pdf")
                 }
             case "editCardInfo":
             if let controller = segue.destinationViewController as? CreateCardViewController{
                 controller.cardInf = sender as! CardInfo
                 controller.openedFromEditor = true
                 controller.cardContent = allCardContent
-                GA.screen("editor->editInfo(createCard)")
+                GA.event("editor_editInfo_createCard")
                 }
                default: break
                 

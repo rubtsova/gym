@@ -100,7 +100,12 @@ public class CardContent : NSObject, NSCoding {
         aCoder.encodeObject(self.card, forKey:"card")
         aCoder.encodeObject(self.content, forKey:"content")
         aCoder.encodeBool(self.blocked, forKey:"blocked")
-        
+    }
+    
+    func save() {
+        let documentsUrl = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
+        let fileAbsoluteUrl = documentsUrl.URLByAppendingPathComponent(self.getName() + ".card")
+        NSKeyedArchiver.archiveRootObject(self, toFile: fileAbsoluteUrl.path!)
     }
 }
 

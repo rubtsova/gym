@@ -621,6 +621,8 @@
 		84B8CDFE1A7E497A00044B8B /* CardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8CDFD1A7E497A00044B8B /* CardInfo.swift */; };
 		9219D1071A7FAA4400A3330B /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9219D1061A7FAA4400A3330B /* CardCollectionViewCell.swift */; };
 		D59BF6161B0DF3EB008F2AE1 /* empty.png in Resources */ = {isa = PBXBuildFile; fileRef = D59BF6151B0DF3EB008F2AE1 /* empty.png */; };
+		D5A80BDC1BAF3A8B00EDFB10 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A80BDA1BAF3A8B00EDFB10 /* Fabric.framework */; settings = {ASSET_TAGS = (); }; };
+		D5A80BDD1BAF3A8B00EDFB10 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A80BDB1BAF3A8B00EDFB10 /* Crashlytics.framework */; settings = {ASSET_TAGS = (); }; };
 		F10322AC1AD66B62005A8230 /* PropertiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10322AB1AD66B62005A8230 /* PropertiesView.swift */; };
 		F12A8B581A83A29B000AD455 /* CreateCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12A8B571A83A29B000AD455 /* CreateCardViewController.swift */; };
 		F13ADA021ADCEFE100CEFF08 /* DescriptionElementList.plist in Resources */ = {isa = PBXBuildFile; fileRef = F13ADA011ADCEFE100CEFF08 /* DescriptionElementList.plist */; };
@@ -1262,6 +1264,8 @@
 		9219D1061A7FAA4400A3330B /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		C65E4729B0EA480F47C4A824 /* libPods-Rhythmic Gymnastics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Rhythmic Gymnastics.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D59BF6151B0DF3EB008F2AE1 /* empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty.png; sourceTree = "<group>"; };
+		D5A80BDA1BAF3A8B00EDFB10 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		D5A80BDB1BAF3A8B00EDFB10 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		F10322AB1AD66B62005A8230 /* PropertiesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertiesView.swift; sourceTree = "<group>"; };
 		F12A8B571A83A29B000AD455 /* CreateCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateCardViewController.swift; path = ../CreateCardViewController.swift; sourceTree = "<group>"; };
 		F13ADA011ADCEFE100CEFF08 /* DescriptionElementList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DescriptionElementList.plist; sourceTree = "<group>"; };
@@ -1290,6 +1294,8 @@
 			files = (
 				3FE56C3D1B4FC88600A2FFC8 /* StoreKit.framework in Frameworks */,
 				782214D926AC734B5F91E96D /* libPods-Rhythmic Gymnastics.a in Frameworks */,
+				D5A80BDD1BAF3A8B00EDFB10 /* Crashlytics.framework in Frameworks */,
+				D5A80BDC1BAF3A8B00EDFB10 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1946,7 +1952,6 @@
 			isa = PBXGroup;
 			children = (
 				348D7C8E1B5156CF00234FF0 /* GoogleService-Info.plist */,
-				3FE56C3C1B4FC88600A2FFC8 /* StoreKit.framework */,
 				8479BDC11A69A5AC00F5DF45 /* Rhythmic Gymnastics */,
 				8479BDC01A69A5AC00F5DF45 /* Products */,
 				B6C3B614BF4C4A9FE3397E8C /* Pods */,
@@ -2088,6 +2093,9 @@
 		F1B53C8ED3F04EB41CC5921D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D5A80BDA1BAF3A8B00EDFB10 /* Fabric.framework */,
+				D5A80BDB1BAF3A8B00EDFB10 /* Crashlytics.framework */,
+				3FE56C3C1B4FC88600A2FFC8 /* StoreKit.framework */,
 				C65E4729B0EA480F47C4A824 /* libPods-Rhythmic Gymnastics.a */,
 			);
 			name = Frameworks;
@@ -2105,6 +2113,7 @@
 				8479BDBC1A69A5AB00F5DF45 /* Frameworks */,
 				8479BDBD1A69A5AB00F5DF45 /* Resources */,
 				16A8668F461F7DFA02427F90 /* Copy Pods Resources */,
+				D5A80BD91BAF3A7C00EDFB10 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -2794,6 +2803,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		D5A80BD91BAF3A7C00EDFB10 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 84ded72a27092a7f5f7140541e42c826c3e38590 1123d0d98cbc246886eb73d8546d524c78b143d689809c0d01ce836fd464e0ed";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -2939,8 +2961,13 @@
 			baseConfigurationReference = 835E19C23201D8D68F12E117 /* Pods-Rhythmic Gymnastics.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Rhythmic Gymnastics/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.rubtsova.gymnastics;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2954,11 +2981,18 @@
 			baseConfigurationReference = 1795EE964DF21287ACDAB087 /* Pods-Rhythmic Gymnastics.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Sergey Pronin (857ALQXRDT)";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Rhythmic Gymnastics/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.rubtsova.gymnastics;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1e9dc8f0-2259-415a-98b3-d6be40255020";
 				SWIFT_OBJC_BRIDGING_HEADER = "rhythmic gymnastics/Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 2;
 			};

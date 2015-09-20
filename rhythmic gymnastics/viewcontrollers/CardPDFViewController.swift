@@ -38,10 +38,20 @@ class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaym
         
         purchasedCardNumb = userDef.integerForKey(cardNumber) as Int
         
-        if cardContent.blocked == true {
-            drawCard(true)
+        let freeCards = userDef.integerForKey("free_cards")
+        if cardContent.blocked && freeCards > 0 {
+            cardContent.blocked = false
+            dispatch_async(dispatch_get_main_queue(), {
+                self.cardContent.save()
+            })
+            userDef.setInteger(freeCards-1, forKey: "free_cards")
+            userDef.synchronize()
+            
+            GA.event("card_spendFree")
         }
-        else { drawCard(false) }
+        
+        drawCard(cardContent.blocked)
+        
         let data = NSData(contentsOfFile: pdfFilePath)!
         webView.loadData(data, MIMEType: "application/pdf", textEncodingName: "utf-8", baseURL: NSURL())
         
@@ -57,21 +67,32 @@ class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaym
     //@IBOutlet weak var pdfCard: UIWebView!
 
     private func export() {
-        if cardContent.blocked == false { exportPDF() }
-        if purchasedCardNumb > 0 { cardsAreExist() }
-        else { cardsAreNotExist() }
+        if cardContent.blocked == false {
+            exportPDF()
+            GA.event("export_options_export")
+        } else {
+            if purchasedCardNumb > 0 {
+                cardsAreExist()
+                GA.event("export_options_exportSpend")
+            } else {
+                cardsAreNotExist()
+                GA.event("export_options_exportNotSpend")
+            }
+        }
     }
 
     
     private func cardsAreExist() {
         let userDef = NSUserDefaults.standardUserDefaults()
         let boughtCardsCount = userDef.integerForKey(cardNumber) as Int
+        
+        GA.event("export_ifSpend")
 
         let s: String = "Количество оплаченных карточек: " + boughtCardsCount.description + "\nИспользовать одну из них, чтобы сохранить или отправить готовую карточку?\nИмейте в виду, что возможность сохранить готовый документ будет доступна только для данной карточки. Если отредактируете и снова захотите сохранить, придется использовать новую активацию."
         let alert = UIAlertController(title: "Сохранение готовой программы", message: s, preferredStyle: .Alert)
         
-        alert.addAction(UIAlertAction(title: "Отмена", style: UIAlertActionStyle.Default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Да", style: UIAlertActionStyle.Cancel, handler: {(alert: UIAlertAction) in self.take1Card()}))
+        alert.addAction(UIAlertAction(title: "Отмена", style: UIAlertActionStyle.Default, handler: { _ in GA.event("export_ifSpend_no") }))
+        alert.addAction(UIAlertAction(title: "Да", style: UIAlertActionStyle.Cancel, handler: { _ in GA.event("export_ifSpend_yes"); self.take1Card()}))
         
         self.presentViewController(alert, animated: true, completion: nil)
 
@@ -80,16 +101,17 @@ class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaym
     func take1Card() {
         if userDef.boolForKey("isUnlimited") != true {
             userDef.setObject(--purchasedCardNumb, forKey: cardNumber)
+            GA.event("export_spendCard")
+        } else {
+            GA.event("export_spendUnlimited")
         }
         cardContent.blocked = false
+        cardContent.save()
         exportPDF()
-        GA.screen("pdf:take1card")
+        GA.event("pdf_take1card")
     }
     
     private func cardsAreNotExist() {
-        let userDef = NSUserDefaults.standardUserDefaults()
-        _ = userDef.integerForKey(cardNumber) as Int
-        
         let s: String = "Чтобы сохранить готовую карточку в формате PDF любым возможным способом, приобретите какой-либо из пакетов."
         let alert = UIAlertController(title: "Сохранение готовой программы", message: s, preferredStyle: .Alert)
         
@@ -107,13 +129,13 @@ class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaym
         let data = NSData(contentsOfFile: pdfFilePath)!
         webView.loadData(data, MIMEType: "application/pdf", textEncodingName: "utf-8", baseURL: NSURL())
         
-        let activityController = UIActivityViewController(activityItems: [data, "Катя - Лента"], applicationActivities: nil)
+        let activityController = UIActivityViewController(activityItems: [data, "\(cardContent.card.gymName) \(cardContent.card.cardName)"], applicationActivities: nil)
         
         //без этого работать не станет
         activityController.modalPresentationStyle = .Popover
         activityController.popoverPresentationController!.barButtonItem = editButton
         self.presentViewController(activityController, animated: true, completion: nil)
-        GA.screen("pdf:exportCard")
+        GA.event("pdf_exportCard")
     }
     
     private func drawCard(safe: Bool) {
@@ -223,22 +245,26 @@ class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaym
         //var but = sender as! UIBarButtonItem
         popPresenter?.barButtonItem = editButton
         presentViewController(alert, animated: true, completion: nil)
+        
+        GA.event("export_options")
     }
     
     private func alertEdit() {
-                let documentsUrl = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
-                let fileAbsoluteUrl = documentsUrl.URLByAppendingPathComponent(cardContent.getName() + ".card").absoluteURL
+        let documentsUrl = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
+        let fileAbsoluteUrl = documentsUrl.URLByAppendingPathComponent(cardContent.getName() + ".card").absoluteURL
+
+        cardContent = NSKeyedUnarchiver.unarchiveObjectWithFile(fileAbsoluteUrl.path!) as! CardContent
+
+        if openedFromEditor {
+            self.navigationController!.popViewControllerAnimated(true)
+        } else {
+            //!! аналогично при "Создать"
+            let editor = self.storyboard!.instantiateViewControllerWithIdentifier("CardEditorViewController") as! CardEditorViewController
+            editor.allCardContent = cardContent
+            self.navigationController!.setViewControllers([self.navigationController!.viewControllers[0], editor], animated: true)
+        }
         
-                cardContent = NSKeyedUnarchiver.unarchiveObjectWithFile(fileAbsoluteUrl.path!) as! CardContent
-        
-                if openedFromEditor {
-                    self.navigationController!.popViewControllerAnimated(true)
-                } else {
-                    //!! аналогично при "Создать"
-                    let editor = self.storyboard!.instantiateViewControllerWithIdentifier("CardEditorViewController") as! CardEditorViewController
-                    editor.allCardContent = cardContent
-                    self.navigationController!.setViewControllers([self.navigationController!.viewControllers[0], editor], animated: true)
-                }
+        GA.event("export_options_edit")
     }
     
     private func drawElem(element: SimpleCellElement, preImageCordX: Double, coordY: Double) -> Double {
@@ -343,7 +369,7 @@ class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaym
     }
     
     func buyProduct(prod: SKProduct) {
-        GA.screen("pdf:clickBUY")
+        GA.event("pdf_clickBUY")
         let payment = SKPayment(product: prod)
         SKPaymentQueue.defaultQueue().addPayment(payment)
     }
@@ -368,7 +394,7 @@ class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaym
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
                 SKPaymentQueue.defaultQueue().finishTransaction(transaction)
-                GA.screen("pdf:transactionFAILED")
+                GA.event("pdf_transactionFAILED")
             default:
                 break
             }
@@ -400,7 +426,7 @@ class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaym
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
         cardsAreExist()
-        GA.screen("pdf:PURCHASEwasFINISHED" + s)
+        GA.event("pdf_PURCHASEwasFINISHED_" + s)
     }
 
     

@@ -106,7 +106,7 @@ class CreateCardViewController: UIViewController {
                 UIView.animateWithDuration(0.4 , animations: {
                     textField.backgroundColor = UIColor(red: 191.0/255, green: 154.0/255, blue: 208.0/255, alpha: 1)
                     textField.alpha = 1})
-                GA.screen("createCard: fieldIsEmpty")
+                GA.event("createCard_fieldIsEmpty")
                 return
             }
             
@@ -127,7 +127,7 @@ class CreateCardViewController: UIViewController {
                 
                 self.birthTextField.alpha = 1
             })
-            GA.screen("createCard: yearNeOk")
+            GA.event("createCard_yearNeOk")
             
             return
         }
@@ -166,6 +166,6 @@ class CreateCardViewController: UIViewController {
             controller.card = sender as! CardInfo
             controller.allCardContent = cardContent
         }
-        GA.screen("createCard->editor")
+        GA.event("createCard_editor")
     }
 }

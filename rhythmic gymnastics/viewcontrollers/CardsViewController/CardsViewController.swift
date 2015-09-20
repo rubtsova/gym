@@ -83,7 +83,7 @@ class CardsViewController: UIViewController, UICollectionViewDataSource, UIColle
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        if indexPath.row == 0 {
+        if indexPath.item == 0 {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Button", forIndexPath: indexPath) 
             cell.backgroundColor = UIColor(patternImage: UIImage(named: "addNewCard.png")!)
             return cell
@@ -109,7 +109,7 @@ class CardsViewController: UIViewController, UICollectionViewDataSource, UIColle
         collectionView.deselectItemAtIndexPath(indexPath, animated: true)
         
         if indexPath.row == 0 {
-            GA.event("cards->newCard")
+            GA.event("cards_newCard")
             self.performSegueWithIdentifier("CreateCard", sender: nil)
             //TODO здесь можно сбросить выбор если он имеется
         }
@@ -141,7 +141,7 @@ class CardsViewController: UIViewController, UICollectionViewDataSource, UIColle
             
             else {
                 //переходим к просмотру
-                GA.event("cards->pdf")
+                GA.event("cards_pdf")
                 self.performSegueWithIdentifier("listToPDF", sender: currentCell.cardContent)
             }
         }
