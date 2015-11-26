@@ -621,8 +621,10 @@
 		84B8CDFE1A7E497A00044B8B /* CardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8CDFD1A7E497A00044B8B /* CardInfo.swift */; };
 		9219D1071A7FAA4400A3330B /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9219D1061A7FAA4400A3330B /* CardCollectionViewCell.swift */; };
 		D59BF6161B0DF3EB008F2AE1 /* empty.png in Resources */ = {isa = PBXBuildFile; fileRef = D59BF6151B0DF3EB008F2AE1 /* empty.png */; };
-		D5A80BDC1BAF3A8B00EDFB10 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A80BDA1BAF3A8B00EDFB10 /* Fabric.framework */; settings = {ASSET_TAGS = (); }; };
-		D5A80BDD1BAF3A8B00EDFB10 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A80BDB1BAF3A8B00EDFB10 /* Crashlytics.framework */; settings = {ASSET_TAGS = (); }; };
+		D5A80BDC1BAF3A8B00EDFB10 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A80BDA1BAF3A8B00EDFB10 /* Fabric.framework */; };
+		D5A80BDD1BAF3A8B00EDFB10 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A80BDB1BAF3A8B00EDFB10 /* Crashlytics.framework */; };
+		D5DFE9A11C0641DF004CF871 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DFE9A01C0641DF004CF871 /* MessageUI.framework */; };
+		D5DFE9A31C0644B3004CF871 /* ServerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DFE9A21C0644B3004CF871 /* ServerHelper.swift */; };
 		F10322AC1AD66B62005A8230 /* PropertiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10322AB1AD66B62005A8230 /* PropertiesView.swift */; };
 		F12A8B581A83A29B000AD455 /* CreateCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12A8B571A83A29B000AD455 /* CreateCardViewController.swift */; };
 		F13ADA021ADCEFE100CEFF08 /* DescriptionElementList.plist in Resources */ = {isa = PBXBuildFile; fileRef = F13ADA011ADCEFE100CEFF08 /* DescriptionElementList.plist */; };
@@ -1266,6 +1268,8 @@
 		D59BF6151B0DF3EB008F2AE1 /* empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty.png; sourceTree = "<group>"; };
 		D5A80BDA1BAF3A8B00EDFB10 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		D5A80BDB1BAF3A8B00EDFB10 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		D5DFE9A01C0641DF004CF871 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		D5DFE9A21C0644B3004CF871 /* ServerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServerHelper.swift; path = "rhythmic gymnastics/ServerHelper.swift"; sourceTree = SOURCE_ROOT; };
 		F10322AB1AD66B62005A8230 /* PropertiesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertiesView.swift; sourceTree = "<group>"; };
 		F12A8B571A83A29B000AD455 /* CreateCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateCardViewController.swift; path = ../CreateCardViewController.swift; sourceTree = "<group>"; };
 		F13ADA011ADCEFE100CEFF08 /* DescriptionElementList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DescriptionElementList.plist; sourceTree = "<group>"; };
@@ -1292,6 +1296,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5DFE9A11C0641DF004CF871 /* MessageUI.framework in Frameworks */,
 				3FE56C3D1B4FC88600A2FFC8 /* StoreKit.framework in Frameworks */,
 				782214D926AC734B5F91E96D /* libPods-Rhythmic Gymnastics.a in Frameworks */,
 				D5A80BDD1BAF3A8B00EDFB10 /* Crashlytics.framework in Frameworks */,
@@ -1975,6 +1980,7 @@
 				D5B143E61AB6786500F1A4D0 /* Images */,
 				3FB9FF821A9CE986003FE2F2 /* Model */,
 				8479BDC41A69A5AC00F5DF45 /* AppDelegate.swift */,
+				D5DFE9A21C0644B3004CF871 /* ServerHelper.swift */,
 				9219D1031A7FA50200A3330B /* ViewControllers */,
 				8479BDCD1A69A5AE00F5DF45 /* Images.xcassets */,
 				8479BDCF1A69A5AE00F5DF45 /* LaunchScreen.xib */,
@@ -2093,6 +2099,7 @@
 		F1B53C8ED3F04EB41CC5921D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D5DFE9A01C0641DF004CF871 /* MessageUI.framework */,
 				D5A80BDA1BAF3A8B00EDFB10 /* Fabric.framework */,
 				D5A80BDB1BAF3A8B00EDFB10 /* Crashlytics.framework */,
 				3FE56C3C1B4FC88600A2FFC8 /* StoreKit.framework */,
@@ -2137,6 +2144,7 @@
 				TargetAttributes = {
 					8479BDBE1A69A5AB00F5DF45 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 857ALQXRDT;
 					};
 				};
 			};
@@ -2847,6 +2855,7 @@
 				F15CD25F1AA1223A00E6C2DD /* ElementDER.swift in Sources */,
 				F142E9C41AEEDAA400E3C6A1 /* CardPDFViewController.swift in Sources */,
 				F1D1C06B1A9E89B3008912A7 /* CardElement.swift in Sources */,
+				D5DFE9A31C0644B3004CF871 /* ServerHelper.swift in Sources */,
 				9219D1071A7FAA4400A3330B /* CardCollectionViewCell.swift in Sources */,
 				F15CD24F1AA1207800E6C2DD /* CardRow.swift in Sources */,
 				8479BDC51A69A5AC00F5DF45 /* AppDelegate.swift in Sources */,
@@ -2961,6 +2970,7 @@
 			baseConfigurationReference = 835E19C23201D8D68F12E117 /* Pods-Rhythmic Gymnastics.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

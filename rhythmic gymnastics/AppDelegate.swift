@@ -28,6 +28,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             defaults.synchronize()
         }
         
+        if defaults.objectForKey("user-id") == nil {
+            defaults.setObject(NSUUID().UUIDString, forKey: "user-id")
+            defaults.synchronize()
+        }
+        
+        ServerHelper.syncSettings()
+        
         return true
     }
 

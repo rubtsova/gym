@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 let names = "names"
 
@@ -74,6 +75,15 @@ class CardsViewController: UIViewController, UICollectionViewDataSource, UIColle
         collectionView.reloadData()
         
         GA.screen("cards")
+    }
+    
+    @IBAction func clickReview(sender: AnyObject) {
+        let composeController = MFMailComposeViewController()
+        composeController.setSubject("Гимнастика — Отзыв")
+        composeController.setToRecipients(["sergey@pronin.me", "ekaterina___95@mail.ru"])
+        composeController.setMessageBody("\n\n\n" + (NSUserDefaults.standardUserDefaults().objectForKey("user-id") as? String ?? ""), isHTML: false)
+        composeController.mailComposeDelegate = self
+        self.presentViewController(composeController, animated: true, completion: nil)
     }
     
     //UICollectionViewDataSource
@@ -244,5 +254,12 @@ class CardsViewController: UIViewController, UICollectionViewDataSource, UIColle
         if let controller = segue.destinationViewController as? CardPDFViewController {
             controller.cardContent = sender as! CardContent
         }
+    }
+}
+
+
+extension CardsViewController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        controller.parentViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 }

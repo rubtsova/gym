@@ -29,6 +29,10 @@ class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaym
     //берем кол-во оплаченных карт
     let userDef = NSUserDefaults.standardUserDefaults()
     var purchasedCardNumb: Int = 0
+    
+    deinit {
+        SKPaymentQueue.defaultQueue().removeTransactionObserver(self)
+    }
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +54,7 @@ class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaym
             GA.event("card_spendFree")
         }
         
-        drawCard(cardContent.blocked)
+        drawCard(cardContent.blocked && !NSUserDefaults.standardUserDefaults().boolForKey("isUnlimited"))
         
         let data = NSData(contentsOfFile: pdfFilePath)!
         webView.loadData(data, MIMEType: "application/pdf", textEncodingName: "utf-8", baseURL: NSURL())
@@ -67,7 +71,7 @@ class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaym
     //@IBOutlet weak var pdfCard: UIWebView!
 
     private func export() {
-        if cardContent.blocked == false {
+        if cardContent.blocked == false || NSUserDefaults.standardUserDefaults().boolForKey("isUnlimited") {
             exportPDF()
             GA.event("export_options_export")
         } else {
@@ -115,9 +119,12 @@ class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaym
         let s: String = "Чтобы сохранить готовую карточку в формате PDF любым возможным способом, приобретите какой-либо из пакетов."
         let alert = UIAlertController(title: "Сохранение готовой программы", message: s, preferredStyle: .Alert)
         
-        alert.addAction(UIAlertAction(title: "4 карточки за " + productsArray[2].price.description + " руб." , style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction) in self.buyProduct(self.productsArray[2])}))
-        alert.addAction(UIAlertAction(title: "12 карточек за " + productsArray[1].price.description + " руб." , style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction) in self.buyProduct(self.productsArray[1])}))
-        alert.addAction(UIAlertAction(title: "Безлимит за " + productsArray[0].price.description + " руб." , style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction) in self.buyProduct(self.productsArray[0])}))
+        alert.addAction(UIAlertAction(title: "4 карточки за " + productsArray[2].price.description + " руб." ,
+            style: .Default, handler: {(alert: UIAlertAction) in self.buyProduct(self.productsArray[2])}))
+        alert.addAction(UIAlertAction(title: "12 карточек за " + productsArray[1].price.description + " руб." ,
+            style: .Default, handler: {(alert: UIAlertAction) in self.buyProduct(self.productsArray[1])}))
+        alert.addAction(UIAlertAction(title: "Безлимит за " + productsArray[0].price.description + " руб." ,
+            style: .Default, handler: {(alert: UIAlertAction) in self.buyProduct(self.productsArray[0])}))
         alert.addAction(UIAlertAction(title: "Отмена", style: UIAlertActionStyle.Default, handler: nil))
 
         self.presentViewController(alert, animated: true, completion: nil)
@@ -421,6 +428,7 @@ class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaym
             userDef.setBool(false, forKey: "isUnlimited")
             s = "4"
         }
+        userDef.synchronize()
         
         let alert = UIAlertController(title: "Спасибо", message: "Покупка завершена успешно\n Количество карточек для сохранения: " + s, preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))

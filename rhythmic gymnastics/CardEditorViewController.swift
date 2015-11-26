@@ -584,7 +584,9 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func editingValueInCellDidEnd(cell: MainCardTVCell, value: Double) {
-        allCardContent.content[cardTableView.indexPathForCell(cell)!.row].totalVal = value
+        if let index = cardTableView.indexPathForCell(cell)?.row {
+            allCardContent.content[index].totalVal = value
+        }
     }
     
     @IBAction func deleteElementButtonClicked(sender: AnyObject) {
