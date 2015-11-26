@@ -240,6 +240,8 @@ class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaym
         UIGraphicsEndPDFContext()
         
         data.writeToFile(pdfFilePath, atomically: true)
+        
+        //some comment
     }
     
     @IBAction func touchEditorButton(sender: AnyObject) {
