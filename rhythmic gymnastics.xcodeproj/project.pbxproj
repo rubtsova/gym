@@ -625,7 +625,6 @@
 		D5A80BDD1BAF3A8B00EDFB10 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A80BDB1BAF3A8B00EDFB10 /* Crashlytics.framework */; };
 		D5DFE9A11C0641DF004CF871 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DFE9A01C0641DF004CF871 /* MessageUI.framework */; };
 		D5DFE9A31C0644B3004CF871 /* ServerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DFE9A21C0644B3004CF871 /* ServerHelper.swift */; };
-		D5E2F8F71C073C6E00EB3D88 /* somefile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E2F8F61C073C6E00EB3D88 /* somefile.swift */; };
 		F10322AC1AD66B62005A8230 /* PropertiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10322AB1AD66B62005A8230 /* PropertiesView.swift */; };
 		F12A8B581A83A29B000AD455 /* CreateCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12A8B571A83A29B000AD455 /* CreateCardViewController.swift */; };
 		F13ADA021ADCEFE100CEFF08 /* DescriptionElementList.plist in Resources */ = {isa = PBXBuildFile; fileRef = F13ADA011ADCEFE100CEFF08 /* DescriptionElementList.plist */; };
@@ -1271,7 +1270,6 @@
 		D5A80BDB1BAF3A8B00EDFB10 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		D5DFE9A01C0641DF004CF871 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D5DFE9A21C0644B3004CF871 /* ServerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServerHelper.swift; path = "rhythmic gymnastics/ServerHelper.swift"; sourceTree = SOURCE_ROOT; };
-		D5E2F8F61C073C6E00EB3D88 /* somefile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = somefile.swift; path = "rhythmic gymnastics/viewcontrollers/somefile.swift"; sourceTree = SOURCE_ROOT; };
 		F10322AB1AD66B62005A8230 /* PropertiesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertiesView.swift; sourceTree = "<group>"; };
 		F12A8B571A83A29B000AD455 /* CreateCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateCardViewController.swift; path = ../CreateCardViewController.swift; sourceTree = "<group>"; };
 		F13ADA011ADCEFE100CEFF08 /* DescriptionElementList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DescriptionElementList.plist; sourceTree = "<group>"; };
@@ -2012,7 +2010,6 @@
 				8479BDC61A69A5AC00F5DF45 /* MasterViewController.swift */,
 				F142E9C31AEEDAA400E3C6A1 /* CardPDFViewController.swift */,
 				9219D1041A7FA9EB00A3330B /* CardsViewController */,
-				D5E2F8F61C073C6E00EB3D88 /* somefile.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -2840,7 +2837,6 @@
 				3FE23EEC1B4FF0D500124394 /* GANHelper.swift in Sources */,
 				F15CD25D1AA1223000E6C2DD /* ElementOTG.swift in Sources */,
 				F1D1C0691A9E8322008912A7 /* CardContent.swift in Sources */,
-				D5E2F8F71C073C6E00EB3D88 /* somefile.swift in Sources */,
 				F15CD2611AA1224500E6C2DD /* ElementM.swift in Sources */,
 				3F162B251AAF578A00F796F0 /* CardEditorViewController.swift in Sources */,
 				3F162B281AAF5CBE00F796F0 /* ElementsValuesTVCell.swift in Sources */,
