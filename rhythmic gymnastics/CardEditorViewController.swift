@@ -102,6 +102,19 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
         
         cardPropertiesView.recountProperties(allCardContent)
         
+        let recognizerSingleClick: UITapGestureRecognizer = UITapGestureRecognizer()
+        recognizerSingleClick.numberOfTapsRequired = 1
+        recognizerSingleClick.addTarget(self, action: "stapOrSwipe:")
+        self.view.addGestureRecognizer(recognizerSingleClick)
+        let recognizerSwipe: UISwipeGestureRecognizer = UISwipeGestureRecognizer()
+        recognizerSwipe.numberOfTouchesRequired = 1
+        recognizerSwipe.addTarget(self, action: "stapOrSwipe:")
+        
+    }
+    
+    //когда нажимаем просто на экран или свайп (чтобы при редактировании ценности не вылетал)
+    func tapOrSwipe (recognizer: UIGestureRecognizer){
+        self.view.endEditing(true)
     }
     
     //UITableViewDataSource
