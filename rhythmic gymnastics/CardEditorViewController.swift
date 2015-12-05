@@ -6,6 +6,9 @@
 //  Copyright (c) 2015 Admin. All rights reserved.
 //
 
+/*Изменила окно создания новой карточки, чтобы клавиатура убиралась(но я не могу это потестить нормально)
+Самый главный краш попыталась исправить примерно таким же образом - как только редактирование заканчивается, выполняются там сразу все нужные операции, теперь невозможно сделать так, чтобы можно было пролистнуть эту редактируемую ячейку(опять же не могу потестить)*/
+
 import UIKit
 
 class CardEditorViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ElementsValuesTVCellDelegate, MainCardTVCellDelegate {
@@ -94,27 +97,30 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
         tableView.dataSource = self
         tableView.delegate = self
         
+        
+        /*let recognizerScroll: UIPanGestureRecognizer = UIPanGestureRecognizer()
+        recognizerScroll.addTarget(cardTableView, action: "scrollCardTableView")*/
         cardTableView.dataSource = self
         cardTableView.delegate = self
-        
         cardTableView.editing = true
         cardTableView.allowsSelectionDuringEditing = true
+        //cardTableView.addGestureRecognizer(recognizerScroll)
         
         cardPropertiesView.recountProperties(allCardContent)
         
-        let recognizerSingleClick: UITapGestureRecognizer = UITapGestureRecognizer()
+        /*let recognizerSingleClick: UITapGestureRecognizer = UITapGestureRecognizer()
         recognizerSingleClick.numberOfTapsRequired = 1
-        recognizerSingleClick.addTarget(self, action: "stapOrSwipe:")
+        recognizerSingleClick.addTarget(self, action: "tapOrSwipe:")
         self.view.addGestureRecognizer(recognizerSingleClick)
         let recognizerSwipe: UISwipeGestureRecognizer = UISwipeGestureRecognizer()
         recognizerSwipe.numberOfTouchesRequired = 1
-        recognizerSwipe.addTarget(self, action: "stapOrSwipe:")
+        recognizerSwipe.addTarget(self, action: "tapOrSwipe:")*/
         
     }
     
     //когда нажимаем просто на экран или свайп (чтобы при редактировании ценности не вылетал)
-    func tapOrSwipe (recognizer: UIGestureRecognizer){
-        self.view.endEditing(true)
+    func scrollCardTableView (recognizer: UIPanGestureRecognizer){
+        cardTableView.endEditing(true)
     }
     
     //UITableViewDataSource

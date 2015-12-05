@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             defaults.synchronize()
         }
         
-        ServerHelper.syncSettings()
+        //ServerHelper.syncSettings()
         
         return true
     }

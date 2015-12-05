@@ -16,7 +16,7 @@ protocol MainCardTVCellDelegate {
     func editingValueInCellDidEnd(cell: MainCardTVCell, value: Double)
 }
 
-class MainCardTVCell: UITableViewCell {
+class MainCardTVCell: UITableViewCell, UITextFieldDelegate {
    
     @IBOutlet var imageViews: [UIImageView]!
     
@@ -42,6 +42,7 @@ class MainCardTVCell: UITableViewCell {
         }
         selectionStyle = .None
         valueField.text = "0.0"
+        valueField.delegate = self
     }
     
     override func prepareForReuse() {
@@ -67,6 +68,11 @@ class MainCardTVCell: UITableViewCell {
         self.delegate?.editingValueInCellDidEnd(self, value: val)
     }
 
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.endEditing(true)
+        textField.resignFirstResponder()
+        return true
+    }
 //    NSArray *identifiers = @[
 //    @"com.example.myapp.apple",
 //    @"com.example.myapp.pear",

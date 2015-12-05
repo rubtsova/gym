@@ -160,6 +160,8 @@
 		<string>Прыжок &apos;&apos;жете ан турнан&apos;&apos; в кольцо с наклоном туловища назад</string>
 		<key>leap10_2_05</key>
 		<string>Прыжок &apos;&apos;жете ан турнан&apos;&apos; с подбивным в кольцо со сменой ног(смена прямыми ногами)</string>
+		<key>leap10_3_05</key>
+		<string>Прыжок &apos;&apos;жете ан турнан&apos;&apos; </string>
 		<key>leap11_0_05</key>
 		<string>Баттерфляй (&apos;&apos;Бедуинский&apos;&apos; прыжок в наклонной  плоскости)</string>
 	</dict>

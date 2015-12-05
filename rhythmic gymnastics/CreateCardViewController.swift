@@ -9,7 +9,7 @@
 
 import UIKit
 
-class CreateCardViewController: UIViewController {
+class CreateCardViewController: UIViewController, UITextFieldDelegate{
     
     var cardContent: CardContent!
     
@@ -24,6 +24,9 @@ class CreateCardViewController: UIViewController {
         self.title = "Создание новой программы"
         createButton.setTitle("СОЗДАТЬ", forState: .Normal)
         
+        for textF in fields {
+            textF.delegate = self
+        }
         if openedFromEditor {
             for button in buttons {
                 if button.tag == cardInf.subject.rawValue {
@@ -64,6 +67,12 @@ class CreateCardViewController: UIViewController {
     @IBOutlet weak var birthTextField: UITextField!
     @IBOutlet weak var coachTextField: UITextField!
     
+    //чтобы клавиатура убралась
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.endEditing(true)
+        textField.resignFirstResponder()
+        return true
+    }
     
     @IBAction func subjectButTouch(sender: UIButton) {
         for button in buttons {

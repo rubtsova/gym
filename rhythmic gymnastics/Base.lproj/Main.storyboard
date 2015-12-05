@@ -248,7 +248,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Например: 2003" minimumFontSize="17" id="zTq-3U-sJg">
                                 <rect key="frame" x="188" y="462" width="531" height="30"/>
@@ -256,14 +256,14 @@
                                 <animations/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Например: Винер И.А." minimumFontSize="17" id="6vK-rM-g0s">
                                 <rect key="frame" x="123" y="569" width="596" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="drF-qZ-G5E">
                                 <rect key="frame" x="250" y="737" width="90" height="86"/>
@@ -296,7 +296,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3E5-Df-yYV">
                                 <rect key="frame" x="631" y="737" width="86" height="86"/>
@@ -354,7 +354,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aua-aX-63S">
                                 <rect key="frame" x="150" y="735" width="92" height="90"/>
@@ -435,121 +435,6 @@
                                     <action selector="deleteElementButtonClicked:" destination="TsW-72-gDr" eventType="touchUpInside" id="D5F-Vs-71N"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="73" sectionHeaderHeight="1" sectionFooterHeight="1" id="SqD-pq-iv4">
-                                <rect key="frame" x="16" y="98" width="540" height="266"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MainCardTVCell" rowHeight="73" id="ADp-Sg-nDq" customClass="MainCardTVCell" customModule="Rhythmic_Gymnastics" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1" width="540" height="73"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ADp-Sg-nDq" id="ThG-9R-CRQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="540" height="72"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frame.png" id="o2m-FP-JUK">
-                                                    <rect key="frame" x="-13" y="0.0" width="553" height="72"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="KLp-do-hk5">
-                                                    <rect key="frame" x="12" y="18" width="42" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="5wO-7y-BOG">
-                                                    <rect key="frame" x="110" y="18" width="22" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="oZc-HF-Kxp">
-                                                    <rect key="frame" x="133" y="18" width="23" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="iOy-mo-fdi">
-                                                    <rect key="frame" x="160" y="18" width="21" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Ewt-VY-am6">
-                                                    <rect key="frame" x="183" y="18" width="20" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="PQa-Zc-W0L">
-                                                    <rect key="frame" x="62" y="18" width="22" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ekL-nF-Zpx">
-                                                    <rect key="frame" x="205" y="18" width="18" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" tag="9" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Nie-Pf-8XI">
-                                                    <rect key="frame" x="224" y="18" width="22" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="zMR-De-Q7K">
-                                                    <rect key="frame" x="247" y="18" width="20" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="GdZ-6l-lNA">
-                                                    <rect key="frame" x="39" y="18" width="20" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="x8Y-VF-1hQ">
-                                                    <rect key="frame" x="269" y="18" width="20" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
-                                                </imageView>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="Ilj-8E-zS2">
-                                                    <rect key="frame" x="405" y="23" width="55" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                                    <connections>
-                                                        <action selector="editingValueDidEnd:" destination="ADp-Sg-nDq" eventType="editingDidEnd" id="KpB-zp-Sw9"/>
-                                                    </connections>
-                                                </textField>
-                                                <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="SD5-31-QIx">
-                                                    <rect key="frame" x="86" y="18" width="23" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
-                                                </imageView>
-                                            </subviews>
-                                            <animations/>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" selected="YES"/>
-                                            <bool key="isElement" value="YES"/>
-                                        </accessibility>
-                                        <connections>
-                                            <outlet property="hiddenBack" destination="o2m-FP-JUK" id="keW-hT-tq5"/>
-                                            <outlet property="valueField" destination="Ilj-8E-zS2" id="lYG-b8-qqV"/>
-                                            <outletCollection property="imageViews" destination="KLp-do-hk5" collectionClass="NSMutableArray" id="ZOQ-ID-W6D"/>
-                                            <outletCollection property="imageViews" destination="GdZ-6l-lNA" collectionClass="NSMutableArray" id="3uY-CT-xZG"/>
-                                            <outletCollection property="imageViews" destination="PQa-Zc-W0L" collectionClass="NSMutableArray" id="Fo1-I4-5H8"/>
-                                            <outletCollection property="imageViews" destination="SD5-31-QIx" collectionClass="NSMutableArray" id="PO7-bL-znK"/>
-                                            <outletCollection property="imageViews" destination="5wO-7y-BOG" collectionClass="NSMutableArray" id="5ud-nF-u3a"/>
-                                            <outletCollection property="imageViews" destination="oZc-HF-Kxp" collectionClass="NSMutableArray" id="3aG-yc-8Ix"/>
-                                            <outletCollection property="imageViews" destination="iOy-mo-fdi" collectionClass="NSMutableArray" id="PXR-Ou-JjY"/>
-                                            <outletCollection property="imageViews" destination="Ewt-VY-am6" collectionClass="NSMutableArray" id="6pm-d8-arY"/>
-                                            <outletCollection property="imageViews" destination="ekL-nF-Zpx" collectionClass="NSMutableArray" id="Boz-S0-Chf"/>
-                                            <outletCollection property="imageViews" destination="Nie-Pf-8XI" collectionClass="NSMutableArray" id="5yc-pa-7xJ"/>
-                                            <outletCollection property="imageViews" destination="zMR-De-Q7K" collectionClass="NSMutableArray" id="tgN-f2-wh7"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <view contentMode="scaleToFill" id="bhh-cv-qHv" customClass="PropertiesView" customModule="Rhythmic_Gymnastics" customModuleProvider="target">
                                 <rect key="frame" x="587" y="146" width="155" height="235"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1078,6 +963,121 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="73" sectionHeaderHeight="1" sectionFooterHeight="1" id="SqD-pq-iv4">
+                                <rect key="frame" x="15" y="98" width="540" height="266"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MainCardTVCell" rowHeight="73" id="ADp-Sg-nDq" customClass="MainCardTVCell" customModule="Rhythmic_Gymnastics" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1" width="540" height="73"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ADp-Sg-nDq" id="ThG-9R-CRQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="540" height="72"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frame.png" id="o2m-FP-JUK">
+                                                    <rect key="frame" x="-13" y="0.0" width="553" height="72"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="KLp-do-hk5">
+                                                    <rect key="frame" x="12" y="18" width="42" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="5wO-7y-BOG">
+                                                    <rect key="frame" x="110" y="18" width="22" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="oZc-HF-Kxp">
+                                                    <rect key="frame" x="133" y="18" width="23" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="iOy-mo-fdi">
+                                                    <rect key="frame" x="160" y="18" width="21" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Ewt-VY-am6">
+                                                    <rect key="frame" x="183" y="18" width="20" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="PQa-Zc-W0L">
+                                                    <rect key="frame" x="62" y="18" width="22" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ekL-nF-Zpx">
+                                                    <rect key="frame" x="205" y="18" width="18" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="9" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Nie-Pf-8XI">
+                                                    <rect key="frame" x="224" y="18" width="22" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="zMR-De-Q7K">
+                                                    <rect key="frame" x="247" y="18" width="20" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="GdZ-6l-lNA">
+                                                    <rect key="frame" x="39" y="18" width="20" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="x8Y-VF-1hQ">
+                                                    <rect key="frame" x="269" y="18" width="20" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="Ilj-8E-zS2">
+                                                    <rect key="frame" x="405" y="23" width="55" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <action selector="editingValueDidEnd:" destination="ADp-Sg-nDq" eventType="editingDidEnd" id="KpB-zp-Sw9"/>
+                                                    </connections>
+                                                </textField>
+                                                <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="SD5-31-QIx">
+                                                    <rect key="frame" x="86" y="18" width="23" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                </imageView>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" selected="YES"/>
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
+                                        <connections>
+                                            <outlet property="hiddenBack" destination="o2m-FP-JUK" id="keW-hT-tq5"/>
+                                            <outlet property="valueField" destination="Ilj-8E-zS2" id="lYG-b8-qqV"/>
+                                            <outletCollection property="imageViews" destination="KLp-do-hk5" collectionClass="NSMutableArray" id="ZOQ-ID-W6D"/>
+                                            <outletCollection property="imageViews" destination="GdZ-6l-lNA" collectionClass="NSMutableArray" id="3uY-CT-xZG"/>
+                                            <outletCollection property="imageViews" destination="PQa-Zc-W0L" collectionClass="NSMutableArray" id="Fo1-I4-5H8"/>
+                                            <outletCollection property="imageViews" destination="SD5-31-QIx" collectionClass="NSMutableArray" id="PO7-bL-znK"/>
+                                            <outletCollection property="imageViews" destination="5wO-7y-BOG" collectionClass="NSMutableArray" id="5ud-nF-u3a"/>
+                                            <outletCollection property="imageViews" destination="oZc-HF-Kxp" collectionClass="NSMutableArray" id="3aG-yc-8Ix"/>
+                                            <outletCollection property="imageViews" destination="iOy-mo-fdi" collectionClass="NSMutableArray" id="PXR-Ou-JjY"/>
+                                            <outletCollection property="imageViews" destination="Ewt-VY-am6" collectionClass="NSMutableArray" id="6pm-d8-arY"/>
+                                            <outletCollection property="imageViews" destination="ekL-nF-Zpx" collectionClass="NSMutableArray" id="Boz-S0-Chf"/>
+                                            <outletCollection property="imageViews" destination="Nie-Pf-8XI" collectionClass="NSMutableArray" id="5yc-pa-7xJ"/>
+                                            <outletCollection property="imageViews" destination="zMR-De-Q7K" collectionClass="NSMutableArray" id="tgN-f2-wh7"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
