@@ -60,7 +60,13 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
     var arrayMasterCriteria: [[SimpleCellElement]] = []
     var arrayRiskDER: [[SimpleCellElement]] = []
     var arrayAddings: [[SimpleCellElement]] = []
-
+    
+    var iphone: Bool = false
+    /*if UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad {
+     iphone = false
+    } else {
+     iphone = true
+    }*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -265,6 +271,52 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
         self.tableView.reloadData()
     }
 
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        if tableView == cardTableView {
+            return 61.0
+        }
+        
+        let main = mainSegmentedControl.selectedSegmentIndex
+        let support = supportSegmentedControl.selectedSegmentIndex
+        
+        var elements = [SimpleCellElement]()
+        
+        if main == 0 {
+        switch support {
+        case 0:
+            elements = arrayLeaps[indexPath.section][findDifficultyElemForCell(indexPath,array: arrayLeaps)]
+        case 1:
+            elements = arrayBala[indexPath.section][findDifficultyElemForCell(indexPath,array: arrayBala)]
+        case 2:
+            elements = arrayRotate[indexPath.section][findDifficultyElemForCell(indexPath,array: arrayRotate)]
+        default: elements = [SimpleCellElement]()
+        }
+        }
+
+        if main == 1 {
+            
+            switch support {
+            case 0:
+                elements = arrayFandO[(indexPath.row)/2][(indexPath.row) % 2]
+            case 1:
+                elements = arrayMasterCriteria[indexPath.row]
+            case 2:
+                elements = arrayRiskDER[indexPath.row]
+            default: elements = [SimpleCellElement]()
+            }
+        }
+        
+        if main == 2 {
+            elements = arrayAddings[indexPath.row]
+
+        }
+
+        if elements.count > 6 {
+            return 101.0
+        }
+        return 54.0
+    }
 
     //UITableViewDelegate
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -435,6 +487,7 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
     @IBAction func editInfoButtonTouch(sender: UIButton) {
         self.performSegueWithIdentifier("editCardInfo", sender: allCardContent.card)
     }
+    
     
     
     //1 клик по элементу в общей таблице всех элементов

@@ -621,6 +621,8 @@
 		8479BDD11A69A5AE00F5DF45 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8479BDCF1A69A5AE00F5DF45 /* LaunchScreen.xib */; };
 		84B1B16C1A743702004433F8 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B1B16B1A743702004433F8 /* CardsViewController.swift */; };
 		84B8CDFE1A7E497A00044B8B /* CardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8CDFD1A7E497A00044B8B /* CardInfo.swift */; };
+		84D48E591C4642E800850475 /* IPhoneMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D48E581C4642E800850475 /* IPhoneMain.storyboard */; };
+		84D48E5B1C466C6B00850475 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D48E5A1C466C6A00850475 /* delete.png */; };
 		9219D1071A7FAA4400A3330B /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9219D1061A7FAA4400A3330B /* CardCollectionViewCell.swift */; };
 		D59BF6161B0DF3EB008F2AE1 /* empty.png in Resources */ = {isa = PBXBuildFile; fileRef = D59BF6151B0DF3EB008F2AE1 /* empty.png */; };
 		D5A80BDC1BAF3A8B00EDFB10 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A80BDA1BAF3A8B00EDFB10 /* Fabric.framework */; };
@@ -1267,6 +1269,8 @@
 		8479BDD01A69A5AE00F5DF45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		84B1B16B1A743702004433F8 /* CardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		84B8CDFD1A7E497A00044B8B /* CardInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardInfo.swift; sourceTree = "<group>"; };
+		84D48E581C4642E800850475 /* IPhoneMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = IPhoneMain.storyboard; sourceTree = "<group>"; };
+		84D48E5A1C466C6A00850475 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
 		9219D1061A7FAA4400A3330B /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		C65E4729B0EA480F47C4A824 /* libPods-Rhythmic Gymnastics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Rhythmic Gymnastics.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D59BF6151B0DF3EB008F2AE1 /* empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty.png; sourceTree = "<group>"; };
@@ -1314,6 +1318,7 @@
 		348D7C901B5178F600234FF0 /* subject */ = {
 			isa = PBXGroup;
 			children = (
+				84D48E5A1C466C6A00850475 /* delete.png */,
 				348D7C911B5178F600234FF0 /* add_0_1.png */,
 				348D7C921B5178F600234FF0 /* add_0_3.png */,
 				348D7C931B5178F600234FF0 /* add_0_4.png */,
@@ -1995,6 +2000,7 @@
 				3FA024021AE69C8D00606864 /* UIImageTint.swift */,
 				3FE23EEB1B4FF0D500124394 /* GANHelper.swift */,
 				3FE23EEF1B4FF19900124394 /* Bridging-Header.h */,
+				84D48E581C4642E800850475 /* IPhoneMain.storyboard */,
 			);
 			path = "Rhythmic Gymnastics";
 			sourceTree = "<group>";
@@ -2193,6 +2199,7 @@
 				3F037D1D1B4EA40800E45F63 /* rota2_2_03_pic.png in Resources */,
 				3F037B261B4EA3F100E45F63 /* bala3_8_05.png in Resources */,
 				3F037D381B4EA40800E45F63 /* rota3_2_05.png in Resources */,
+				84D48E5B1C466C6B00850475 /* delete.png in Resources */,
 				348D7D6A1B5178F600234FF0 /* M_3.png in Resources */,
 				3F037D131B4EA40800E45F63 /* rota2_0_04_pic.png in Resources */,
 				348D7DA41B5178F600234FF0 /* sub_4_1_O.png in Resources */,
@@ -2573,6 +2580,7 @@
 				348D7D811B5178F600234FF0 /* sub_0_0_F.png in Resources */,
 				3F037AB71B4EA3F100E45F63 /* bala2_1_06_pic.png in Resources */,
 				3F037C2B1B4EA3FA00E45F63 /* leap1_5_02.png in Resources */,
+				84D48E591C4642E800850475 /* IPhoneMain.storyboard in Resources */,
 				3F037D2B1B4EA40800E45F63 /* rota3_0_05_pic.png in Resources */,
 				3F037B3C1B4EA3F100E45F63 /* bala6_1_02.png in Resources */,
 				3F037AE51B4EA3F100E45F63 /* bala3_1_03_pic.png in Resources */,
@@ -2830,7 +2838,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run 84ded72a27092a7f5f7140541e42c826c3e38590 1123d0d98cbc246886eb73d8546d524c78b143d689809c0d01ce836fd464e0ed";
+			shellScript = "";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -2992,7 +3000,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "rhythmic gymnastics/Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -3015,7 +3023,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "rhythmic gymnastics/Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

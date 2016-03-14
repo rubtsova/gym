@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="63a-rH-Xib">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--Мои программы выступлений-->
+        <scene sceneID="xk6-OB-tMo">
+            <objects>
+                <viewController id="q9b-Ep-hOi" customClass="CardsViewController" customModule="Rhythmic_Gymnastics" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jXI-0a-twO"/>
+                        <viewControllerLayoutGuide type="bottom" id="j0A-rD-hQV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="075-zT-TuZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="right" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2lZ-bh-YKW">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <animations/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="KNc-WU-SDc"/>
+                                    <barButtonItem title="Удалить" id="AtD-DN-0wW">
+                                        <color key="tintColor" red="1" green="0.0" blue="0.037066020669999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="touchDeleteSelected:" destination="q9b-Ep-hOi" id="wbA-ad-V0O"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EnM-1r-jOF">
+                                <rect key="frame" x="121" y="210" width="36" height="148"/>
+                                <animations/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Hq-kt-KoP">
+                                <rect key="frame" x="157" y="210" width="36" height="148"/>
+                                <animations/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MOJ-qf-qO5">
+                                <rect key="frame" x="26" y="79" width="274" height="437"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="smN-Ba-hjh">
+                                    <size key="itemSize" width="150" height="200"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Button" id="hl5-Fx-fn9">
+                                        <rect key="frame" x="0.0" y="0.0" width="102" height="136"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="102" height="136"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="addNewCard.png" translatesAutoresizingMaskIntoConstraints="NO" id="wfZ-B8-Kab">
+                                                    <rect key="frame" x="0.0" y="0.0" width="102" height="136"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Создать новую программу " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivf-JR-RX2">
+                                                    <rect key="frame" x="0.0" y="39" width="102" height="57"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <animations/>
+                                        <size key="customSize" width="102" height="136"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Card" id="CTx-5T-O8c" customClass="CardCollectionViewCell" customModule="Rhythmic_Gymnastics" customModuleProvider="target">
+                                        <rect key="frame" x="172" y="0.0" width="102" height="136"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="102" height="136"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardTemplate.png" translatesAutoresizingMaskIntoConstraints="NO" id="WCE-if-z8m">
+                                                    <rect key="frame" x="0.0" y="0.0" width="102" height="136"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HdI-ox-Tds">
+                                                    <rect key="frame" x="9" y="16" width="86" height="86"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="galka.png" translatesAutoresizingMaskIntoConstraints="NO" id="xTN-Ep-z6F">
+                                                    <rect key="frame" x="68" y="0.0" width="34" height="33"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwt-03-ikp">
+                                                    <rect key="frame" x="14" y="104" width="73" height="24"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <animations/>
+                                        <size key="customSize" width="102" height="136"/>
+                                        <connections>
+                                            <outlet property="cardName" destination="zwt-03-ikp" id="tKc-vk-Sv9"/>
+                                            <outlet property="choosenCellImage" destination="xTN-Ep-z6F" id="oUG-1a-Vgh"/>
+                                            <outlet property="subjectPicture" destination="HdI-ox-Tds" id="wj8-US-H2U"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="q9b-Ep-hOi" id="TBr-Kc-Rt0"/>
+                                    <outlet property="delegate" destination="q9b-Ep-hOi" id="Bkq-Jp-DVM"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Мои программы выступлений" id="8QB-r3-bEF" userLabel="Мои карточки">
+                        <barButtonItem key="leftBarButtonItem" title="Отзыв" id="bcp-jF-D1N">
+                            <connections>
+                                <action selector="clickReview:" destination="q9b-Ep-hOi" id="bmL-tp-Gey"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Выбрать" id="PXv-8h-P7R">
+                            <connections>
+                                <action selector="touchChooseButton:" destination="q9b-Ep-hOi" id="oAs-fG-fDt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="beginingImage1" destination="EnM-1r-jOF" id="yQi-7j-0xn"/>
+                        <outlet property="beginingImage2" destination="0Hq-kt-KoP" id="K3g-zn-Qce"/>
+                        <outlet property="collectionView" destination="MOJ-qf-qO5" id="kGj-jb-Oal"/>
+                        <outlet property="hiddenToolBar" destination="2lZ-bh-YKW" id="HYZ-iu-UsX"/>
+                        <segue destination="gv8-GI-10y" kind="push" identifier="CreateCard" id="b0M-4Z-AtI"/>
+                        <segue destination="HAJ-Oc-v7l" kind="push" identifier="listToPDF" id="dfY-tV-aaI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Src-q1-2f0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="564" y="-2558"/>
+        </scene>
+        <!--Итоговый документ-->
+        <scene sceneID="YiA-I2-FJq">
+            <objects>
+                <viewController id="HAJ-Oc-v7l" customClass="CardPDFViewController" customModule="Rhythmic_Gymnastics" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PjO-da-FUp"/>
+                        <viewControllerLayoutGuide type="bottom" id="UbA-uP-8le"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p69-xq-lh8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nAd-4r-ANB">
+                                <rect key="frame" x="0.0" y="28" width="320" height="540"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Итоговый документ" id="dZz-3v-mnU">
+                        <barButtonItem key="rightBarButtonItem" title="Опции" id="EWc-Dt-rQc">
+                            <connections>
+                                <action selector="touchEditorButton:" destination="HAJ-Oc-v7l" id="izW-Wn-abw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="editButton" destination="EWc-Dt-rQc" id="sJd-nE-RuS"/>
+                        <outlet property="webView" destination="nAd-4r-ANB" id="nGw-3v-ax1"/>
+                        <segue destination="q9b-Ep-hOi" kind="push" id="3fz-IQ-Wyz"/>
+                        <segue destination="emr-te-5bL" kind="push" identifier="pdfToEditor" id="qEm-MI-PbQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HvX-eY-xJh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1343" y="-2538"/>
+        </scene>
+        <!--Новая карточка-->
+        <scene sceneID="Feg-S1-Bxm">
+            <objects>
+                <viewController id="gv8-GI-10y" customClass="CreateCardViewController" customModule="Rhythmic_Gymnastics" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qeN-1Y-CV4"/>
+                        <viewControllerLayoutGuide type="bottom" id="EVy-rn-gq7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hTa-ho-cwH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Название" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaN-Se-dMk">
+                                <rect key="frame" x="14" y="67" width="90" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Имя гимнастки" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yc-wl-RXW">
+                                <rect key="frame" x="14" y="117" width="142" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Город(страна)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZI4-SW-1jD">
+                                <rect key="frame" x="14" y="164" width="153" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Тренер" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJG-O6-j1P">
+                                <rect key="frame" x="14" y="259" width="97" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Предмет" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JK3-uC-Y4A">
+                                <rect key="frame" x="14" y="302" width="91" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="пример: Мария Трегубова" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZkI-1G-Exd">
+                                <rect key="frame" x="147" y="113" width="163" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="пример: 2003" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qQp-dL-oqZ">
+                                <rect key="frame" x="147" y="208" width="164" height="30"/>
+                                <animations/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="пример: Винер И.А." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zga-cH-p5O">
+                                <rect key="frame" x="104" y="255" width="206" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="пример: Москва" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v0b-qy-mj1">
+                                <rect key="frame" x="147" y="160" width="163" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOh-tC-lGN">
+                                <rect key="frame" x="64" y="346" width="50" height="50"/>
+                                <animations/>
+                                <state key="normal" image="sub0.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="light_sub0.png"/>
+                                <state key="highlighted" image="sub0.png"/>
+                                <connections>
+                                    <action selector="subjectButTouch:" destination="gv8-GI-10y" eventType="touchUpInside" id="yxW-di-TJN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yA1-yw-YcK">
+                                <rect key="frame" x="117" y="346" width="50" height="50"/>
+                                <animations/>
+                                <state key="normal" image="sub1.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="light_sub1.png"/>
+                                <state key="highlighted" image="sub1.png"/>
+                                <connections>
+                                    <action selector="subjectButTouch:" destination="gv8-GI-10y" eventType="touchUpInside" id="wHI-dG-Hzt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSe-WB-pBB">
+                                <rect key="frame" x="265" y="346" width="50" height="50"/>
+                                <animations/>
+                                <state key="normal" image="sub4.png">
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="light_sub4.png"/>
+                                <state key="highlighted" image="sub4.png"/>
+                                <connections>
+                                    <action selector="subjectButTouch:" destination="gv8-GI-10y" eventType="touchUpInside" id="Mgx-IE-3vj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HsK-Ow-e8C">
+                                <rect key="frame" x="213" y="346" width="50" height="50"/>
+                                <animations/>
+                                <state key="normal" image="sub3.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="light_sub3.png"/>
+                                <state key="highlighted" image="sub3.png"/>
+                                <connections>
+                                    <action selector="subjectButTouch:" destination="gv8-GI-10y" eventType="touchUpInside" id="kKx-Id-aEI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4IP-qM-bfQ">
+                                <rect key="frame" x="9" y="476" width="302" height="54"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="СОЗДАТЬ">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="createButtonTouch:" destination="gv8-GI-10y" eventType="touchUpInside" id="Gkt-TP-Vdh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ch5-ov-Q2u">
+                                <rect key="frame" x="164" y="346" width="50" height="50"/>
+                                <animations/>
+                                <state key="normal" image="sub2.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="light_sub2.png"/>
+                                <state key="highlighted" image="sub2.png"/>
+                                <connections>
+                                    <action selector="subjectButTouch:" destination="gv8-GI-10y" eventType="touchUpInside" id="kNV-tV-ZOE"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="пример: Трегубова-Лента" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a9l-E1-iD0">
+                                <rect key="frame" x="104" y="63" width="206" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2q-Va-3db">
+                                <rect key="frame" x="9" y="346" width="50" height="50"/>
+                                <animations/>
+                                <state key="normal" title="WA" image="subWA.bmp">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="light_subWA.png"/>
+                                <state key="highlighted" image="subWA.bmp"/>
+                                <connections>
+                                    <action selector="subjectButTouch:" destination="gv8-GI-10y" eventType="touchUpInside" id="7tt-2z-mLa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Музыка с голосом" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msa-14-3Fp">
+                                <rect key="frame" x="9" y="423" width="164" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XeA-fx-Vex">
+                                <rect key="frame" x="187" y="418" width="51" height="31"/>
+                                <animations/>
+                                <color key="onTintColor" red="0.86274509799999999" green="0.68627450980000004" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Год рождения" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aE9-kf-DQz">
+                                <rect key="frame" x="12" y="212" width="147" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Новая карточка" id="qsV-pq-7Z7"/>
+                    <connections>
+                        <outlet property="birthTextField" destination="qQp-dL-oqZ" id="ddv-Nf-Xp7"/>
+                        <outlet property="cityTextField" destination="v0b-qy-mj1" id="dRf-XO-4ZN"/>
+                        <outlet property="coachTextField" destination="zga-cH-p5O" id="uK0-XB-hv1"/>
+                        <outlet property="createButton" destination="4IP-qM-bfQ" id="m2c-q4-PIH"/>
+                        <outlet property="gymNameTextField" destination="ZkI-1G-Exd" id="kfA-WV-F7g"/>
+                        <outlet property="musicSwitch" destination="XeA-fx-Vex" id="c9j-xJ-wdZ"/>
+                        <outlet property="nameTextField" destination="a9l-E1-iD0" id="dUC-GT-aVr"/>
+                        <outletCollection property="fields" destination="a9l-E1-iD0" collectionClass="NSMutableArray" id="MPy-Xm-L4l"/>
+                        <outletCollection property="fields" destination="ZkI-1G-Exd" collectionClass="NSMutableArray" id="WBl-rf-qTu"/>
+                        <outletCollection property="fields" destination="v0b-qy-mj1" collectionClass="NSMutableArray" id="tGK-39-Yvu"/>
+                        <outletCollection property="fields" destination="qQp-dL-oqZ" collectionClass="NSMutableArray" id="ghj-VK-q2k"/>
+                        <outletCollection property="fields" destination="zga-cH-p5O" collectionClass="NSMutableArray" id="jcz-ol-JsT"/>
+                        <outletCollection property="buttons" destination="fOh-tC-lGN" collectionClass="NSMutableArray" id="mZ7-eq-dfI"/>
+                        <outletCollection property="buttons" destination="yA1-yw-YcK" collectionClass="NSMutableArray" id="yGN-nK-djj"/>
+                        <outletCollection property="buttons" destination="Ch5-ov-Q2u" collectionClass="NSMutableArray" id="S6h-tR-vRH"/>
+                        <outletCollection property="buttons" destination="HsK-Ow-e8C" collectionClass="NSMutableArray" id="r9y-61-Fim"/>
+                        <outletCollection property="buttons" destination="g2q-Va-3db" collectionClass="NSMutableArray" id="FF8-qw-v6z"/>
+                        <outletCollection property="buttons" destination="uSe-WB-pBB" collectionClass="NSMutableArray" id="Peu-G5-Rab"/>
+                        <segue destination="emr-te-5bL" kind="push" identifier="create" id="jfD-Qo-3Uq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fak-hg-UF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="406" y="-1450"/>
+        </scene>
+        <!--Конструктор -->
+        <scene sceneID="XgY-eH-Vfq">
+            <objects>
+                <viewController storyboardIdentifier="CardEditorViewController" id="emr-te-5bL" customClass="CardEditorViewController" customModule="Rhythmic_Gymnastics" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z6i-5D-w8f"/>
+                        <viewControllerLayoutGuide type="bottom" id="jJB-O9-T3N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="he0-fM-bLN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isB-qQ-uoe">
+                                <rect key="frame" x="277" y="111" width="30" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" backgroundImage="delete.png">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.037066020669999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteElementButtonClicked:" destination="emr-te-5bL" eventType="touchUpInside" id="8Ar-pb-nzW"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="cCG-3Z-M0w">
+                                <rect key="frame" x="10" y="120" width="297" height="71"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MainCardTVCell" rowHeight="61" id="kjI-15-ON7" customClass="MainCardTVCell" customModule="Rhythmic_Gymnastics" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1" width="297" height="61"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kjI-15-ON7" id="xcP-UW-xrm">
+                                            <rect key="frame" x="0.0" y="0.0" width="297" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frame.png" translatesAutoresizingMaskIntoConstraints="NO" id="W0y-Zb-dsC">
+                                                    <rect key="frame" x="0.0" y="-4" width="289" height="64"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JvA-MG-us2">
+                                                    <rect key="frame" x="12" y="14" width="42" height="40"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z6s-rV-5pd">
+                                                    <rect key="frame" x="110" y="14" width="22" height="40"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mhF-JO-dYo">
+                                                    <rect key="frame" x="133" y="14" width="23" height="40"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zyk-7U-fiG">
+                                                    <rect key="frame" x="157" y="14" width="21" height="40"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IXF-cx-v9J">
+                                                    <rect key="frame" x="179" y="14" width="20" height="40"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mSa-gG-ymH">
+                                                    <rect key="frame" x="62" y="14" width="22" height="40"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zG9-16-I6U">
+                                                    <rect key="frame" x="201" y="14" width="18" height="40"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="9" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LY4-iY-V3f">
+                                                    <rect key="frame" x="220" y="14" width="22" height="40"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="osL-XM-h5r">
+                                                    <rect key="frame" x="243" y="14" width="20" height="40"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XZt-qs-iw6">
+                                                    <rect key="frame" x="39" y="14" width="20" height="40"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Dw-oz-95d">
+                                                    <rect key="frame" x="267" y="14" width="20" height="40"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vbu-Dd-fjN">
+                                                    <rect key="frame" x="87" y="14" width="23" height="40"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gbv-Oc-EV4">
+                                                    <rect key="frame" x="262" y="21" width="35" height="30"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <action selector="editingValueDidEnd:" destination="kjI-15-ON7" eventType="editingDidEnd" id="Flw-go-wCL"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" selected="YES"/>
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
+                                        <connections>
+                                            <outlet property="hiddenBack" destination="W0y-Zb-dsC" id="Wbb-yO-UIb"/>
+                                            <outlet property="valueField" destination="Gbv-Oc-EV4" id="48O-PW-j4m"/>
+                                            <outletCollection property="imageViews" destination="JvA-MG-us2" collectionClass="NSMutableArray" id="M1i-Ub-LNG"/>
+                                            <outletCollection property="imageViews" destination="XZt-qs-iw6" collectionClass="NSMutableArray" id="Rt9-8x-aGk"/>
+                                            <outletCollection property="imageViews" destination="mSa-gG-ymH" collectionClass="NSMutableArray" id="PIj-fP-wa8"/>
+                                            <outletCollection property="imageViews" destination="vbu-Dd-fjN" collectionClass="NSMutableArray" id="TZf-mK-t0y"/>
+                                            <outletCollection property="imageViews" destination="z6s-rV-5pd" collectionClass="NSMutableArray" id="r6p-36-kkv"/>
+                                            <outletCollection property="imageViews" destination="mhF-JO-dYo" collectionClass="NSMutableArray" id="gaJ-Z4-6wk"/>
+                                            <outletCollection property="imageViews" destination="zyk-7U-fiG" collectionClass="NSMutableArray" id="ls7-Fu-vPX"/>
+                                            <outletCollection property="imageViews" destination="IXF-cx-v9J" collectionClass="NSMutableArray" id="YuU-qi-hHX"/>
+                                            <outletCollection property="imageViews" destination="zG9-16-I6U" collectionClass="NSMutableArray" id="Eq8-kq-bcl"/>
+                                            <outletCollection property="imageViews" destination="LY4-iY-V3f" collectionClass="NSMutableArray" id="xTD-VN-giz"/>
+                                            <outletCollection property="imageViews" destination="osL-XM-h5r" collectionClass="NSMutableArray" id="cXS-w3-ykg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h5a-nx-Vfk" customClass="PropertiesView" customModule="Rhythmic_Gymnastics" customModuleProvider="target">
+                                <rect key="frame" x="3" y="64" width="317" height="47"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYG-x1-OQo">
+                                        <rect key="frame" x="102" y="2" width="48" height="25"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="0.191725333" green="0.15589144699999999" blue="0.236328125" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="F%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoY-a2-bmn">
+                                        <rect key="frame" x="29" y="26" width="42" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4HG-MU-Ogl">
+                                        <rect key="frame" x="11" y="5" width="28" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" red="0.91088948749999998" green="0.84439926860000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="O" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ui-G0-N74">
+                                        <rect key="frame" x="47" y="5" width="28" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCx-QN-mQ4" userLabel="FpercentValue">
+                                        <rect key="frame" x="51" y="27" width="30" height="20"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JS6-T6-d61" userLabel="OValue">
+                                        <rect key="frame" x="68" y="7" width="19" height="18"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.89357458369999998" green="0.79192972559999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mdy-PW-VbW" userLabel="TotalValue">
+                                        <rect key="frame" x="90" y="22" width="67" height="29"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="M" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3X-Qu-Eav">
+                                        <rect key="frame" x="169" y="2" width="42" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whJ-Oz-uOK">
+                                        <rect key="frame" x="187" y="2" width="24" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DER" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgV-So-3O7">
+                                        <rect key="frame" x="215" y="2" width="28" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aok-iK-Eph">
+                                        <rect key="frame" x="247" y="2" width="23" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRn-IX-oi0">
+                                        <rect key="frame" x="290" y="2" width="25" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0R-zR-oki" userLabel="FValue">
+                                        <rect key="frame" x="29" y="7" width="18" height="18"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.89357458369999998" green="0.79192972559999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="740-ao-iiz">
+                                        <rect key="frame" x="159" y="21" width="154" height="27"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title=""/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="editInfoButtonTouch:" destination="emr-te-5bL" eventType="touchUpInside" id="2E6-wo-0hc"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Редактировать данные" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpA-OZ-T2V">
+                                        <rect key="frame" x="163" y="24" width="152" height="19"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="D" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xv-N9-JRu">
+                                        <rect key="frame" x="273" y="2" width="42" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="TotalValueLabel" destination="Mdy-PW-VbW" id="HKc-WJ-onD"/>
+                                    <outlet property="countDERLabel" destination="aok-iK-Eph" id="dLQ-R1-347"/>
+                                    <outlet property="countDLabel" destination="kRn-IX-oi0" id="mAB-L9-GdK"/>
+                                    <outlet property="countFLabel" destination="N0R-zR-oki" id="5j4-ej-wvQ"/>
+                                    <outlet property="countMLabel" destination="whJ-Oz-uOK" id="YLF-ou-hPR"/>
+                                    <outlet property="countOLabel" destination="JS6-T6-d61" id="Keq-Qj-mcn"/>
+                                    <outlet property="perFLabel" destination="dCx-QN-mQ4" id="5H7-gi-urx"/>
+                                </connections>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cMo-dV-rBj" userLabel="MainSegmentedControl">
+                                <rect key="frame" x="0.0" y="193" width="320" height="29"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.81425773199999996" green="0.66324277239999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <segments>
+                                    <segment title="Трудность"/>
+                                    <segment title="М и предмет"/>
+                                    <segment title="Дополнительно"/>
+                                </segments>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="mainSegmentChanged:" destination="emr-te-5bL" eventType="valueChanged" id="UQo-SI-v7B"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vrr-z3-VWb">
+                                <rect key="frame" x="0.0" y="221" width="768" height="909"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="obT-YH-lmN">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="29"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.85490196080000003" green="0.75686274509999996" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <segments>
+                                            <segment title="Прыжки"/>
+                                            <segment title="Равновесия"/>
+                                            <segment title="Вращения"/>
+                                        </segments>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="supportSegmentChanged:" destination="emr-te-5bL" eventType="valueChanged" id="lm2-oh-f6w"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fL5-qt-hzW">
+                                        <rect key="frame" x="0.0" y="29" width="320" height="320"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LabelTVCell" rowHeight="39" id="Pik-jv-MMp" customClass="LabelTVCell" customModule="Rhythmic_Gymnastics">
+                                                <rect key="frame" x="0.0" y="22" width="320" height="39"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pik-jv-MMp" id="qyv-i9-jhp">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="38"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Вообще мне нужны разные View для каждой из главных вкладок с разными таблицами и элементами" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qrk-hO-ur1">
+                                                            <rect key="frame" x="8" y="0.0" width="312" height="35"/>
+                                                            <animations/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <animations/>
+                                                </tableViewCellContentView>
+                                                <animations/>
+                                                <connections>
+                                                    <outlet property="cellLabel" destination="Qrk-hO-ur1" id="kGM-us-orN"/>
+                                                </connections>
+                                            </tableViewCell>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ElementsValuesTVCell" rowHeight="54" id="ZwS-5v-R15" customClass="ElementsValuesTVCell" customModule="Rhythmic_Gymnastics" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="61" width="320" height="54"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZwS-5v-R15" id="wdP-vE-kQI">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="53"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ou-jc-Wwd">
+                                                            <rect key="frame" x="5" y="8" width="40" height="40"/>
+                                                            <animations/>
+                                                            <color key="backgroundColor" red="0.89357458369999998" green="0.79192972559999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fAw-5o-MiI">
+                                                            <rect key="frame" x="5" y="8" width="40" height="40"/>
+                                                            <animations/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fwb-Bt-irz">
+                                                            <rect key="frame" x="97" y="8" width="40" height="40"/>
+                                                            <animations/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gGh-gw-cpV">
+                                                            <rect key="frame" x="54" y="8" width="40" height="40"/>
+                                                            <animations/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5dk-vQ-qnh">
+                                                            <rect key="frame" x="226" y="8" width="40" height="40"/>
+                                                            <animations/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZOd-tG-ixk">
+                                                            <rect key="frame" x="183" y="8" width="40" height="40"/>
+                                                            <animations/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fVC-FJ-Nj9">
+                                                            <rect key="frame" x="140" y="8" width="40" height="40"/>
+                                                            <animations/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JbK-Nc-GJP">
+                                                            <rect key="frame" x="270" y="8" width="40" height="40"/>
+                                                            <animations/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" tag="7" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8k7-WR-Wnh">
+                                                            <rect key="frame" x="97" y="53" width="40" height="40"/>
+                                                            <animations/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DNu-x5-29m">
+                                                            <rect key="frame" x="54" y="53" width="40" height="40"/>
+                                                            <animations/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" tag="10" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UTc-Rl-gmA">
+                                                            <rect key="frame" x="226" y="53" width="40" height="40"/>
+                                                            <animations/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" tag="9" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="81e-0K-e4y">
+                                                            <rect key="frame" x="183" y="53" width="40" height="40"/>
+                                                            <animations/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="irm-Ec-fH2">
+                                                            <rect key="frame" x="140" y="53" width="40" height="40"/>
+                                                            <animations/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AAl-yU-xX4">
+                                                            <rect key="frame" x="270" y="53" width="40" height="40"/>
+                                                            <animations/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <animations/>
+                                                </tableViewCellContentView>
+                                                <animations/>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.88604676930000004" green="0.81237751709999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Конструктор " id="4VV-8k-LCB">
+                        <barButtonItem key="rightBarButtonItem" title="Документ" id="db6-Sh-ZDx">
+                            <connections>
+                                <action selector="saveButtonClick:" destination="emr-te-5bL" id="kmL-2t-YDI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="cardPropertiesView" destination="h5a-nx-Vfk" id="HGN-zT-aAr"/>
+                        <outlet property="cardTableView" destination="cCG-3Z-M0w" id="YBd-Ty-TaM"/>
+                        <outlet property="deleteElementButton" destination="isB-qQ-uoe" id="yvv-f8-bNY"/>
+                        <outlet property="mainEditingView" destination="vrr-z3-VWb" id="R8g-1v-jAp"/>
+                        <outlet property="mainSegmentedControl" destination="cMo-dV-rBj" id="bFn-ey-fPN"/>
+                        <outlet property="supportSegmentedControl" destination="obT-YH-lmN" id="fDc-Ot-8Kb"/>
+                        <outlet property="tableView" destination="fL5-qt-hzW" id="CwF-BU-RtD"/>
+                        <segue destination="HAJ-Oc-v7l" kind="push" identifier="saveAndShow" id="2sP-v4-Ju1"/>
+                        <segue destination="gv8-GI-10y" kind="push" identifier="editCardInfo" id="cpE-0a-0im"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Up-Sm-vEN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="837" y="-1554"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BJt-Gz-uuu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="63a-rH-Xib" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="t78-jn-IKM">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="q9b-Ep-hOi" kind="relationship" relationship="rootViewController" id="Za0-QU-7VC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zcJ-FQ-pkT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-118.10133333333333" y="-2746.5955555555556"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="addNewCard.png" width="600" height="800"/>
+        <image name="cardTemplate.png" width="600" height="800"/>
+        <image name="delete.png" width="128" height="128"/>
+        <image name="frame.png" width="702" height="103"/>
+        <image name="galka.png" width="128" height="128"/>
+        <image name="light_sub0.png" width="600" height="600"/>
+        <image name="light_sub1.png" width="600" height="600"/>
+        <image name="light_sub2.png" width="600" height="600"/>
+        <image name="light_sub3.png" width="600" height="600"/>
+        <image name="light_sub4.png" width="600" height="600"/>
+        <image name="light_subWA.png" width="936" height="934"/>
+        <image name="sub0.png" width="600" height="600"/>
+        <image name="sub1.png" width="600" height="600"/>
+        <image name="sub2.png" width="600" height="600"/>
+        <image name="sub3.png" width="600" height="600"/>
+        <image name="sub4.png" width="600" height="600"/>
+        <image name="subWA.bmp" width="95" height="95"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="jfD-Qo-3Uq"/>
+        <segue reference="b0M-4Z-AtI"/>
+        <segue reference="Za0-QU-7VC"/>
+        <segue reference="dfY-tV-aaI"/>
+    </inferredMetricsTieBreakers>
+</document>

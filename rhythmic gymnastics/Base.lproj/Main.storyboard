@@ -13,8 +13,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="right" id="BFU-E2-6DT">
+                                <rect key="frame" x="0.0" y="980" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <animations/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="5aL-MK-opa"/>
+                                    <barButtonItem title="Удалить" id="XFp-dK-udA">
+                                        <color key="tintColor" red="1" green="0.0" blue="0.037066020673091948" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="touchDeleteSelected:" destination="7aT-PN-yAp" id="LBF-8o-ojy"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="xgA-J1-wQD">
+                                <rect key="frame" x="335" y="416" width="47" height="192"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="EyS-pt-DrR">
+                                <rect key="frame" x="381" y="416" width="47" height="192"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="aXY-KF-wYy">
-                                <rect key="frame" x="26" y="43" width="714" height="1000"/>
+                                <rect key="frame" x="27" y="82" width="721" height="1000"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -52,7 +76,7 @@
                                         <animations/>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Card" id="Lez-t4-agv" customClass="CardCollectionViewCell" customModule="Rhythmic_Gymnastics" customModuleProvider="target">
-                                        <rect key="frame" x="188" y="0.0" width="150" height="200"/>
+                                        <rect key="frame" x="190" y="0.0" width="150" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
@@ -98,30 +122,6 @@
                                     <outlet property="delegate" destination="7aT-PN-yAp" id="eLF-iv-zdc"/>
                                 </connections>
                             </collectionView>
-                            <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="right" id="BFU-E2-6DT">
-                                <rect key="frame" x="0.0" y="980" width="768" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <animations/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="5aL-MK-opa"/>
-                                    <barButtonItem title="Удалить" id="XFp-dK-udA">
-                                        <color key="tintColor" red="1" green="0.0" blue="0.037066020673091948" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <action selector="touchDeleteSelected:" destination="7aT-PN-yAp" id="LBF-8o-ojy"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="xgA-J1-wQD">
-                                <rect key="frame" x="335" y="416" width="47" height="192"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="EyS-pt-DrR">
-                                <rect key="frame" x="381" y="416" width="47" height="192"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -149,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PG8-6U-inH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="762" y="-2902"/>
+            <point key="canvasLocation" x="1058" y="-2702"/>
         </scene>
         <!--Итоговый документ-->
         <scene sceneID="zxy-dm-Mm2">
@@ -586,14 +586,6 @@
                                     <outlet property="perFLabel" destination="OS5-I0-t7c" id="zq5-kA-WA6"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KEd-gn-cpG">
-                                <rect key="frame" x="711" y="310" width="24" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" id="4eQ-SH-4j1">
                                 <rect key="frame" x="0.0" y="377" width="768" height="909"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
