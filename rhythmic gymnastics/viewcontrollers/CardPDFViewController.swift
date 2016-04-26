@@ -20,6 +20,8 @@ class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaym
     
     var openedFromEditor = false
     var pdfFilePath: String!
+    var iphone:Bool = true
+    
     
     let productIdentifiers = Set(["me.rubtsova.gymnastics.inapp.unlimited", "me.rubtsova.gymnastics.inapp.cards10", "me.rubtsova.gymnastics.inapp.cards3"])
     
@@ -139,9 +141,14 @@ class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaym
         let activityController = UIActivityViewController(activityItems: [data, "\(cardContent.card.gymName) \(cardContent.card.cardName)"], applicationActivities: nil)
         
         //без этого работать не станет
+        if iphone {
+            
+        }
+        else {
         activityController.modalPresentationStyle = .Popover
         activityController.popoverPresentationController!.barButtonItem = editButton
         self.presentViewController(activityController, animated: true, completion: nil)
+        }
         GA.event("pdf_exportCard")
     }
     

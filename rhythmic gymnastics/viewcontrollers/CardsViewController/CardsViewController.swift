@@ -95,7 +95,7 @@ class CardsViewController: UIViewController, UICollectionViewDataSource, UIColle
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         if indexPath.item == 0 {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Button", forIndexPath: indexPath) 
-            cell.backgroundColor = UIColor(patternImage: UIImage(named: "addNewCard.png")!)
+//            cell.backgroundColor = UIColor(patternImage: UIImage(named: "addNewCard.png")!)
             return cell
         } else {
             storage = cardsNames.objectForKey(names) as! [String]

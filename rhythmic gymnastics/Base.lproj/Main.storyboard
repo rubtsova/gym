@@ -707,7 +707,7 @@
                                                             <animations/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ujs-G4-af8">
-                                                            <rect key="frame" x="101" y="13" width="53" height="53"/>
+                                                            <rect key="frame" x="101" y="12" width="53" height="53"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <animations/>
                                                         </imageView>
@@ -1149,9 +1149,9 @@
         <image name="subWA.bmp" width="95" height="95"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="S2s-7O-HX9"/>
-        <segue reference="IE5-bQ-urs"/>
-        <segue reference="yym-Dx-0QJ"/>
+        <segue reference="k8B-2s-hU6"/>
         <segue reference="Vqe-wa-Sp2"/>
+        <segue reference="WkM-CR-XJF"/>
+        <segue reference="S2s-7O-HX9"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -57,6 +57,7 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet var buttons: [UIButton]!
     
+    @IBOutlet var constraintsFields: [NSLayoutConstraint]!
     
     @IBOutlet weak var createButton: UIButton!
     

@@ -32,7 +32,7 @@ class ElementsValuesTVCell: UITableViewCell {
     //как только она загрузится из Storyboard
     override func awakeFromNib() {
         
-        for imView in imageViews {
+        for imView in imageViews ?? [] {
             let recognizerSingleClick: UITapGestureRecognizer = UITapGestureRecognizer()
             recognizerSingleClick.numberOfTapsRequired = 1
             recognizerSingleClick.addTarget(self, action: "singleTap:")

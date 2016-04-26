@@ -61,7 +61,7 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
     var arrayRiskDER: [[SimpleCellElement]] = []
     var arrayAddings: [[SimpleCellElement]] = []
     
-    var iphone: Bool = false
+    var iphone: Bool = true
     /*if UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad {
      iphone = false
     } else {
@@ -242,9 +242,11 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func reloadMainSegment(main: Int) {
+        if !iphone {
         for view in mainSegmentViews {
             if view.tag == main {view.hidden = false}
             else {view.hidden = true}
+        }
         }
         
         if main == 2 || main == 3 {
@@ -257,8 +259,14 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
                 supportSegmentedControl.setTitle("Прыжки", forSegmentAtIndex: 0)
                 supportSegmentedControl.setTitle("Равновесия", forSegmentAtIndex: 1)
                 supportSegmentedControl.setTitle("Повороты", forSegmentAtIndex: 2)
-                tableView.sectionHeaderHeight = 35
-                tableView.sectionFooterHeight = 35
+                if iphone {
+                    tableView.sectionHeaderHeight = 25
+                    tableView.sectionFooterHeight = 25
+                }
+                else {
+                    tableView.sectionHeaderHeight = 35
+                    tableView.sectionFooterHeight = 35
+                }
             }
             else {
                 supportSegmentedControl.setTitle("ФТГ(F) и ДТГ(О)", forSegmentAtIndex: 0)
@@ -273,9 +281,12 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
+        
         if tableView == cardTableView {
             return 61.0
         }
+        
+        if iphone {
         
         let main = mainSegmentedControl.selectedSegmentIndex
         let support = supportSegmentedControl.selectedSegmentIndex
@@ -316,6 +327,9 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
             return 101.0
         }
         return 54.0
+            
+        }
+        else {return 54.0}
     }
 
     //UITableViewDelegate
@@ -450,22 +464,30 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
         
         let main = mainSegmentedControl.selectedSegmentIndex
         let support = supportSegmentedControl.selectedSegmentIndex
+        var height:CGFloat = 0
+        if iphone {
+            height = 25
+        }
+        else {height = 35}
         
-        var view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 35))
-        let label: UILabel = UILabel(frame: CGRect(x: 15, y: 0, width: tableView.bounds.width, height: 35))
+        var view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: height))
+        var label: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: height))
+        label.numberOfLines = 3
+        label.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        if iphone {label.font = label.font.fontWithSize(14)}
         
         if main == 0 {
-            label.backgroundColor = UIColor.whiteColor()
             //label.textAlignment
-            label.text = sectionHeaders()[supportSegmentedControl.selectedSegmentIndex][section]
+            let t: String = sectionHeaders()[supportSegmentedControl.selectedSegmentIndex][section]
+            label.text = t
+            label.backgroundColor = UIColor.whiteColor()
+            view.backgroundColor = UIColor.whiteColor()
             view.addSubview(label)
             return view
         }
         if main == 1 && support == 0 {
             view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 70))
             view.backgroundColor = supportSegmentedControl.backgroundColor
-            //label.textAlignment
-            label.numberOfLines = 3
             label.text = ""
             header = label
             view.addSubview(label)
@@ -494,8 +516,7 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
     func singleClickToElementInElValCell(currElement: SimpleCellElement) {
         
         let main = mainSegmentedControl.selectedSegmentIndex
-        
-        if main == 0 {
+        if main == 0 && !iphone{
             descriptElemLabel.text = currElement.name
             descriptElemImageView.image = currElement.imageDescription
         }
@@ -790,7 +811,7 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
         var cel = MainCardTVCell()
         for cell in cardTableView.visibleCells {
             cel = cell as! MainCardTVCell
-            if cel  == selectedCell {
+            if cardTableView.indexPathForCell(cel)  == cardTableView.indexPathForCell(selectedCell) {
                 cel.hiddenBack.hidden = false
             }
             else {

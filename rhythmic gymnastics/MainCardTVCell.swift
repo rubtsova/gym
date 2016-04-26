@@ -145,11 +145,15 @@ class MainCardTVCell: UITableViewCell, UITextFieldDelegate {
                         coordY = element.imageName.hasPrefix("add_1") ? coordY + 26: coordY
                         
                         imageView.frame = CGRect(x: (Double)(preImageView.frame.minX + preImageView.frame.width), y: coordY, width: imageWidth, height: imageHeight)
+                        //var constraint = NSLayoutConstraint()
+                        //imageView.constraints.append(<#T##newElement: NSLayoutConstraint##NSLayoutConstraint#>)
+                        
 
                         if ((Double)(preImageView.frame.minX + preImageView.frame.width) + imageWidth > 300) {
                             //предупреждение
                             return false
                         }
+                        break
                     }
                 }
                 
