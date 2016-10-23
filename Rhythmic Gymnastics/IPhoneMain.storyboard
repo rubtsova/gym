@@ -262,12 +262,12 @@
                     <navigationItem key="navigationItem" title="Отзыв" id="wB2-cd-1Mh">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="I9h-It-l79">
                             <connections>
-                                <action selector="tapCancel:" destination="8Af-Ue-6m4" id="JFm-4q-8T5"/>
+                                <action selector="tapCancel" destination="8Af-Ue-6m4" id="Cjs-D8-W7A"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="ecM-7M-LfC">
                             <connections>
-                                <action selector="tapDone:" destination="8Af-Ue-6m4" id="to2-1N-LZO"/>
+                                <action selector="tapDone" destination="8Af-Ue-6m4" id="mLb-pS-Wgd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

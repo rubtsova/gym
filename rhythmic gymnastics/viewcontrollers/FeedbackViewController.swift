@@ -22,12 +22,12 @@ class FeedbackViewController: UIViewController, UITextFieldDelegate, UITextViewD
         textView.contentInset.left = -4
     }
 
-    @IBAction func tapCancel(sender: AnyObject) {
+    @IBAction func tapCancel() {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
     
-    @IBAction func tapDone(sender: AnyObject) {
+    @IBAction func tapDone() {
         textView.resignFirstResponder()
         textFieldEmail.resignFirstResponder()
         
