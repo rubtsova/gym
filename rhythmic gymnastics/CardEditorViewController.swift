@@ -11,12 +11,16 @@
 
 import UIKit
 
-class CardEditorViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ElementsValuesTVCellDelegate, MainCardTVCellDelegate {
+class CardEditorViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ElementsValuesTVCellDelegate, MainCardTVCellDelegate, UIAlertViewDelegate {
     
 //
 //    required init(coder aDecoder: NSCoder) {
 //        super.init(coder: aDecoder)
 //    }
+    
+    struct Tags {
+        static let Disclaimer = 1
+    }
     
     ///основная таблица элементов созданной карточки
     @IBOutlet weak var cardTableView: UITableView!
@@ -198,18 +202,18 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
         
         if main == 0 && support == 0 {
             for item in arrayLeaps[section] {
-                if item.count != 0 {count++}
+                if item.count != 0 {count += 1}
             }
         }
         if main == 0 && support == 1 {
             for item in arrayBala[section] {
-                if item.count != 0 {count++}
+                if item.count != 0 {count += 1}
             }
         }
 
         if main == 0 && support == 2 {
             for item in arrayRotate[section] {
-                if item.count != 0 {count++}
+                if item.count != 0 {count += 1}
             }
         }
         
@@ -447,9 +451,9 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
         while k < array[index.section].count {
             if array[index.section][k].count != 0 {
                 if currIndex == index.row {return k}
-                else {currIndex++}
+                else {currIndex += 1}
             }
-            k++
+            k += 1
         }
         return k
     }
@@ -471,7 +475,7 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
         else {height = 35}
         
         var view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: height))
-        var label: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: height))
+        let label: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: height))
         label.numberOfLines = 3
         label.lineBreakMode = NSLineBreakMode.ByWordWrapping
         if iphone {label.font = label.font.fontWithSize(14)}
@@ -548,19 +552,18 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
             }
             else
             if currentCell.addElement(currElement, animatedTag: currentCell.elements.count()) {
-                if currElement.imageName == "add_0_4" || currElement.imageName == "M_17" {
+                /*if currElement.imageName == "add_0_4" || currElement.imageName == "M_17" {
                     firstStepView.hidden = true
                     secondStepView.hidden = true
                     masterShowView.hidden = false
-                }
+                }*/
                 allCardContent.content[indexPath!.row].addElement(currElement)
                 cardPropertiesView.TotalValueLabel.text = allCardContent.totalValue.description
             }
   
             else {
-                let alert = UIAlertController(title: "Недостаточно места", message: "Границы строчек карточки не позволяют добавить элемент в данную строку", preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "ОК", style: UIAlertActionStyle.Default, handler: nil))
-                self.presentViewController(alert, animated: true, completion: nil)
+                UIAlertView(title: "Недостаточно места", message: "Границы строчек карточки не позволяют добавить элемент в данную строку",
+                            delegate: nil, cancelButtonTitle: "OK").show()
             }
             allCardContent.blocked = true
             
@@ -692,11 +695,11 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
         currentCell.removeElement(selectedElement)
         allCardContent.content[cardTableView.indexPathForCell(currentCell)!.row].removeElement(selectedElement)
         
-        if selectedElement.imageName.hasPrefix("M_M") {
+        /*if selectedElement.imageName.hasPrefix("M_M") {
             firstStepView.hidden = true
             secondStepView.hidden = true
             masterShowView.hidden = false
-        }
+        }*/
         
         allCardContent.blocked = true
         cardPropertiesView.recountProperties(allCardContent)
@@ -749,33 +752,46 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
         cardsNames.synchronize()
         
         checkRules()
-        
-        go()
     }
     
     func checkRules() {
-        if cardPropertiesView.countMaster > 5 { showAlert("Нарушение правил", message: "Количество элементов мастерства превышает границу, установленную правилами художественной гимнастики(max 5).")
+        if cardPropertiesView.countMaster > 5 {
+            showAlert("Нарушение правил", message: "Количество элементов мастерства превышает границу, установленную правилами художественной гимнастики(max 5).")
+            return
         }
         
-        if cardPropertiesView.dance == 0 { showAlert("Нарушение правил", message: "В правилах художественной гимнастики предусмотрена как минимум одна дорожка танцевальных шагов в упражнении. В вашей программе ее нет.")
+        if cardPropertiesView.dance == 0 {
+            showAlert("Нарушение правил", message: "В правилах художественной гимнастики предусмотрена как минимум одна дорожка танцевальных шагов в упражнении. В вашей программе ее нет.")
+            return
         }
         
-        if cardPropertiesView.countD > 9 { showAlert("Нарушение правил", message: "Количество элементов трудности тела превышает границу, установленную правилами художественной гимнастики(max 9).")
+        if cardPropertiesView.countD > 9 {
+            showAlert("Нарушение правил", message: "Количество элементов трудности тела превышает границу, установленную правилами художественной гимнастики(max 9).")
+            return
         }
         
-        if cardPropertiesView.countDer > 3 { showAlert("Нарушение правил", message: "Количество элементов риска превышает границу, установленную правилами художественной гимнастики(max 3 DER в упражнении).")
+        if cardPropertiesView.countDer > 3 {
+            showAlert("Нарушение правил", message: "Количество элементов риска превышает границу, установленную правилами художественной гимнастики(max 3 DER в упражнении).")
+            return
         }
         
-        if cardPropertiesView.countDer < 6{ showAlert("Нарушение правил", message: "Добавлено недостаточно элементов типа «Трудность тела». По правилам их количество должно быть не менее 6.")
+        if cardPropertiesView.countDer < 6{
+            showAlert("Нарушение правил", message: "Добавлено недостаточно элементов типа «Трудность тела». По правилам их количество должно быть не менее 6.")
+            return
         }
-        
+        go()
     }
     
-    func showAlert(title: String, message: String){
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Отмена", style: UIAlertActionStyle.Default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Продолжить", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction) in self.go()}))
-        self.presentViewController(alert, animated: true, completion: nil)
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertView(title: title, message: message, delegate: self, cancelButtonTitle: "Отмена", otherButtonTitles: "Продолжить")
+        alert.tag = Tags.Disclaimer
+        alert.show()
+    }
+    
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        if alertView.cancelButtonIndex != buttonIndex {
+            self.go()
+        }
     }
     
     func go () {

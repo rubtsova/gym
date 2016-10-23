@@ -27,6 +27,7 @@ class GANHelper: NSObject {
     
     class func screen(name: String) {
         let tracker = GANHelper.instance.gai.defaultTracker
+        
         tracker.set(kGAIScreenName, value: name)
         
         let builder = GAIDictionaryBuilder.createScreenView()

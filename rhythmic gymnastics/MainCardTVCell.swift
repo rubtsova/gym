@@ -32,11 +32,11 @@ class MainCardTVCell: UITableViewCell, UITextFieldDelegate {
         for imView in imageViews {
             let recognizerSingleClick: UITapGestureRecognizer = UITapGestureRecognizer()
             recognizerSingleClick.numberOfTapsRequired = 1
-            recognizerSingleClick.addTarget(self, action: "singleTap:")
+            recognizerSingleClick.addTarget(self, action: #selector(MainCardTVCell.singleTap(_:)))
             imView.addGestureRecognizer(recognizerSingleClick)
             imView.userInteractionEnabled = false
             
-            let recognizerDrag: UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action:Selector("dragImView:"))
+            let recognizerDrag: UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action:#selector(MainCardTVCell.dragImView(_:)))
             imView.addGestureRecognizer(recognizerDrag)
     
         }
@@ -108,6 +108,8 @@ class MainCardTVCell: UITableViewCell, UITextFieldDelegate {
     func addElement(element: SimpleCellElement, animatedTag: Int) -> Bool{
         let index = elements.count()
         
+        
+        /*if !iphone{
         if index == 0 {
             let imageWidth: Double = (Double)(element.imageForCard.size.width)/(Double)(element.imageForCard.size.height) * 40
             let imageHeight : Double = 40
@@ -115,6 +117,23 @@ class MainCardTVCell: UITableViewCell, UITextFieldDelegate {
             imageViews[0].frame = CGRect(x: 12, y: 18, width: imageWidth, height: imageHeight)
             imageViews[0].image = element.imageForCard
             imageViews[0].userInteractionEnabled = true
+            
+            if element.imageName.hasPrefix("add_0_6") {
+                return false
+            }
+        }
+        }*/
+        
+        //iphone
+        if index == 0 {
+            let imageWidth: Double = (Double)(element.imageForCard.size.width)/(Double)(element.imageForCard.size.height) * 40
+            let imageHeight : Double = 40
+            
+            imageViews[0].image = element.imageForCard
+            imageViews[0].userInteractionEnabled = true
+            imageViews[0].addConstraint(NSLayoutConstraint(item: imageViews[0], attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: CGFloat(imageWidth)))
+            
+            imageViews[0].addConstraint(NSLayoutConstraint(item: imageViews[0], attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: CGFloat(imageHeight)))
             
             if element.imageName.hasPrefix("add_0_6") {
                 return false
@@ -134,28 +153,39 @@ class MainCardTVCell: UITableViewCell, UITextFieldDelegate {
                 var imageWidth: Double = (Double)(drawingImage.size.width)/(Double)(drawingImage.size.height) * 40
                 var imageHeight : Double = 40
                 
-                var coordY: Double = 18
+                imageHeight = element.imageName.hasPrefix("add_1") ? imageHeight/3:imageHeight
+                imageWidth = element.imageName.hasPrefix("add_1") ? imageWidth/3:imageWidth
                 
                 for preImageView in imageViews {
                     if preImageView.tag == elements.count() - 1 /*предыдущий*/ {
                         
-                        imageHeight = element.imageName.hasPrefix("add_1") ? 40/3:40
-                        imageWidth = element.imageName.hasPrefix("add_1") ? imageWidth/3:imageWidth
-                        
-                        coordY = element.imageName.hasPrefix("add_1") ? coordY + 26: coordY
-                        
-                        imageView.frame = CGRect(x: (Double)(preImageView.frame.minX + preImageView.frame.width), y: coordY, width: imageWidth, height: imageHeight)
-                        //var constraint = NSLayoutConstraint()
-                        //imageView.constraints.append(<#T##newElement: NSLayoutConstraint##NSLayoutConstraint#>)
-                        
-
                         if ((Double)(preImageView.frame.minX + preImageView.frame.width) + imageWidth > 300) {
                             //предупреждение
                             return false
                         }
-                        break
+                        
+                        imageView.addConstraint(NSLayoutConstraint(item: imageView, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: CGFloat(imageWidth)))
+                        
+                        imageView.addConstraint(NSLayoutConstraint(item: imageView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: CGFloat(imageHeight)))
                     }
                 }
+                
+                /*for preImageView in imageViews {
+                 if preImageView.tag == elements.count() - 1 /*предыдущий*/ {
+                 
+                 imageHeight = element.imageName.hasPrefix("add_1") ? 40/3:40
+                 imageWidth = element.imageName.hasPrefix("add_1") ? imageWidth/3:imageWidth
+                 
+                 coordY = element.imageName.hasPrefix("add_1") ? coordY + 26: coordY
+                 
+                 imageView.frame = CGRect(x: (Double)(preImageView.frame.minX + preImageView.frame.width), y: coordY, width: imageWidth, height: imageHeight)
+                 
+                 if ((Double)(preImageView.frame.minX + preImageView.frame.width) + imageWidth > 300) {
+                 //предупреждение
+                 return false
+                 }
+                 }
+                 }*/
                 
                 if imageView.tag == animatedTag {
                     imageView.image = drawingImage
@@ -185,8 +215,9 @@ class MainCardTVCell: UITableViewCell, UITextFieldDelegate {
                 break
             }
         }
-    
         remove(currIndex)
+        let temp = round(10 * elements.totalVal) / 10
+         valueField.text = temp.description
     }
     
     private func remove(index: Int) {

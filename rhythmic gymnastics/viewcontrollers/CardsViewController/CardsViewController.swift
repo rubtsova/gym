@@ -95,16 +95,16 @@ class CardsViewController: UIViewController, UICollectionViewDataSource, UIColle
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         if indexPath.item == 0 {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Button", forIndexPath: indexPath) 
-//            cell.backgroundColor = UIColor(patternImage: UIImage(named: "addNewCard.png")!)
+            cell.backgroundColor = UIColor(patternImage: UIImage(named: "addNewCard.png")!)
             return cell
         } else {
             storage = cardsNames.objectForKey(names) as! [String]
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Card", forIndexPath: indexPath) as! CardCollectionViewCell
             
             let documentsUrl = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
-            let fileAbsoluteUrl = documentsUrl.URLByAppendingPathComponent(storage[indexPath.row - 1] + ".card").absoluteURL
+            let fileAbsoluteUrl = documentsUrl.URLByAppendingPathComponent(storage[indexPath.row - 1] + ".card")!.absoluteURL
             
-            cell.cardContent = NSKeyedUnarchiver.unarchiveObjectWithFile(fileAbsoluteUrl.path!) as! CardContent
+            cell.cardContent = NSKeyedUnarchiver.unarchiveObjectWithFile(fileAbsoluteUrl!.path!) as! CardContent
             
             cell.cardName.text = storage[indexPath.row - 1]
             let subject = cell.cardContent.card.subject
@@ -193,7 +193,7 @@ class CardsViewController: UIViewController, UICollectionViewDataSource, UIColle
         for (i, item) in storage.enumerate() {
             for (_, selectedItem) in selectedCards.enumerate() {
                 if item == selectedItem {
-                    pdfPath = cachesUrl.URLByAppendingPathComponent(storage[i] + ".pdf").path!
+                    pdfPath = cachesUrl.URLByAppendingPathComponent(storage[i] + ".pdf")!.path!
                     let data = NSData(contentsOfFile: pdfPath)!
                     pathes.append(data)
                 }
@@ -203,8 +203,10 @@ class CardsViewController: UIViewController, UICollectionViewDataSource, UIColle
         let activityController = UIActivityViewController(activityItems: pathes, applicationActivities: nil)
         
         //без этого работать не станет
-        activityController.modalPresentationStyle = .Popover
-        activityController.popoverPresentationController!.barButtonItem = sender as? UIBarButtonItem
+        if #available(iOS 8.0, *) {
+            activityController.modalPresentationStyle = .Popover
+            activityController.popoverPresentationController!.barButtonItem = sender as? UIBarButtonItem
+        }
         //var rect = self.navigationController!.view.bounds
         //rect.size.height /= 2
         //activityController.popoverPresentationController!.sourceRect = rect

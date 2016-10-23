@@ -78,10 +78,10 @@ class PropertiesView: UIView {
             if element.imageName.hasPrefix("DER_0") {//база риска
                 setDER(++countDer)
             }
-            if element.imageName.hasPrefix("M_M") {//мастерство
+            if element.imageName.hasPrefix("M_18") {//мастерство
                 setM(++countMaster)
             }
-            if element.imageName.hasPrefix("sub_5_0_N_S") {++dance}
+            if element.imageName.hasPrefix("sub_5_0_N_S") {dance += 1}
             }
             difficultyAdd = false
         }

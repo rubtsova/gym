@@ -29,7 +29,7 @@ extension UIImage {
         let inputImage: UIImage = UIImage(named: color + ".png")!
         let maskRef: CGImageRef = self.CGImage!;
         
-        let mask: CGImageRef = CGImageMaskCreate( CGImageGetWidth(maskRef), CGImageGetHeight(maskRef), CGImageGetBitsPerComponent(maskRef),  CGImageGetBitsPerPixel(maskRef), CGImageGetBytesPerRow(maskRef), CGImageGetDataProvider(maskRef), nil, false)!
+        let mask: CGImageRef = CGImageMaskCreate( CGImageGetWidth(maskRef), CGImageGetHeight(maskRef), CGImageGetBitsPerComponent(maskRef),  CGImageGetBitsPerPixel(maskRef), CGImageGetBytesPerRow(maskRef), CGImageGetDataProvider(maskRef)!, nil, false)!
         
         let maskedImageRef: CGImageRef = CGImageCreateWithMask(inputImage.CGImage!, mask)!
         let maskedImage: UIImage = UIImage(CGImage: maskedImageRef)

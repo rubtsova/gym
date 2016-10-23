@@ -35,11 +35,11 @@ class ElementsValuesTVCell: UITableViewCell {
         for imView in imageViews ?? [] {
             let recognizerSingleClick: UITapGestureRecognizer = UITapGestureRecognizer()
             recognizerSingleClick.numberOfTapsRequired = 1
-            recognizerSingleClick.addTarget(self, action: "singleTap:")
+            recognizerSingleClick.addTarget(self, action: #selector(ElementsValuesTVCell.singleTap(_:)))
             
             let recognizerDoubleClick: UITapGestureRecognizer = UITapGestureRecognizer()
             recognizerDoubleClick.numberOfTapsRequired = 2
-            recognizerDoubleClick.addTarget(self, action: "doubleTap:")
+            recognizerDoubleClick.addTarget(self, action: #selector(ElementsValuesTVCell.doubleTap(_:)))
             
             imView.addGestureRecognizer(recognizerSingleClick)
             imView.addGestureRecognizer(recognizerDoubleClick)

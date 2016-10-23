@@ -17,15 +17,27 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate{
     var subjectChoosen = false
     var cardInf = CardInfo()
     var openedFromEditor: Bool = false
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        automaticallyAdjustsScrollViewInsets = false
 
         self.title = "Создание новой программы"
         createButton.setTitle("СОЗДАТЬ", forState: .Normal)
         
+        constraintFieldHeight.constant = UIDevice.dim(28, 26, 24)
+        
         for textF in fields {
             textF.delegate = self
+            textF.font = UIFont.systemFontOfSize(UIDevice.dim(16, 14, 12))
+        }
+        for label in labels {
+            label.font = UIFont.systemFontOfSize(UIDevice.dim(14, 12, 10))
         }
         if openedFromEditor {
             for button in buttons {
@@ -51,13 +63,17 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate{
             subject = Subject.getSubject(2)
             subjectChoosen = true
         }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CreateCardViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CreateCardViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
     
+    @IBOutlet var labels: [UILabel]!
     @IBOutlet var fields: [UITextField]!
+    @IBOutlet weak var constraintFieldHeight: NSLayoutConstraint!
+    @IBOutlet weak var mainScroll: UIScrollView!
     
     @IBOutlet var buttons: [UIButton]!
-    
-    @IBOutlet var constraintsFields: [NSLayoutConstraint]!
     
     @IBOutlet weak var createButton: UIButton!
     
@@ -73,6 +89,10 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate{
         textField.endEditing(true)
         textField.resignFirstResponder()
         return true
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        mainScroll.scrollToTextViewCursor(textField, inset: 0)
     }
     
     @IBAction func subjectButTouch(sender: UIButton) {
@@ -166,10 +186,8 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate{
         }
     
     func showAlert(titleAlert: String, messageAlert: String) {
-        let alert = UIAlertController(title: titleAlert, message: messageAlert, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "ОК", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
-        }
+        UIAlertView(title: titleAlert, message: messageAlert, delegate: nil, cancelButtonTitle: "OK").show()
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let controller = segue.destinationViewController as? CardEditorViewController {
@@ -177,5 +195,17 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate{
             controller.allCardContent = cardContent
         }
         GA.event("createCard_editor")
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        let keyboardSize = (notification.userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue().size
+        
+        mainScroll.contentInset = UIEdgeInsetsMake(0, 0, keyboardSize.height, 0)
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        UIView.animateWithDuration(0.3) {
+            self.mainScroll.contentInset = UIEdgeInsetsZero; return
+        }
     }
 }

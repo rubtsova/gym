@@ -105,7 +105,7 @@ public class CardContent : NSObject, NSCoding {
     func save() {
         let documentsUrl = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
         let fileAbsoluteUrl = documentsUrl.URLByAppendingPathComponent(self.getName() + ".card")
-        NSKeyedArchiver.archiveRootObject(self, toFile: fileAbsoluteUrl.path!)
+        NSKeyedArchiver.archiveRootObject(self, toFile: fileAbsoluteUrl!.path!)
     }
 }
 

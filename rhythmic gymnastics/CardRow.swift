@@ -58,7 +58,7 @@ public class CardRow : NSObject, NSCoding {
                 var ii = i
                 while ii < row.count - 1 && row[ii+1].imageName.hasPrefix("add_1") {
                     val = val + Double(Int(row[ii+1].imageName[6])! + 1) * element.value
-                    ii++
+                    ii=ii+1
                 }
             }
             if element.imageName.hasPrefix("DER_1")||element.imageName.hasPrefix("DER_2") {//доп критерии рисков
@@ -73,7 +73,7 @@ public class CardRow : NSObject, NSCoding {
             if element.imageName.hasPrefix("DER_0") {//база риска
                 val = val + Double(Int(element.imageName[6])! + 2)*0.1
             }
-            if element.imageName.hasPrefix("M_M") {//мастерство
+            if element.imageName.hasPrefix("M_18") {//мастерство
                 val = val + 0.3
             }
             
