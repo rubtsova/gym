@@ -32,4 +32,23 @@ class ServerHelper: NSObject {
             
         }.resume()
     }
+    
+    class func sendFeedback(email: String, text: String) {
+        guard let userId = NSUserDefaults.standardUserDefaults().objectForKey("user-id") as? String else { return }
+        let URL = NSURL(string: "https://dev-pronin.appspot.com/api/swift/gymnastics")!
+        
+        let params: [String: String] = [
+            "user_id": userId,
+            "email": email,
+            "text": text
+        ]
+        let body = params.map({ "\($0)=" + $1.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! }).joinWithSeparator("&")
+        
+        let request = NSMutableURLRequest(URL: URL)
+        request.HTTPMethod = "POST"
+        request.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding)
+        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        
+        SharedSession.dataTaskWithRequest(request).resume()
+    }
 }

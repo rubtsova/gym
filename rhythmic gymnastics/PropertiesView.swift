@@ -66,20 +66,22 @@ class PropertiesView: UIView {
         var difficultyAdd = false
         for row in allContent.content {
             for element in row.row {
-             if element.functional == true { setF(++countF) }
-             if element.functional == false { setO(++countO) }
+                if element.functional == true { countF += 1; setF(countF) }
+                if element.functional == false { countO += 1; setO(countO) }
              if element.imageName.hasPrefix("rota") || element.imageName.hasPrefix("bala") || element.imageName.hasPrefix("leap"){//повороты, мультипл трудность вращения
-                if !difficultyAdd { setD(++countD)}
+                if !difficultyAdd { countD += 1; setD(countD)}
                 difficultyAdd = true
             }
             if element.imageName.hasPrefix("add_0_5") {//плюс
                 difficultyAdd = false
             }
             if element.imageName.hasPrefix("DER_0") {//база риска
-                setDER(++countDer)
+                countDer += 1
+                setDER(countDer)
             }
             if element.imageName.hasPrefix("M_18") {//мастерство
-                setM(++countMaster)
+                countMaster += 1
+                setM(countMaster)
             }
             if element.imageName.hasPrefix("sub_5_0_N_S") {dance += 1}
             }

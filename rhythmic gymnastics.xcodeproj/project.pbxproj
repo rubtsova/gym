@@ -622,6 +622,7 @@
 		84B8CDFE1A7E497A00044B8B /* CardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8CDFD1A7E497A00044B8B /* CardInfo.swift */; };
 		84D48E591C4642E800850475 /* IPhoneMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D48E581C4642E800850475 /* IPhoneMain.storyboard */; };
 		9219D1071A7FAA4400A3330B /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9219D1061A7FAA4400A3330B /* CardCollectionViewCell.swift */; };
+		D51E807A1DBCCE0300D7BB6A /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51E80791DBCCE0300D7BB6A /* FeedbackViewController.swift */; };
 		D5279FA61D03419400A62178 /* bulava-right.png in Resources */ = {isa = PBXBuildFile; fileRef = D5279FA41D03419400A62178 /* bulava-right.png */; };
 		D5279FA71D03419400A62178 /* bulava-left.png in Resources */ = {isa = PBXBuildFile; fileRef = D5279FA51D03419400A62178 /* bulava-left.png */; };
 		D59BF6161B0DF3EB008F2AE1 /* empty.png in Resources */ = {isa = PBXBuildFile; fileRef = D59BF6151B0DF3EB008F2AE1 /* empty.png */; };
@@ -1272,6 +1273,7 @@
 		84B8CDFD1A7E497A00044B8B /* CardInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardInfo.swift; sourceTree = "<group>"; };
 		84D48E581C4642E800850475 /* IPhoneMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = IPhoneMain.storyboard; sourceTree = "<group>"; };
 		9219D1061A7FAA4400A3330B /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		D51E80791DBCCE0300D7BB6A /* FeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedbackViewController.swift; path = "Rhythmic Gymnastics/viewcontrollers/FeedbackViewController.swift"; sourceTree = SOURCE_ROOT; };
 		D5279FA21D03412000A62178 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = "Rhythmic Gymnastics/ru.lproj/Main.strings"; sourceTree = "<group>"; };
 		D5279FA31D03412000A62178 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		D5279FA41D03419400A62178 /* bulava-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bulava-right.png"; sourceTree = "<group>"; };
@@ -2025,6 +2027,7 @@
 				8479BDC61A69A5AC00F5DF45 /* MasterViewController.swift */,
 				F142E9C31AEEDAA400E3C6A1 /* CardPDFViewController.swift */,
 				9219D1041A7FA9EB00A3330B /* CardsViewController */,
+				D51E80791DBCCE0300D7BB6A /* FeedbackViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -2881,6 +2884,7 @@
 				84B1B16C1A743702004433F8 /* CardsViewController.swift in Sources */,
 				F15CD2591AA1221700E6C2DD /* ElementDance.swift in Sources */,
 				3FA024031AE69C8D00606864 /* UIImageTint.swift in Sources */,
+				D51E807A1DBCCE0300D7BB6A /* FeedbackViewController.swift in Sources */,
 				F12A8B581A83A29B000AD455 /* CreateCardViewController.swift in Sources */,
 				8479BDC91A69A5AC00F5DF45 /* DetailViewController.swift in Sources */,
 				8479BDC71A69A5AC00F5DF45 /* MasterViewController.swift in Sources */,

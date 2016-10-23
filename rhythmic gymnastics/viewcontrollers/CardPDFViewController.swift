@@ -149,7 +149,8 @@ class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaym
     
     func take1Card() {
         if userDef.boolForKey("isUnlimited") != true {
-            userDef.setObject(--purchasedCardNumb, forKey: cardNumber)
+            purchasedCardNumb -= 1
+            userDef.setObject(purchasedCardNumb, forKey: cardNumber)
             GA.event("export_spendCard")
         } else {
             GA.event("export_spendUnlimited")

@@ -728,7 +728,8 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
         currentCell.addElement(element, animatedTag: currentCell.elements.count())
         allCardContent.content[cardTableView.indexPathForCell(currentCell)!.row].addElement(element)
         currentCell.value += 0.3
-        cardPropertiesView.setM(++cardPropertiesView.countMaster)
+        cardPropertiesView.countMaster += 1
+        cardPropertiesView.setM(cardPropertiesView.countMaster)
         GA.event("masterPush")
     }
     
