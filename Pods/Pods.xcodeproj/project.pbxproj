@@ -7,174 +7,648 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		44C32F1355271D883C65FD1A77BFAF5A /* Pods-Rhythmic Gymnastics-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 011A79121A4BD39580EAC079250D1332 /* Pods-Rhythmic Gymnastics-dummy.m */; };
-		6A4F0857F5410689D0E120AEA62F69AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		C9C68A092874048A1B22CA7BDCDD5798 /* Pods-Rhythmic Gymnastics-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C451B97E0DF70488DC7C5B2E4B2ED1D6 /* Pods-Rhythmic Gymnastics-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		155AA915560F2FBF256B3DA8FC29C7D7 /* ACEDrawingToolState.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE86D82ACF32030080B3E0B59CC64ED /* ACEDrawingToolState.m */; };
+		1D10F1EEF2C00682930A180B26A153C7 /* sticker_close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E693875CCD2ED48A07F9A3F7B10321DA /* sticker_close@3x.png */; };
+		2D59379BA08D42FA01BD8EF9FFBD0F66 /* sticker_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56C1DC76830E871F1BA5B38088A77AAC /* sticker_close@2x.png */; };
+		2F5D5E5B61A1A4143E8284B6C2D9DF55 /* ACEDraggableText.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DFA197D0A324A12DC36FFC13F508AA7D /* ACEDraggableText.bundle */; };
+		2FF96F882D70BBB3CA42A32272A321CB /* ACEDrawingView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAAE46D173373FB6F5F9A9F7B1C5189 /* ACEDrawingView-dummy.m */; };
+		3159D7CAFD56B809F40CA3330DA10889 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */; };
+		45F0BF635C8D76A2A4750884CD372D3F /* ACEDrawingView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CECB937281D4DA6024732ADCD5BBC116 /* ACEDrawingView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		47F3EE4E72DF4B7E42EA988CC90D0865 /* sticker_resize@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABFDF6D71414A6CC2690EED5B3AEA49D /* sticker_resize@2x.png */; };
+		5112F92FB0AEF4EAF141F6A76F314B94 /* ACEDrawingTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D7D994B13ABE44C76A48FA9DC1DA4E /* ACEDrawingTools.m */; };
+		541C5362289CC44D4F067D097F231250 /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = D0FC79591329B6F39DD87CF32A75C322 /* GTMDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58660B82E0C45A3B873C27284F3FABA8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACC64101FAE4862F8806DB02FC71B0E /* QuartzCore.framework */; };
+		5E41FE784D02D6D33C04756F8405373D /* ACEDrawingToolState.h in Headers */ = {isa = PBXBuildFile; fileRef = FE9590FC2968865B74904DCA64F303C0 /* ACEDrawingToolState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		68721BF54B6D927ECF44F662484B85B3 /* Pods-Rhythmic Gymnastics-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A171453FF5D81F8DB70179F6C8C8A705 /* Pods-Rhythmic Gymnastics-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		76AB949008DBC330A112901C29A94FBF /* sticker_resize.png in Resources */ = {isa = PBXBuildFile; fileRef = EF060118322FD339D04EA88DDB9C76C3 /* sticker_resize.png */; };
+		76B1B7A20F87C8AB44C52E1A93569E93 /* sticker_resize@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 945ABAF4D195428440F39F0BA14EE98F /* sticker_resize@3x.png */; };
+		79D86A001532168826C9B7859DD8A7DE /* ACEDrawingView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1497289EFC73D1F2F489A106BF0F8655 /* ACEDrawingView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D5A6207082960B9772E99FDF180A7AC /* ACEDrawingLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13DEBF192B5C83974A467CCF6DCAD3D4 /* ACEDrawingLabelView.m */; };
+		81E4B6988FF26F9249B79C6C8CC667B4 /* GoogleToolboxForMac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ADA52BD7C30B2A41297682863AD0ABAE /* GoogleToolboxForMac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4B007EC1D67DE19B9C21F36C46B226E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */; };
+		B8BCA758D8F847E8330167F8D8693BCD /* Pods-Rhythmic Gymnastics-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D1447BF7264EBEE59F3A6C024047FD55 /* Pods-Rhythmic Gymnastics-dummy.m */; };
+		BCFD39C16AD7580271B5783568AF1B85 /* sticker_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3569165235FFED544C19B056354143 /* sticker_close.png */; };
+		C450618BD583CA3C2BFCC4AA5485D32D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */; };
+		CB6A309C14D97625AC1E75C778CBDCA3 /* ACEDrawingTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 856F29C2125147763703FE334ED66813 /* ACEDrawingTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA0703FAC44F1D5D8E9951C9DBF9ABC1 /* ACEDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE030C49990272EA02E5EA3A1EC56B3D /* ACEDrawingView.m */; };
+		DBFECCB0BBE3F11CC41A3C1A8C4879D3 /* GTMNSData+zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 486B238C885C1DEE14982E48486288E5 /* GTMNSData+zlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD87EEB694C96B684A9FC8942CD64034 /* Pods-Rhythmic Gymnastics-iPad-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FB07B640DAEA6AA042DB894610DA9266 /* Pods-Rhythmic Gymnastics-iPad-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DEB7E7D898003BD198F7C1715BFD5F1B /* ACEDrawingLabelView.h in Headers */ = {isa = PBXBuildFile; fileRef = 480D663D1AF0D733FD47EEB79B1453BB /* ACEDrawingLabelView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E072D1619653EB96A678297AE5EA1387 /* Pods-Rhythmic Gymnastics-iPad-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6805DC097BAC982C16B26B93C5A4E74E /* Pods-Rhythmic Gymnastics-iPad-dummy.m */; };
+		E316F2B0ED852550BC277BCF921025D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */; };
+		F7D889906DECB078EAAECB9D4A320E9C /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = B733AA7E15346B8C5C475EA7BBA38C9D /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		FAC3F3CAABA60EF76069431C5BB5032A /* GoogleToolboxForMac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBDB31BD5D0B2516D7F1E8D4061A90E /* GoogleToolboxForMac-dummy.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1F0EF266FBD675AD5463C0FADE2C0D74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46E15656C90425D2C106D2D3627A94E9;
+			remoteInfo = ACEDrawingView;
+		};
+		3D682AAE3CF34FFA34B467FA2710CEAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00103D6C821BE85971C563025527BA5D;
+			remoteInfo = GoogleToolboxForMac;
+		};
+		587079C5E9201C22FE426E8F96B34FE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00103D6C821BE85971C563025527BA5D;
+			remoteInfo = GoogleToolboxForMac;
+		};
+		883DEA7915C6ECEBDE2DD488CB0E8CD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46E15656C90425D2C106D2D3627A94E9;
+			remoteInfo = ACEDrawingView;
+		};
+		CE11EDF761D842CF1B2E52EA40F5CDC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F0A3B28518DCB2F5E6382A9419C47AF;
+			remoteInfo = "ACEDrawingView-ACEDraggableText";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		011A79121A4BD39580EAC079250D1332 /* Pods-Rhythmic Gymnastics-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Rhythmic Gymnastics-dummy.m"; sourceTree = "<group>"; };
-		03186160E36A51CBFBE5BD7306B6E60F /* libGoogleAnalytics.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = Libraries/libGoogleAnalytics.a; sourceTree = "<group>"; };
-		0542E4713ABE729E5F6D8426F8DFC23C /* Pods-Rhythmic Gymnastics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rhythmic Gymnastics.release.xcconfig"; sourceTree = "<group>"; };
-		0B7E10AB2280BD544494BA2089FD30B4 /* GAI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = Headers/Public/GAI.h; sourceTree = "<group>"; };
-		100B03E66B8B96EB2BD3B589920062DB /* Pods-Rhythmic Gymnastics-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Rhythmic Gymnastics-resources.sh"; sourceTree = "<group>"; };
-		2D472DF573158DC82D6835A727E6D444 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2FCE937F8373AA7A775E6F8AC134E792 /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProductAction.h; path = Headers/Public/GAIEcommerceProductAction.h; sourceTree = "<group>"; };
-		413695FD8C7B3F6F8989E10D8DBBB2DE /* Pods-Rhythmic Gymnastics-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Rhythmic Gymnastics-frameworks.sh"; sourceTree = "<group>"; };
-		4CDF9BBDD34A0C4EC0DE23CE394D6461 /* GAIFields.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIFields.h; path = Headers/Public/GAIFields.h; sourceTree = "<group>"; };
-		53C889E5C35714BB2FC20486A832D7F6 /* GAITrackedViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAITrackedViewController.h; path = Headers/Public/GAITrackedViewController.h; sourceTree = "<group>"; };
-		6988B5E20798E3D47D5D92EE0DB909F0 /* GAITracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAITracker.h; path = Headers/Public/GAITracker.h; sourceTree = "<group>"; };
-		6A6A3624A5F639D691B09204EE1CE33C /* GAILogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAILogger.h; path = Headers/Public/GAILogger.h; sourceTree = "<group>"; };
-		90D9E4815E931F928EC9CC4F2C28793C /* Pods-Rhythmic Gymnastics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rhythmic Gymnastics.debug.xcconfig"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9B79515E993885608532770BBFD44321 /* Pods-Rhythmic Gymnastics.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Rhythmic Gymnastics.modulemap"; sourceTree = "<group>"; };
-		9CB5DF98E39BAD362C92CAEDCF716197 /* Pods_Rhythmic_Gymnastics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rhythmic_Gymnastics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC9F0039713523630E3952679F91F002 /* Pods-Rhythmic Gymnastics-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rhythmic Gymnastics-acknowledgements.plist"; sourceTree = "<group>"; };
-		C451B97E0DF70488DC7C5B2E4B2ED1D6 /* Pods-Rhythmic Gymnastics-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Rhythmic Gymnastics-umbrella.h"; sourceTree = "<group>"; };
-		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D61AA685C7992563ADDC84DC1D8C3C19 /* Pods-Rhythmic Gymnastics-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Rhythmic Gymnastics-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D944354D4AA756045FD8085BD24179CD /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIDictionaryBuilder.h; path = Headers/Public/GAIDictionaryBuilder.h; sourceTree = "<group>"; };
-		E710070925FB93799D576568C57C4BF4 /* GAIEcommerceFields.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceFields.h; path = Headers/Public/GAIEcommerceFields.h; sourceTree = "<group>"; };
-		EDCB7F4C24B2F574413446F086D97E05 /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommercePromotion.h; path = Headers/Public/GAIEcommercePromotion.h; sourceTree = "<group>"; };
-		F400454B50715A5F9C37C5B63D14A858 /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProduct.h; path = Headers/Public/GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		0B2027449A5AD6ED98DFE663C1BFDCF4 /* Pods-Rhythmic Gymnastics-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Rhythmic Gymnastics-resources.sh"; sourceTree = "<group>"; };
+		0E49193CB338F988F6F2B2140D0CD27A /* ACEDrawingView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ACEDrawingView.framework; path = ACEDrawingView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13DEBF192B5C83974A467CCF6DCAD3D4 /* ACEDrawingLabelView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ACEDrawingLabelView.m; path = ACEDrawingView/ACEDrawingLabelView.m; sourceTree = "<group>"; };
+		1497289EFC73D1F2F489A106BF0F8655 /* ACEDrawingView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ACEDrawingView.h; path = ACEDrawingView/ACEDrawingView.h; sourceTree = "<group>"; };
+		15310F3F2638F3402D5884DDD7B1F73D /* Pods-Rhythmic Gymnastics-iPad.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Rhythmic Gymnastics-iPad.modulemap"; sourceTree = "<group>"; };
+		1631451C256A1C1B94E5AF2719CCE119 /* GAITracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAITracker.h; path = Sources/GAITracker.h; sourceTree = "<group>"; };
+		17E7178547DE7CAAE5359CE88B647BEF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1ECD4A831B01841CEF6828959F88F19D /* Pods-Rhythmic Gymnastics-iPad-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Rhythmic Gymnastics-iPad-resources.sh"; sourceTree = "<group>"; };
+		31FA0663A868E532F0E7B3DA79EA6B65 /* ResourceBundle-ACEDraggableText-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-ACEDraggableText-Info.plist"; sourceTree = "<group>"; };
+		360E3E8FACDFC65C7F48926C44882C96 /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProductAction.h; path = Sources/GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		36D7D994B13ABE44C76A48FA9DC1DA4E /* ACEDrawingTools.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ACEDrawingTools.m; path = ACEDrawingView/ACEDrawingTools.m; sourceTree = "<group>"; };
+		3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3E2EB55D35D0D20E329E386E3B9EAEFE /* GGLCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GGLCore.framework; path = Frameworks/GGLCore.framework; sourceTree = "<group>"; };
+		41F23B094669A28BF524F591C51AE66F /* ACEDrawingView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ACEDrawingView-prefix.pch"; sourceTree = "<group>"; };
+		421F700DB8C51EA4A43A0A12F0611162 /* GoogleToolboxForMac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = GoogleToolboxForMac.modulemap; sourceTree = "<group>"; };
+		460EBE25E13A481523B5A38933773796 /* GGLAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GGLAnalytics.framework; path = Frameworks/GGLAnalytics.framework; sourceTree = "<group>"; };
+		468DFC6498809057B401FF817C21DCFE /* GAIFields.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIFields.h; path = Sources/GAIFields.h; sourceTree = "<group>"; };
+		480D663D1AF0D733FD47EEB79B1453BB /* ACEDrawingLabelView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ACEDrawingLabelView.h; path = ACEDrawingView/ACEDrawingLabelView.h; sourceTree = "<group>"; };
+		486B238C885C1DEE14982E48486288E5 /* GTMNSData+zlib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSData+zlib.h"; path = "Foundation/GTMNSData+zlib.h"; sourceTree = "<group>"; };
+		49116B2BB0AE98B6337516B3B1C41317 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		4A5B5271D0EDF4AF132CA4540C3E6C26 /* Core-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Core-Module.h"; path = "Headers/ModuleHeaders/Core-Module.h"; sourceTree = "<group>"; };
+		4D3569165235FFED544C19B056354143 /* sticker_close.png */ = {isa = PBXFileReference; includeInIndex = 1; name = sticker_close.png; path = ACEDrawingView/ACEDraggableText/sticker_close.png; sourceTree = "<group>"; };
+		543F57686A6E12447D4E96AEA404599E /* Pods-Rhythmic Gymnastics-iPad-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Rhythmic Gymnastics-iPad-acknowledgements.markdown"; sourceTree = "<group>"; };
+		568F48519D9DDEB3FA849DACBF7F7F82 /* ACEDrawingView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = ACEDrawingView.modulemap; sourceTree = "<group>"; };
+		56C1DC76830E871F1BA5B38088A77AAC /* sticker_close@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "sticker_close@2x.png"; path = "ACEDrawingView/ACEDraggableText/sticker_close@2x.png"; sourceTree = "<group>"; };
+		572AAB9EEE28E12E110152590377CBAD /* ACEDrawingView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ACEDrawingView.xcconfig; sourceTree = "<group>"; };
+		579FEB915C05301295E6B11988884594 /* Pods-Rhythmic Gymnastics-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Rhythmic Gymnastics-frameworks.sh"; sourceTree = "<group>"; };
+		591F3EE620E7AEB7FB1F309D6393D52D /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
+		5C02EFC619D67A47DFA1A587BDB272DB /* GAI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = Sources/GAI.h; sourceTree = "<group>"; };
+		5D331720EF6F50EF39A245243489D1EB /* SignIn-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SignIn-Module.h"; path = "Headers/ModuleHeaders/SignIn-Module.h"; sourceTree = "<group>"; };
+		6805DC097BAC982C16B26B93C5A4E74E /* Pods-Rhythmic Gymnastics-iPad-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Rhythmic Gymnastics-iPad-dummy.m"; sourceTree = "<group>"; };
+		6C4C66F77C7F60905E2995D19A3D694A /* Core.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Core.h; path = Headers/Core.h; sourceTree = "<group>"; };
+		6EE1D8DCD02FF0E7F81A87D690A4E446 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = Libraries/libGoogleAnalytics.a; sourceTree = "<group>"; };
+		6F69EA328BA452AC75D6220918BE49F5 /* Pods-Rhythmic Gymnastics-iPad-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rhythmic Gymnastics-iPad-acknowledgements.plist"; sourceTree = "<group>"; };
+		7CE86D82ACF32030080B3E0B59CC64ED /* ACEDrawingToolState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ACEDrawingToolState.m; path = ACEDrawingView/ACEDrawingToolState.m; sourceTree = "<group>"; };
+		7D232A877B29399178961E166580A691 /* Analytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Analytics.h; path = Headers/Analytics.h; sourceTree = "<group>"; };
+		7F11A3F54609B62906795000358FE8EA /* GoogleToolboxForMac-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-prefix.pch"; sourceTree = "<group>"; };
+		7F74C796B35EBBE72E75EBC1A66559A2 /* Pods-Rhythmic Gymnastics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rhythmic Gymnastics.debug.xcconfig"; sourceTree = "<group>"; };
+		8280B6A31D6E9853EB7D2DD8618BAA1E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		856F29C2125147763703FE334ED66813 /* ACEDrawingTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ACEDrawingTools.h; path = ACEDrawingView/ACEDrawingTools.h; sourceTree = "<group>"; };
+		8C59600BBD6E72BC7C9B76826BB1EDEE /* Pods-Rhythmic Gymnastics-iPad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rhythmic Gymnastics-iPad.release.xcconfig"; sourceTree = "<group>"; };
+		8DF0106CDB79BB72EEEC9DFA61FEFA72 /* Pods_Rhythmic_Gymnastics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Rhythmic_Gymnastics.framework; path = "Pods-Rhythmic Gymnastics.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		945ABAF4D195428440F39F0BA14EE98F /* sticker_resize@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "sticker_resize@3x.png"; path = "ACEDrawingView/ACEDraggableText/sticker_resize@3x.png"; sourceTree = "<group>"; };
+		9621F1CFE5ED4C4328F3D71808A1DC9C /* GAIEcommerceFields.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceFields.h; path = Sources/GAIEcommerceFields.h; sourceTree = "<group>"; };
+		99D19128D97258CADAF4F206373C2D37 /* GAITrackedViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAITrackedViewController.h; path = Sources/GAITrackedViewController.h; sourceTree = "<group>"; };
+		9B1AA18A4BCBE84018CC65132B6CB48B /* Pods-Rhythmic Gymnastics-iPad-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Rhythmic Gymnastics-iPad-frameworks.sh"; sourceTree = "<group>"; };
+		9D689CFA789428FA956A08E873A25E2B /* Pods-Rhythmic Gymnastics-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rhythmic Gymnastics-acknowledgements.plist"; sourceTree = "<group>"; };
+		9F27B816144BE22774B69D688ABEE38A /* Pods-Rhythmic Gymnastics-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Rhythmic Gymnastics-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A171453FF5D81F8DB70179F6C8C8A705 /* Pods-Rhythmic Gymnastics-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Rhythmic Gymnastics-umbrella.h"; sourceTree = "<group>"; };
+		A44A85EB092614F7A0B0C14F17A23528 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		AA8FB33C9659F8E58A28BF1DA61178F0 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GoogleToolboxForMac.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABFDF6D71414A6CC2690EED5B3AEA49D /* sticker_resize@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "sticker_resize@2x.png"; path = "ACEDrawingView/ACEDraggableText/sticker_resize@2x.png"; sourceTree = "<group>"; };
+		ADA52BD7C30B2A41297682863AD0ABAE /* GoogleToolboxForMac-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-umbrella.h"; sourceTree = "<group>"; };
+		B433D73D4559832164D0512A18CAD608 /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProduct.h; path = Sources/GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		B733AA7E15346B8C5C475EA7BBA38C9D /* GTMNSData+zlib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSData+zlib.m"; path = "Foundation/GTMNSData+zlib.m"; sourceTree = "<group>"; };
+		B7701176A0D9F766683783C327F6C20D /* GoogleToolboxForMac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleToolboxForMac.xcconfig; sourceTree = "<group>"; };
+		BACC64101FAE4862F8806DB02FC71B0E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		C80E295028D849A992AACD1AA9C3B2B9 /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommercePromotion.h; path = Sources/GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		CDAAE46D173373FB6F5F9A9F7B1C5189 /* ACEDrawingView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ACEDrawingView-dummy.m"; sourceTree = "<group>"; };
+		CECB937281D4DA6024732ADCD5BBC116 /* ACEDrawingView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ACEDrawingView-umbrella.h"; sourceTree = "<group>"; };
+		D01330A6B1E2B59D071781DE80215854 /* GAILogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAILogger.h; path = Sources/GAILogger.h; sourceTree = "<group>"; };
+		D02C8119CACC329405E2B7E969815037 /* Pods_Rhythmic_Gymnastics_iPad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Rhythmic_Gymnastics_iPad.framework; path = "Pods-Rhythmic Gymnastics-iPad.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0FC79591329B6F39DD87CF32A75C322 /* GTMDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		D1447BF7264EBEE59F3A6C024047FD55 /* Pods-Rhythmic Gymnastics-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Rhythmic Gymnastics-dummy.m"; sourceTree = "<group>"; };
+		D52B83B5E2C27869146F89BBB9C01253 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA75FC093EB3C8A6787255271FC23425 /* Pods-Rhythmic Gymnastics-iPad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rhythmic Gymnastics-iPad.debug.xcconfig"; sourceTree = "<group>"; };
+		DCE020C58BC90918BFF90FD17315A98C /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIDictionaryBuilder.h; path = Sources/GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		DE030C49990272EA02E5EA3A1EC56B3D /* ACEDrawingView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ACEDrawingView.m; path = ACEDrawingView/ACEDrawingView.m; sourceTree = "<group>"; };
+		DFA197D0A324A12DC36FFC13F508AA7D /* ACEDraggableText.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = ACEDraggableText.bundle; path = ACEDraggableText.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		E06AD5F8FA3212C516501BDFE4D4FD1B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E266FCFE18E71B48A80881EB5BC6F4F7 /* Pods-Rhythmic Gymnastics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rhythmic Gymnastics.release.xcconfig"; sourceTree = "<group>"; };
+		E5793D069EF36F8F0810E9AADFBDB417 /* Pods-Rhythmic Gymnastics.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Rhythmic Gymnastics.modulemap"; sourceTree = "<group>"; };
+		E693875CCD2ED48A07F9A3F7B10321DA /* sticker_close@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; name = "sticker_close@3x.png"; path = "ACEDrawingView/ACEDraggableText/sticker_close@3x.png"; sourceTree = "<group>"; };
+		EF060118322FD339D04EA88DDB9C76C3 /* sticker_resize.png */ = {isa = PBXFileReference; includeInIndex = 1; name = sticker_resize.png; path = ACEDrawingView/ACEDraggableText/sticker_resize.png; sourceTree = "<group>"; };
+		FA06BBA356AAB069E9A594824C481BF8 /* Analytics-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Analytics-Module.h"; path = "Headers/ModuleHeaders/Analytics-Module.h"; sourceTree = "<group>"; };
+		FB07B640DAEA6AA042DB894610DA9266 /* Pods-Rhythmic Gymnastics-iPad-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Rhythmic Gymnastics-iPad-umbrella.h"; sourceTree = "<group>"; };
+		FE9590FC2968865B74904DCA64F303C0 /* ACEDrawingToolState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ACEDrawingToolState.h; path = ACEDrawingView/ACEDrawingToolState.h; sourceTree = "<group>"; };
+		FEBDB31BD5D0B2516D7F1E8D4061A90E /* GoogleToolboxForMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleToolboxForMac-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3359AAB4C6BCC828CD311041BB78B150 /* Frameworks */ = {
+		34893B2DD50F3A307C1500B82B0745E5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A4F0857F5410689D0E120AEA62F69AB /* Foundation.framework in Frameworks */,
+				C450618BD583CA3C2BFCC4AA5485D32D /* Foundation.framework in Frameworks */,
+				58660B82E0C45A3B873C27284F3FABA8 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EB3AB465AB695710E5B7E9AADA209E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4B007EC1D67DE19B9C21F36C46B226E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88BB708DFA8EFCAA63D8A32FC68C82C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5BC3C2283912B347E1CC6E0FE0EDA1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E316F2B0ED852550BC277BCF921025D5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9BC43EEAF05BCB201B3D28C244AA7E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3159D7CAFD56B809F40CA3330DA10889 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		16FAF52C5F8CA163781E3549F9FB9990 /* Pods-Rhythmic Gymnastics */ = {
+		03148980A49209289A8118D44B44CB34 /* NSData+zlib */ = {
 			isa = PBXGroup;
 			children = (
-				2D472DF573158DC82D6835A727E6D444 /* Info.plist */,
-				9B79515E993885608532770BBFD44321 /* Pods-Rhythmic Gymnastics.modulemap */,
-				D61AA685C7992563ADDC84DC1D8C3C19 /* Pods-Rhythmic Gymnastics-acknowledgements.markdown */,
-				BC9F0039713523630E3952679F91F002 /* Pods-Rhythmic Gymnastics-acknowledgements.plist */,
-				011A79121A4BD39580EAC079250D1332 /* Pods-Rhythmic Gymnastics-dummy.m */,
-				413695FD8C7B3F6F8989E10D8DBBB2DE /* Pods-Rhythmic Gymnastics-frameworks.sh */,
-				100B03E66B8B96EB2BD3B589920062DB /* Pods-Rhythmic Gymnastics-resources.sh */,
-				C451B97E0DF70488DC7C5B2E4B2ED1D6 /* Pods-Rhythmic Gymnastics-umbrella.h */,
-				90D9E4815E931F928EC9CC4F2C28793C /* Pods-Rhythmic Gymnastics.debug.xcconfig */,
-				0542E4713ABE729E5F6D8426F8DFC23C /* Pods-Rhythmic Gymnastics.release.xcconfig */,
+				486B238C885C1DEE14982E48486288E5 /* GTMNSData+zlib.h */,
+				B733AA7E15346B8C5C475EA7BBA38C9D /* GTMNSData+zlib.m */,
+			);
+			name = "NSData+zlib";
+			sourceTree = "<group>";
+		};
+		06846A77AE5E6822228C745A65429623 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				7D232A877B29399178961E166580A691 /* Analytics.h */,
+				1E94CC63B5528BD66E820FD4BA9A125D /* Frameworks */,
+			);
+			name = Analytics;
+			sourceTree = "<group>";
+		};
+		0B2D03ED2B1DA68363908CA5702EDC63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A44A85EB092614F7A0B0C14F17A23528 /* FirebaseAnalytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		10745A75D9D29378CDFAF2BC3847823E /* Pods-Rhythmic Gymnastics-iPad */ = {
+			isa = PBXGroup;
+			children = (
+				D52B83B5E2C27869146F89BBB9C01253 /* Info.plist */,
+				15310F3F2638F3402D5884DDD7B1F73D /* Pods-Rhythmic Gymnastics-iPad.modulemap */,
+				543F57686A6E12447D4E96AEA404599E /* Pods-Rhythmic Gymnastics-iPad-acknowledgements.markdown */,
+				6F69EA328BA452AC75D6220918BE49F5 /* Pods-Rhythmic Gymnastics-iPad-acknowledgements.plist */,
+				6805DC097BAC982C16B26B93C5A4E74E /* Pods-Rhythmic Gymnastics-iPad-dummy.m */,
+				9B1AA18A4BCBE84018CC65132B6CB48B /* Pods-Rhythmic Gymnastics-iPad-frameworks.sh */,
+				1ECD4A831B01841CEF6828959F88F19D /* Pods-Rhythmic Gymnastics-iPad-resources.sh */,
+				FB07B640DAEA6AA042DB894610DA9266 /* Pods-Rhythmic Gymnastics-iPad-umbrella.h */,
+				DA75FC093EB3C8A6787255271FC23425 /* Pods-Rhythmic Gymnastics-iPad.debug.xcconfig */,
+				8C59600BBD6E72BC7C9B76826BB1EDEE /* Pods-Rhythmic Gymnastics-iPad.release.xcconfig */,
+			);
+			name = "Pods-Rhythmic Gymnastics-iPad";
+			path = "Target Support Files/Pods-Rhythmic Gymnastics-iPad";
+			sourceTree = "<group>";
+		};
+		1E94CC63B5528BD66E820FD4BA9A125D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				460EBE25E13A481523B5A38933773796 /* GGLAnalytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		249385B3856BD0B7C8A985D3C5B783B2 /* GoogleToolboxForMac */ = {
+			isa = PBXGroup;
+			children = (
+				75CA0717CA0BB998CA629C4F7966E9F5 /* Defines */,
+				03148980A49209289A8118D44B44CB34 /* NSData+zlib */,
+				407AB46A0283AF4EA1EDD8BD3F5344E4 /* Support Files */,
+			);
+			name = GoogleToolboxForMac;
+			path = GoogleToolboxForMac;
+			sourceTree = "<group>";
+		};
+		3368182FE69FDAD4FA7FA41AC9E5A7B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6EE1D8DCD02FF0E7F81A87D690A4E446 /* libGoogleAnalytics.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3D9EDF86C6FCBBD288868813BB785DEC /* FirebaseAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				0B2D03ED2B1DA68363908CA5702EDC63 /* Frameworks */,
+			);
+			name = FirebaseAnalytics;
+			path = FirebaseAnalytics;
+			sourceTree = "<group>";
+		};
+		407AB46A0283AF4EA1EDD8BD3F5344E4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				421F700DB8C51EA4A43A0A12F0611162 /* GoogleToolboxForMac.modulemap */,
+				B7701176A0D9F766683783C327F6C20D /* GoogleToolboxForMac.xcconfig */,
+				FEBDB31BD5D0B2516D7F1E8D4061A90E /* GoogleToolboxForMac-dummy.m */,
+				7F11A3F54609B62906795000358FE8EA /* GoogleToolboxForMac-prefix.pch */,
+				ADA52BD7C30B2A41297682863AD0ABAE /* GoogleToolboxForMac-umbrella.h */,
+				8280B6A31D6E9853EB7D2DD8618BAA1E /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GoogleToolboxForMac";
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C7AB6F27FF3606F9360547F8F1977A63 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5D7DE57BEE3D2CEA8DEA8A6B3F7F395C /* Pods-Rhythmic Gymnastics */ = {
+			isa = PBXGroup;
+			children = (
+				E06AD5F8FA3212C516501BDFE4D4FD1B /* Info.plist */,
+				E5793D069EF36F8F0810E9AADFBDB417 /* Pods-Rhythmic Gymnastics.modulemap */,
+				9F27B816144BE22774B69D688ABEE38A /* Pods-Rhythmic Gymnastics-acknowledgements.markdown */,
+				9D689CFA789428FA956A08E873A25E2B /* Pods-Rhythmic Gymnastics-acknowledgements.plist */,
+				D1447BF7264EBEE59F3A6C024047FD55 /* Pods-Rhythmic Gymnastics-dummy.m */,
+				579FEB915C05301295E6B11988884594 /* Pods-Rhythmic Gymnastics-frameworks.sh */,
+				0B2027449A5AD6ED98DFE663C1BFDCF4 /* Pods-Rhythmic Gymnastics-resources.sh */,
+				A171453FF5D81F8DB70179F6C8C8A705 /* Pods-Rhythmic Gymnastics-umbrella.h */,
+				7F74C796B35EBBE72E75EBC1A66559A2 /* Pods-Rhythmic Gymnastics.debug.xcconfig */,
+				E266FCFE18E71B48A80881EB5BC6F4F7 /* Pods-Rhythmic Gymnastics.release.xcconfig */,
 			);
 			name = "Pods-Rhythmic Gymnastics";
 			path = "Target Support Files/Pods-Rhythmic Gymnastics";
 			sourceTree = "<group>";
 		};
-		1BB3C1E6A231CFDA57804F1EB3C4EA90 /* GoogleAnalytics */ = {
+		640BB6DF85DD931813299E50A1F0F29E /* FirebaseCore */ = {
 			isa = PBXGroup;
 			children = (
-				0B7E10AB2280BD544494BA2089FD30B4 /* GAI.h */,
-				D944354D4AA756045FD8085BD24179CD /* GAIDictionaryBuilder.h */,
-				E710070925FB93799D576568C57C4BF4 /* GAIEcommerceFields.h */,
-				F400454B50715A5F9C37C5B63D14A858 /* GAIEcommerceProduct.h */,
-				2FCE937F8373AA7A775E6F8AC134E792 /* GAIEcommerceProductAction.h */,
-				EDCB7F4C24B2F574413446F086D97E05 /* GAIEcommercePromotion.h */,
-				4CDF9BBDD34A0C4EC0DE23CE394D6461 /* GAIFields.h */,
-				6A6A3624A5F639D691B09204EE1CE33C /* GAILogger.h */,
-				53C889E5C35714BB2FC20486A832D7F6 /* GAITrackedViewController.h */,
-				6988B5E20798E3D47D5D92EE0DB909F0 /* GAITracker.h */,
-				BCD43B63CD10AFBA3054B9C7B4C47D31 /* Frameworks */,
+				E305B09F9E9F8C19A8F7F92ACF02466C /* Frameworks */,
 			);
-			path = GoogleAnalytics;
+			name = FirebaseCore;
+			path = FirebaseCore;
 			sourceTree = "<group>";
 		};
-		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+		74F2793732874E885EDF4885DF7C5042 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+				568F48519D9DDEB3FA849DACBF7F7F82 /* ACEDrawingView.modulemap */,
+				572AAB9EEE28E12E110152590377CBAD /* ACEDrawingView.xcconfig */,
+				CDAAE46D173373FB6F5F9A9F7B1C5189 /* ACEDrawingView-dummy.m */,
+				41F23B094669A28BF524F591C51AE66F /* ACEDrawingView-prefix.pch */,
+				CECB937281D4DA6024732ADCD5BBC116 /* ACEDrawingView-umbrella.h */,
+				17E7178547DE7CAAE5359CE88B647BEF /* Info.plist */,
+				31FA0663A868E532F0E7B3DA79EA6B65 /* ResourceBundle-ACEDraggableText-Info.plist */,
 			);
-			name = iOS;
+			name = "Support Files";
+			path = "../Target Support Files/ACEDrawingView";
 			sourceTree = "<group>";
 		};
-		6F0BEF97DCE8B6CA7DA08E9868DA66A1 /* Targets Support Files */ = {
+		75CA0717CA0BB998CA629C4F7966E9F5 /* Defines */ = {
 			isa = PBXGroup;
 			children = (
-				16FAF52C5F8CA163781E3549F9FB9990 /* Pods-Rhythmic Gymnastics */,
+				D0FC79591329B6F39DD87CF32A75C322 /* GTMDefines.h */,
 			);
-			name = "Targets Support Files";
+			name = Defines;
 			sourceTree = "<group>";
 		};
-		79563ED472210C9A8A1C72C1251BEFE8 /* Pods */ = {
+		7A838A5420B62CF4BC50B4C43C664B0C /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				1BB3C1E6A231CFDA57804F1EB3C4EA90 /* GoogleAnalytics */,
+				FA06BBA356AAB069E9A594824C481BF8 /* Analytics-Module.h */,
+				6C4C66F77C7F60905E2995D19A3D694A /* Core.h */,
+				4A5B5271D0EDF4AF132CA4540C3E6C26 /* Core-Module.h */,
+				5D331720EF6F50EF39A245243489D1EB /* SignIn-Module.h */,
+				FCF1F837FBF153C727745365E1DB7154 /* Frameworks */,
 			);
-			name = Pods;
+			name = Core;
+			sourceTree = "<group>";
+		};
+		7D61CBDBB211B6524BB26D451297B34B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DFA197D0A324A12DC36FFC13F508AA7D /* ACEDraggableText.bundle */,
+				0E49193CB338F988F6F2B2140D0CD27A /* ACEDrawingView.framework */,
+				AA8FB33C9659F8E58A28BF1DA61178F0 /* GoogleToolboxForMac.framework */,
+				8DF0106CDB79BB72EEEC9DFA61FEFA72 /* Pods_Rhythmic_Gymnastics.framework */,
+				D02C8119CACC329405E2B7E969815037 /* Pods_Rhythmic_Gymnastics_iPad.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				79563ED472210C9A8A1C72C1251BEFE8 /* Pods */,
-				DDF3D24D8C6275B78D57430AB05BCEB8 /* Products */,
-				6F0BEF97DCE8B6CA7DA08E9868DA66A1 /* Targets Support Files */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				8FE611A75EC2BAF10B264E5F1AE77E72 /* Pods */,
+				7D61CBDBB211B6524BB26D451297B34B /* Products */,
+				E20334B4495A14ACB616C53F2AB56591 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		811F8E46F1C7990DE9943418A9F76054 /* Google */ = {
 			isa = PBXGroup;
 			children = (
-				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+				06846A77AE5E6822228C745A65429623 /* Analytics */,
+				7A838A5420B62CF4BC50B4C43C664B0C /* Core */,
+			);
+			name = Google;
+			path = Google;
+			sourceTree = "<group>";
+		};
+		8FD45BC7DE9EE45FAF03E601F9FBA245 /* ACEDrawingView */ = {
+			isa = PBXGroup;
+			children = (
+				480D663D1AF0D733FD47EEB79B1453BB /* ACEDrawingLabelView.h */,
+				13DEBF192B5C83974A467CCF6DCAD3D4 /* ACEDrawingLabelView.m */,
+				856F29C2125147763703FE334ED66813 /* ACEDrawingTools.h */,
+				36D7D994B13ABE44C76A48FA9DC1DA4E /* ACEDrawingTools.m */,
+				FE9590FC2968865B74904DCA64F303C0 /* ACEDrawingToolState.h */,
+				7CE86D82ACF32030080B3E0B59CC64ED /* ACEDrawingToolState.m */,
+				1497289EFC73D1F2F489A106BF0F8655 /* ACEDrawingView.h */,
+				DE030C49990272EA02E5EA3A1EC56B3D /* ACEDrawingView.m */,
+				9D229C2FBD15B48F7202DE26976DF6AF /* Resources */,
+				74F2793732874E885EDF4885DF7C5042 /* Support Files */,
+			);
+			name = ACEDrawingView;
+			path = ACEDrawingView;
+			sourceTree = "<group>";
+		};
+		8FE611A75EC2BAF10B264E5F1AE77E72 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8FD45BC7DE9EE45FAF03E601F9FBA245 /* ACEDrawingView */,
+				3D9EDF86C6FCBBD288868813BB785DEC /* FirebaseAnalytics */,
+				640BB6DF85DD931813299E50A1F0F29E /* FirebaseCore */,
+				BBBA9AC2F43DC04BE6398AAE7785E7D0 /* FirebaseInstanceID */,
+				811F8E46F1C7990DE9943418A9F76054 /* Google */,
+				EAEA447089685C8D3B350440D16EC980 /* GoogleAnalytics */,
+				249385B3856BD0B7C8A985D3C5B783B2 /* GoogleToolboxForMac */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9D229C2FBD15B48F7202DE26976DF6AF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4D3569165235FFED544C19B056354143 /* sticker_close.png */,
+				56C1DC76830E871F1BA5B38088A77AAC /* sticker_close@2x.png */,
+				E693875CCD2ED48A07F9A3F7B10321DA /* sticker_close@3x.png */,
+				EF060118322FD339D04EA88DDB9C76C3 /* sticker_resize.png */,
+				ABFDF6D71414A6CC2690EED5B3AEA49D /* sticker_resize@2x.png */,
+				945ABAF4D195428440F39F0BA14EE98F /* sticker_resize@3x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		BBBA9AC2F43DC04BE6398AAE7785E7D0 /* FirebaseInstanceID */ = {
+			isa = PBXGroup;
+			children = (
+				CD5B81CEC7826D86A7A269870CA1E526 /* Frameworks */,
+			);
+			name = FirebaseInstanceID;
+			path = FirebaseInstanceID;
+			sourceTree = "<group>";
+		};
+		C7AB6F27FF3606F9360547F8F1977A63 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3AC5D9C5B838BE747D0154460D02F926 /* Foundation.framework */,
+				BACC64101FAE4862F8806DB02FC71B0E /* QuartzCore.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CD5B81CEC7826D86A7A269870CA1E526 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49116B2BB0AE98B6337516B3B1C41317 /* FirebaseInstanceID.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BCD43B63CD10AFBA3054B9C7B4C47D31 /* Frameworks */ = {
+		E20334B4495A14ACB616C53F2AB56591 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				03186160E36A51CBFBE5BD7306B6E60F /* libGoogleAnalytics.a */,
+				5D7DE57BEE3D2CEA8DEA8A6B3F7F395C /* Pods-Rhythmic Gymnastics */,
+				10745A75D9D29378CDFAF2BC3847823E /* Pods-Rhythmic Gymnastics-iPad */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		E305B09F9E9F8C19A8F7F92ACF02466C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				591F3EE620E7AEB7FB1F309D6393D52D /* FirebaseCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DDF3D24D8C6275B78D57430AB05BCEB8 /* Products */ = {
+		EAEA447089685C8D3B350440D16EC980 /* GoogleAnalytics */ = {
 			isa = PBXGroup;
 			children = (
-				9CB5DF98E39BAD362C92CAEDCF716197 /* Pods_Rhythmic_Gymnastics.framework */,
+				5C02EFC619D67A47DFA1A587BDB272DB /* GAI.h */,
+				DCE020C58BC90918BFF90FD17315A98C /* GAIDictionaryBuilder.h */,
+				9621F1CFE5ED4C4328F3D71808A1DC9C /* GAIEcommerceFields.h */,
+				B433D73D4559832164D0512A18CAD608 /* GAIEcommerceProduct.h */,
+				360E3E8FACDFC65C7F48926C44882C96 /* GAIEcommerceProductAction.h */,
+				C80E295028D849A992AACD1AA9C3B2B9 /* GAIEcommercePromotion.h */,
+				468DFC6498809057B401FF817C21DCFE /* GAIFields.h */,
+				D01330A6B1E2B59D071781DE80215854 /* GAILogger.h */,
+				99D19128D97258CADAF4F206373C2D37 /* GAITrackedViewController.h */,
+				1631451C256A1C1B94E5AF2719CCE119 /* GAITracker.h */,
+				3368182FE69FDAD4FA7FA41AC9E5A7B0 /* Frameworks */,
 			);
-			name = Products;
+			name = GoogleAnalytics;
+			path = GoogleAnalytics;
+			sourceTree = "<group>";
+		};
+		FCF1F837FBF153C727745365E1DB7154 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E2EB55D35D0D20E329E386E3B9EAEFE /* GGLCore.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		9AA2322EF4CA17C9C05E29865B8F1E89 /* Headers */ = {
+		0B50A09319D615B128D6472676C2A42A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9C68A092874048A1B22CA7BDCDD5798 /* Pods-Rhythmic Gymnastics-umbrella.h in Headers */,
+				68721BF54B6D927ECF44F662484B85B3 /* Pods-Rhythmic Gymnastics-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C41539139D09D542BAE2198F23043364 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD87EEB694C96B684A9FC8942CD64034 /* Pods-Rhythmic Gymnastics-iPad-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E92C5FEC7BBDE779B3975969E28091B1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEB7E7D898003BD198F7C1715BFD5F1B /* ACEDrawingLabelView.h in Headers */,
+				CB6A309C14D97625AC1E75C778CBDCA3 /* ACEDrawingTools.h in Headers */,
+				5E41FE784D02D6D33C04756F8405373D /* ACEDrawingToolState.h in Headers */,
+				45F0BF635C8D76A2A4750884CD372D3F /* ACEDrawingView-umbrella.h in Headers */,
+				79D86A001532168826C9B7859DD8A7DE /* ACEDrawingView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDA600FDC48ED17BA03DA2D85D4EDA97 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81E4B6988FF26F9249B79C6C8CC667B4 /* GoogleToolboxForMac-umbrella.h in Headers */,
+				541C5362289CC44D4F067D097F231250 /* GTMDefines.h in Headers */,
+				DBFECCB0BBE3F11CC41A3C1A8C4879D3 /* GTMNSData+zlib.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		7EE408FCD0C95505143C6F64F2F21891 /* Pods-Rhythmic Gymnastics */ = {
+		00103D6C821BE85971C563025527BA5D /* GoogleToolboxForMac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F22BAA0266CC8144629D19BBBE8B9751 /* Build configuration list for PBXNativeTarget "Pods-Rhythmic Gymnastics" */;
+			buildConfigurationList = C43D9CA5106C6CCEF973B7EDF833947B /* Build configuration list for PBXNativeTarget "GoogleToolboxForMac" */;
 			buildPhases = (
-				BA0191DF6EE3A670CB4D5F7BA1680FE2 /* Sources */,
-				3359AAB4C6BCC828CD311041BB78B150 /* Frameworks */,
-				9AA2322EF4CA17C9C05E29865B8F1E89 /* Headers */,
+				63D7DA997053F6B5D01DE8CB5817CB51 /* Sources */,
+				F9BC43EEAF05BCB201B3D28C244AA7E1 /* Frameworks */,
+				FDA600FDC48ED17BA03DA2D85D4EDA97 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+			name = GoogleToolboxForMac;
+			productName = GoogleToolboxForMac;
+			productReference = AA8FB33C9659F8E58A28BF1DA61178F0 /* GoogleToolboxForMac.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		46E15656C90425D2C106D2D3627A94E9 /* ACEDrawingView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF7467D027442E3120DB1B200D6CF913 /* Build configuration list for PBXNativeTarget "ACEDrawingView" */;
+			buildPhases = (
+				111876EDA81C61972FB377101C04B1E2 /* Sources */,
+				34893B2DD50F3A307C1500B82B0745E5 /* Frameworks */,
+				EAFA4EB38862D5CB3235FCA8CF564057 /* Resources */,
+				E92C5FEC7BBDE779B3975969E28091B1 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				092D255C828DFF27AA051039B2E2D87E /* PBXTargetDependency */,
+			);
+			name = ACEDrawingView;
+			productName = ACEDrawingView;
+			productReference = 0E49193CB338F988F6F2B2140D0CD27A /* ACEDrawingView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4F0A3B28518DCB2F5E6382A9419C47AF /* ACEDrawingView-ACEDraggableText */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 720C6BCAB3BF1BF1284BE05C6E23F980 /* Build configuration list for PBXNativeTarget "ACEDrawingView-ACEDraggableText" */;
+			buildPhases = (
+				2E4E81266D37F54C615D2DA551B6666F /* Sources */,
+				88BB708DFA8EFCAA63D8A32FC68C82C5 /* Frameworks */,
+				567246BDA968AF9004A9E3A43076D4F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ACEDrawingView-ACEDraggableText";
+			productName = "ACEDrawingView-ACEDraggableText";
+			productReference = DFA197D0A324A12DC36FFC13F508AA7D /* ACEDraggableText.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		55C3BE79D4F3EF2D7447301E7E7715E8 /* Pods-Rhythmic Gymnastics-iPad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75039C380931CE1955DBC31081A62A96 /* Build configuration list for PBXNativeTarget "Pods-Rhythmic Gymnastics-iPad" */;
+			buildPhases = (
+				50455AE3AC895B88F666E5234150312E /* Sources */,
+				4EB3AB465AB695710E5B7E9AADA209E3 /* Frameworks */,
+				C41539139D09D542BAE2198F23043364 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4195E138634CC0ABA03D1658EA02461F /* PBXTargetDependency */,
+				FB1F58789525C34C158E544D7F5626AD /* PBXTargetDependency */,
+			);
+			name = "Pods-Rhythmic Gymnastics-iPad";
+			productName = "Pods-Rhythmic Gymnastics-iPad";
+			productReference = D02C8119CACC329405E2B7E969815037 /* Pods_Rhythmic_Gymnastics_iPad.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9366C3FB5FE66C5235541082A16622C0 /* Pods-Rhythmic Gymnastics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5379BE51C9231FCE67B9B94F232082D0 /* Build configuration list for PBXNativeTarget "Pods-Rhythmic Gymnastics" */;
+			buildPhases = (
+				9AD3F372ACA096D79860B69003AB412D /* Sources */,
+				A5BC3C2283912B347E1CC6E0FE0EDA1B /* Frameworks */,
+				0B50A09319D615B128D6472676C2A42A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5BA0EAF9B594BC12B0791A4B357C20B /* PBXTargetDependency */,
+				C8655F156658FDBC0E2E6CFEEECF314B /* PBXTargetDependency */,
+			);
 			name = "Pods-Rhythmic Gymnastics";
 			productName = "Pods-Rhythmic Gymnastics";
-			productReference = 9CB5DF98E39BAD362C92CAEDCF716197 /* Pods_Rhythmic_Gymnastics.framework */;
+			productReference = 8DF0106CDB79BB72EEEC9DFA61FEFA72 /* Pods_Rhythmic_Gymnastics.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -194,25 +668,122 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = DDF3D24D8C6275B78D57430AB05BCEB8 /* Products */;
+			productRefGroup = 7D61CBDBB211B6524BB26D451297B34B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7EE408FCD0C95505143C6F64F2F21891 /* Pods-Rhythmic Gymnastics */,
+				46E15656C90425D2C106D2D3627A94E9 /* ACEDrawingView */,
+				4F0A3B28518DCB2F5E6382A9419C47AF /* ACEDrawingView-ACEDraggableText */,
+				00103D6C821BE85971C563025527BA5D /* GoogleToolboxForMac */,
+				9366C3FB5FE66C5235541082A16622C0 /* Pods-Rhythmic Gymnastics */,
+				55C3BE79D4F3EF2D7447301E7E7715E8 /* Pods-Rhythmic Gymnastics-iPad */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		567246BDA968AF9004A9E3A43076D4F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCFD39C16AD7580271B5783568AF1B85 /* sticker_close.png in Resources */,
+				2D59379BA08D42FA01BD8EF9FFBD0F66 /* sticker_close@2x.png in Resources */,
+				1D10F1EEF2C00682930A180B26A153C7 /* sticker_close@3x.png in Resources */,
+				76AB949008DBC330A112901C29A94FBF /* sticker_resize.png in Resources */,
+				47F3EE4E72DF4B7E42EA988CC90D0865 /* sticker_resize@2x.png in Resources */,
+				76B1B7A20F87C8AB44C52E1A93569E93 /* sticker_resize@3x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAFA4EB38862D5CB3235FCA8CF564057 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F5D5E5B61A1A4143E8284B6C2D9DF55 /* ACEDraggableText.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		BA0191DF6EE3A670CB4D5F7BA1680FE2 /* Sources */ = {
+		111876EDA81C61972FB377101C04B1E2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44C32F1355271D883C65FD1A77BFAF5A /* Pods-Rhythmic Gymnastics-dummy.m in Sources */,
+				7D5A6207082960B9772E99FDF180A7AC /* ACEDrawingLabelView.m in Sources */,
+				5112F92FB0AEF4EAF141F6A76F314B94 /* ACEDrawingTools.m in Sources */,
+				155AA915560F2FBF256B3DA8FC29C7D7 /* ACEDrawingToolState.m in Sources */,
+				2FF96F882D70BBB3CA42A32272A321CB /* ACEDrawingView-dummy.m in Sources */,
+				DA0703FAC44F1D5D8E9951C9DBF9ABC1 /* ACEDrawingView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E4E81266D37F54C615D2DA551B6666F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50455AE3AC895B88F666E5234150312E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E072D1619653EB96A678297AE5EA1387 /* Pods-Rhythmic Gymnastics-iPad-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63D7DA997053F6B5D01DE8CB5817CB51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAC3F3CAABA60EF76069431C5BB5032A /* GoogleToolboxForMac-dummy.m in Sources */,
+				F7D889906DECB078EAAECB9D4A320E9C /* GTMNSData+zlib.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AD3F372ACA096D79860B69003AB412D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8BCA758D8F847E8330167F8D8693BCD /* Pods-Rhythmic Gymnastics-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		092D255C828DFF27AA051039B2E2D87E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ACEDrawingView-ACEDraggableText";
+			target = 4F0A3B28518DCB2F5E6382A9419C47AF /* ACEDrawingView-ACEDraggableText */;
+			targetProxy = CE11EDF761D842CF1B2E52EA40F5CDC4 /* PBXContainerItemProxy */;
+		};
+		4195E138634CC0ABA03D1658EA02461F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ACEDrawingView;
+			target = 46E15656C90425D2C106D2D3627A94E9 /* ACEDrawingView */;
+			targetProxy = 883DEA7915C6ECEBDE2DD488CB0E8CD0 /* PBXContainerItemProxy */;
+		};
+		B5BA0EAF9B594BC12B0791A4B357C20B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ACEDrawingView;
+			target = 46E15656C90425D2C106D2D3627A94E9 /* ACEDrawingView */;
+			targetProxy = 1F0EF266FBD675AD5463C0FADE2C0D74 /* PBXContainerItemProxy */;
+		};
+		C8655F156658FDBC0E2E6CFEEECF314B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GoogleToolboxForMac;
+			target = 00103D6C821BE85971C563025527BA5D /* GoogleToolboxForMac */;
+			targetProxy = 587079C5E9201C22FE426E8F96B34FE4 /* PBXContainerItemProxy */;
+		};
+		FB1F58789525C34C158E544D7F5626AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GoogleToolboxForMac;
+			target = 00103D6C821BE85971C563025527BA5D /* GoogleToolboxForMac */;
+			targetProxy = 3D682AAE3CF34FFA34B467FA2710CEAB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		015A368F878AC3E2CEAE21DDE8026304 /* Debug */ = {
@@ -259,44 +830,9 @@
 			};
 			name = Debug;
 		};
-		0F93AD681386BFF942472DF596918280 /* Debug */ = {
+		2F1B653E829D13B97F5C612E9937753A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 90D9E4815E931F928EC9CC4F2C28793C /* Pods-Rhythmic Gymnastics.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Rhythmic Gymnastics/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Rhythmic Gymnastics/Pods-Rhythmic Gymnastics.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Rhythmic_Gymnastics;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		312086F1C85F40511EF199FD440AD823 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0542E4713ABE729E5F6D8426F8DFC23C /* Pods-Rhythmic Gymnastics.release.xcconfig */;
+			baseConfigurationReference = 8C59600BBD6E72BC7C9B76826BB1EDEE /* Pods-Rhythmic Gymnastics-iPad.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -309,20 +845,84 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Rhythmic Gymnastics/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Rhythmic Gymnastics-iPad/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Rhythmic Gymnastics/Pods-Rhythmic Gymnastics.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-Rhythmic Gymnastics-iPad/Pods-Rhythmic Gymnastics-iPad.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Rhythmic_Gymnastics;
+				PRODUCT_NAME = Pods_Rhythmic_Gymnastics_iPad;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3728BD5A02E4292AB25900EA3388C57A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7701176A0D9F766683783C327F6C20D /* GoogleToolboxForMac.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GoogleToolboxForMac/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = GoogleToolboxForMac;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3A06164DCEE5FD9C1A08009FD6FB3A52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 572AAB9EEE28E12E110152590377CBAD /* ACEDrawingView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ACEDrawingView/ACEDrawingView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ACEDrawingView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ACEDrawingView/ACEDrawingView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = ACEDrawingView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -369,6 +969,209 @@
 			};
 			name = Release;
 		};
+		4EDAF7D93497D5D64916FDA65BFC97E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA75FC093EB3C8A6787255271FC23425 /* Pods-Rhythmic Gymnastics-iPad.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Rhythmic Gymnastics-iPad/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Rhythmic Gymnastics-iPad/Pods-Rhythmic Gymnastics-iPad.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Rhythmic_Gymnastics_iPad;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		565E20733005C34E438D22EDBDB51584 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E266FCFE18E71B48A80881EB5BC6F4F7 /* Pods-Rhythmic Gymnastics.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Rhythmic Gymnastics/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Rhythmic Gymnastics/Pods-Rhythmic Gymnastics.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Rhythmic_Gymnastics;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6DB7DD1301CFD6B03C697301B98EB240 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 572AAB9EEE28E12E110152590377CBAD /* ACEDrawingView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ACEDrawingView/ACEDrawingView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ACEDrawingView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ACEDrawingView/ACEDrawingView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = ACEDrawingView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7879FDB5F028AA3842E29B6EABEB9E07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7701176A0D9F766683783C327F6C20D /* GoogleToolboxForMac.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GoogleToolboxForMac/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = GoogleToolboxForMac;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E5DA4FE70C4AFD30DBD087BD9584606D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 572AAB9EEE28E12E110152590377CBAD /* ACEDrawingView.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ACEDrawingView";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/ACEDrawingView/ResourceBundle-ACEDraggableText-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = ACEDraggableText;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		F100F2743D93575924A5C9D66BA9A485 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F74C796B35EBBE72E75EBC1A66559A2 /* Pods-Rhythmic Gymnastics.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Rhythmic Gymnastics/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Rhythmic Gymnastics/Pods-Rhythmic Gymnastics.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Rhythmic_Gymnastics;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FDFF6ACBD14E8D80C106237E65D1B1FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 572AAB9EEE28E12E110152590377CBAD /* ACEDrawingView.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ACEDrawingView";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/ACEDrawingView/ResourceBundle-ACEDraggableText-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = ACEDraggableText;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -381,11 +1184,47 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F22BAA0266CC8144629D19BBBE8B9751 /* Build configuration list for PBXNativeTarget "Pods-Rhythmic Gymnastics" */ = {
+		5379BE51C9231FCE67B9B94F232082D0 /* Build configuration list for PBXNativeTarget "Pods-Rhythmic Gymnastics" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0F93AD681386BFF942472DF596918280 /* Debug */,
-				312086F1C85F40511EF199FD440AD823 /* Release */,
+				F100F2743D93575924A5C9D66BA9A485 /* Debug */,
+				565E20733005C34E438D22EDBDB51584 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		720C6BCAB3BF1BF1284BE05C6E23F980 /* Build configuration list for PBXNativeTarget "ACEDrawingView-ACEDraggableText" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDFF6ACBD14E8D80C106237E65D1B1FD /* Debug */,
+				E5DA4FE70C4AFD30DBD087BD9584606D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		75039C380931CE1955DBC31081A62A96 /* Build configuration list for PBXNativeTarget "Pods-Rhythmic Gymnastics-iPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EDAF7D93497D5D64916FDA65BFC97E4 /* Debug */,
+				2F1B653E829D13B97F5C612E9937753A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C43D9CA5106C6CCEF973B7EDF833947B /* Build configuration list for PBXNativeTarget "GoogleToolboxForMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7879FDB5F028AA3842E29B6EABEB9E07 /* Debug */,
+				3728BD5A02E4292AB25900EA3388C57A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF7467D027442E3120DB1B200D6CF913 /* Build configuration list for PBXNativeTarget "ACEDrawingView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DB7DD1301CFD6B03C697301B98EB240 /* Debug */,
+				3A06164DCEE5FD9C1A08009FD6FB3A52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

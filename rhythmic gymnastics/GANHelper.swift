@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 typealias GA = GANHelper
 
 class GANHelper: NSObject {

@@ -73,7 +73,7 @@ public class CardRow : NSObject, NSCoding {
             if element.imageName.hasPrefix("DER_0") {//база риска
                 val = val + Double(Int(element.imageName[6])! + 2)*0.1
             }
-            if element.imageName.hasPrefix("M_18") {//мастерство
+            if element.imageName.hasPrefix("M_M") {//мастерство
                 val = val + 0.3
             }
             

@@ -73,19 +73,6 @@ class MainCardTVCell: UITableViewCell, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-//    NSArray *identifiers = @[
-//    @"com.example.myapp.apple",
-//    @"com.example.myapp.pear",
-//    @"com.example.myapp.banana"
-//    ];
-//    
-//    [[CargoBay sharedManager] productsWithIdentifiers:[NSSet setWithArray:identifiers]
-//    success:^(NSArray *products, NSArray *invalidIdentifiers) {
-//    NSLog(@"Products: %@", products);
-//    NSLog(@"Invalid Identifiers: %@", invalidIdentifiers);
-//    } failure:^(NSError *error) {
-//    NSLog(@"Error: %@", error);
-//    }];
     
     func loadElements(elems: CardRow, animatedTag: Int) {
         let value = elems.totalVal
@@ -108,32 +95,21 @@ class MainCardTVCell: UITableViewCell, UITextFieldDelegate {
     func addElement(element: SimpleCellElement, animatedTag: Int) -> Bool{
         let index = elements.count()
         
-        
-        /*if !iphone{
-        if index == 0 {
-            let imageWidth: Double = (Double)(element.imageForCard.size.width)/(Double)(element.imageForCard.size.height) * 40
-            let imageHeight : Double = 40
-            
-            imageViews[0].frame = CGRect(x: 12, y: 18, width: imageWidth, height: imageHeight)
-            imageViews[0].image = element.imageForCard
-            imageViews[0].userInteractionEnabled = true
-            
-            if element.imageName.hasPrefix("add_0_6") {
-                return false
-            }
-        }
-        }*/
-        
         //iphone
         if index == 0 {
-            let imageWidth: Double = (Double)(element.imageForCard.size.width)/(Double)(element.imageForCard.size.height) * 40
-            let imageHeight : Double = 40
+            let imageWidth: CGFloat = (CGFloat)(element.imageForCard.size.width)/(CGFloat)(element.imageForCard.size.height) * 40
+            let imageHeight : CGFloat = 40
             
             imageViews[0].image = element.imageForCard
             imageViews[0].userInteractionEnabled = true
-            imageViews[0].addConstraint(NSLayoutConstraint(item: imageViews[0], attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: CGFloat(imageWidth)))
             
-            imageViews[0].addConstraint(NSLayoutConstraint(item: imageViews[0], attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: CGFloat(imageHeight)))
+            #if IPAD
+                imageViews[0].frame = CGRect(x: 12, y: 18, width: imageWidth, height: imageHeight)
+            #else
+                imageViews[0].addConstraint(NSLayoutConstraint(item: imageViews[0], attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: CGFloat(imageWidth)))
+                
+                imageViews[0].addConstraint(NSLayoutConstraint(item: imageViews[0], attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: CGFloat(imageHeight)))
+            #endif
             
             if element.imageName.hasPrefix("add_0_6") {
                 return false
@@ -150,42 +126,31 @@ class MainCardTVCell: UITableViewCell, UITextFieldDelegate {
                     drawingImage = UIImage (named: "probel.png")
                 }
                 
-                var imageWidth: Double = (Double)(drawingImage.size.width)/(Double)(drawingImage.size.height) * 40
-                var imageHeight : Double = 40
+                var imageWidth: CGFloat = (CGFloat)(drawingImage.size.width)/(CGFloat)(drawingImage.size.height) * 40
+                var imageHeight : CGFloat = 40
                 
                 imageHeight = element.imageName.hasPrefix("add_1") ? imageHeight/3:imageHeight
                 imageWidth = element.imageName.hasPrefix("add_1") ? imageWidth/3:imageWidth
                 
+                var coordY: CGFloat = 18
                 for preImageView in imageViews {
                     if preImageView.tag == elements.count() - 1 /*предыдущий*/ {
                         
-                        if ((Double)(preImageView.frame.minX + preImageView.frame.width) + imageWidth > 300) {
+                        if ((CGFloat)(preImageView.frame.minX + preImageView.frame.width) + imageWidth > 300) {
                             //предупреждение
                             return false
                         }
                         
-                        imageView.addConstraint(NSLayoutConstraint(item: imageView, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: CGFloat(imageWidth)))
-                        
-                        imageView.addConstraint(NSLayoutConstraint(item: imageView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: CGFloat(imageHeight)))
+                        #if IPAD
+                            coordY = element.imageName.hasPrefix("add_1") ? coordY + 26: coordY
+                            imageView.frame = CGRect(x: (preImageView.frame.minX + preImageView.frame.width), y: coordY, width: imageWidth, height: imageHeight)
+                        #else
+                            imageView.addConstraint(NSLayoutConstraint(item: imageView, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: CGFloat(imageWidth)))
+                            
+                            imageView.addConstraint(NSLayoutConstraint(item: imageView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: CGFloat(imageHeight)))
+                        #endif
                     }
                 }
-                
-                /*for preImageView in imageViews {
-                 if preImageView.tag == elements.count() - 1 /*предыдущий*/ {
-                 
-                 imageHeight = element.imageName.hasPrefix("add_1") ? 40/3:40
-                 imageWidth = element.imageName.hasPrefix("add_1") ? imageWidth/3:imageWidth
-                 
-                 coordY = element.imageName.hasPrefix("add_1") ? coordY + 26: coordY
-                 
-                 imageView.frame = CGRect(x: (Double)(preImageView.frame.minX + preImageView.frame.width), y: coordY, width: imageWidth, height: imageHeight)
-                 
-                 if ((Double)(preImageView.frame.minX + preImageView.frame.width) + imageWidth > 300) {
-                 //предупреждение
-                 return false
-                 }
-                 }
-                 }*/
                 
                 if imageView.tag == animatedTag {
                     imageView.image = drawingImage

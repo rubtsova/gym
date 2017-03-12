@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="NO">
+    <dependencies>
+        <development version="7000" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <navigationController id="sSd-5T-QGA">
+            <navigationBar key="navigationBar" contentMode="scaleToFill" id="nBi-xX-ZpS">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </navigationBar>
+            <viewControllers>
+                <viewController id="jrA-1R-LAD">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OcU-qJ-lwn"/>
+                        <viewControllerLayoutGuide type="bottom" id="glW-cg-u1f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Of2-jn-5S1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" image="bulava-right.png" translatesAutoresizingMaskIntoConstraints="NO" id="esQ-gr-zds">
+                                <rect key="frame" x="264" y="226" width="36" height="148"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="148" id="4QI-Q1-dwv"/>
+                                    <constraint firstAttribute="width" constant="36" id="HvM-Sj-bEk"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" image="bulava-left.png" translatesAutoresizingMaskIntoConstraints="NO" id="nQY-uI-Wp6">
+                                <rect key="frame" x="300" y="226" width="36" height="148"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="148" id="1Xu-kg-Ycv"/>
+                                    <constraint firstAttribute="width" constant="36" id="k3B-y4-1PF"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="esQ-gr-zds" firstAttribute="centerY" secondItem="Of2-jn-5S1" secondAttribute="centerY" id="fc4-LE-Bm1"/>
+                            <constraint firstItem="nQY-uI-Wp6" firstAttribute="centerY" secondItem="esQ-gr-zds" secondAttribute="centerY" id="mib-qd-dZM"/>
+                            <constraint firstItem="nQY-uI-Wp6" firstAttribute="leading" secondItem="esQ-gr-zds" secondAttribute="trailing" id="vtD-ai-hjL"/>
+                            <constraint firstItem="esQ-gr-zds" firstAttribute="centerX" secondItem="Of2-jn-5S1" secondAttribute="centerX" constant="-18" id="xQa-y0-irH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="pDO-VQ-mId"/>
+                </viewController>
+            </viewControllers>
+            <point key="canvasLocation" x="678" y="27"/>
+        </navigationController>
+    </objects>
+    <resources>
+        <image name="bulava-left.png" width="200" height="780"/>
+        <image name="bulava-right.png" width="200" height="780"/>
+    </resources>
+</document>

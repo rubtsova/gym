@@ -6,6 +6,5 @@
 //  Copyright (c) 2015 Admin. All rights reserved.
 //
 
-#import "GAI.h"
-#import "GAIDictionaryBuilder.h"
-#import "GAIFields.h"
+
+#import <Google/Analytics.h>

@@ -9,14 +9,14 @@
 import UIKit
 import StoreKit
 
-let cardNumber = "cardNumber"
+
 
 func qq_dispatchAfter(delaySeconds: Double, block: () -> ()) {
     let popTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(delaySeconds * Double(NSEC_PER_SEC)))
     dispatch_after(popTime, dispatch_get_main_queue(), block)
 }
 
-class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver, UIAlertViewDelegate, UIActionSheetDelegate {
+class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     
     var cardContent: CardContent = CardContent()
     
@@ -25,17 +25,11 @@ class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaym
     
     var openedFromEditor = false
     var pdfFilePath: String!
-    var iphone:Bool = true
+    var iphone: Bool = true
     
+    var products: [SKProduct] = []
     
-    let productIdentifiers = Set(["me.rubtsova.gymnastics.inapp.unlimited.iphone", "me.rubtsova.gymnastics.inapp.cards10.iphone", "me.rubtsova.gymnastics.inapp.cards3.iphone"])
-    
-    var product: SKProduct?
-    var productsArray = Array<SKProduct>()
-    
-    //берем кол-во оплаченных карт
-    let userDef = NSUserDefaults.standardUserDefaults()
-    var purchasedCardNumb: Int = 0
+    let productIdentifiers = InappHelper.Identifier.all
     
     deinit {
         SKPaymentQueue.defaultQueue().removeTransactionObserver(self)
@@ -44,24 +38,20 @@ class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaym
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        requestProductData()//????????НЕ ОЧЕНЬ
         SKPaymentQueue.defaultQueue().addTransactionObserver(self)
+        requestProductData()
         
-        purchasedCardNumb = userDef.integerForKey(cardNumber) as Int
-        
-        let freeCards = userDef.integerForKey("free_cards")
-        if cardContent.blocked && freeCards > 0 {
+        if let freeCards = InappHelper.shared.freeCardsLeft where cardContent.blocked && freeCards > 0 {
             cardContent.blocked = false
             dispatch_async(dispatch_get_main_queue(), {
                 self.cardContent.save()
             })
-            userDef.setInteger(freeCards-1, forKey: "free_cards")
-            userDef.synchronize()
+            InappHelper.shared.freeCardsLeft = freeCards - 1
             
             GA.event("card_spendFree")
         }
         
-        drawCard(cardContent.blocked && !NSUserDefaults.standardUserDefaults().boolForKey("isUnlimited"))
+        drawCard(safe: cardContent.blocked && !InappHelper.shared.hasUnlimitedSubsription)
         
         let data = NSData(contentsOfFile: pdfFilePath)!
         webView.loadData(data, MIMEType: "application/pdf", textEncodingName: "utf-8", baseURL: NSURL())
@@ -75,14 +65,12 @@ class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaym
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
 
-    //@IBOutlet weak var pdfCard: UIWebView!
-
     private func export() {
-        if cardContent.blocked == false || NSUserDefaults.standardUserDefaults().boolForKey("isUnlimited") {
+        if !cardContent.blocked || InappHelper.shared.hasUnlimitedSubsription {
             exportPDF()
             GA.event("export_options_export")
         } else {
-            if purchasedCardNumb > 0 {
+            if InappHelper.shared.purchasedCardsLeft > 0 {
                 cardsAreExist()
                 GA.event("export_options_exportSpend")
             } else {
@@ -92,69 +80,33 @@ class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaym
         }
     }
     
-    
-    struct Tags {
-        static let Save = 1
-        static let Purchase = 2
-        static let Export = 3
-        static let InApp = 4
-    }
-
-    
     private func cardsAreExist() {
-        let userDef = NSUserDefaults.standardUserDefaults()
-        let boughtCardsCount = userDef.integerForKey(cardNumber) as Int
+        let boughtCardsCount = InappHelper.shared.purchasedCardsLeft
         
         GA.event("export_ifSpend")
 
-        let s: String = "Количество оплаченных карточек: " + boughtCardsCount.description + "\nИспользовать одну из них, чтобы сохранить или отправить готовую карточку?\nИмейте в виду, что возможность сохранить готовый документ будет доступна только для данной карточки. Если отредактируете и снова захотите сохранить, придется использовать новую активацию."
+        let message = "Количество оплаченных карточек: \(boughtCardsCount)\nИспользовать одну из них, чтобы сохранить или отправить готовую карточку?\nИмейте в виду, что возможность сохранить готовый документ будет доступна только для данной карточки. Если отредактируете и снова захотите сохранить, придется использовать новую активацию."
         
-        let alert = UIAlertView(title: "Сохранение готовой программы", message: s, delegate: self, cancelButtonTitle: "Отмена", otherButtonTitles: "Да")
-        alert.tag = Tags.Save
-        alert.show()
-    }
-    
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-        switch alertView.tag {
-        case Tags.Save:
-            if buttonIndex == alertView.cancelButtonIndex {
-                GA.event("export_ifSpend_no")
-            } else {
-                GA.event("export_ifSpend_yes")
-                self.take1Card()
-            }
-        case Tags.Purchase:
-            switch buttonIndex {
-            case 1: self.buyProduct(self.productsArray[2])
-            case 2: self.buyProduct(self.productsArray[1])
-            case 3: self.buyProduct(self.productsArray[0])
-            default: break
-            }
-        case Tags.InApp:
-            switch buttonIndex {
-            case 1:
-                if #available(iOS 8.0, *) {
-                    let url: NSURL? = NSURL(string: UIApplicationOpenSettingsURLString)
-                    if url != nil {
-                        UIApplication.sharedApplication().openURL(url!)
-                    }
-                }
-            default:
-                break
-            }
-        default:
-            break
-        }
+        let alert = UIAlertController(title: "Сохранение готовой программы", message: message, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Отмена", style: .Cancel, handler: { _ in
+            GA.event("export_ifSpend_no")
+        }))
+        alert.addAction(UIAlertAction(title: "Да", style: .Default, handler: { _ in
+            GA.event("export_ifSpend_yes")
+            self.take1Card()
+        }))
+        
+        presentViewController(alert, animated: true, completion: nil)
     }
     
     func take1Card() {
-        if userDef.boolForKey("isUnlimited") != true {
-            purchasedCardNumb -= 1
-            userDef.setObject(purchasedCardNumb, forKey: cardNumber)
-            GA.event("export_spendCard")
-        } else {
+        if InappHelper.shared.hasUnlimitedSubsription {
             GA.event("export_spendUnlimited")
+        } else {
+            InappHelper.shared.purchasedCardsLeft -= 1
+            GA.event("export_spendCard")
         }
+        
         cardContent.blocked = false
         cardContent.save()
         exportPDF()
@@ -162,29 +114,40 @@ class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaym
     }
     
     private func cardsAreNotExist() {
-        let alert = UIAlertView(title: "Сохранение готовой программы", message: "Чтобы сохранить готовую карточку в формате PDF любым возможным способом, приобретите какой-либо из пакетов.", delegate: self, cancelButtonTitle: "Отмена", otherButtonTitles: "4 карточки за " + productsArray[2].price.description + " руб.", "12 карточек за " + productsArray[1].price.description + " руб.", "Безлимит за " + productsArray[0].price.description + " руб.")
-        alert.tag = Tags.Purchase
-        alert.show()
+        let alert = UIAlertController(title: "Сохранение готовой программы", message: "Чтобы сохранить готовую карточку в формате PDF любым возможным способом, приобретите какой-либо из пакетов.", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "4 карточки за \(products[2].price) руб.", style: .Default, handler: { _ in
+            self.buyProduct(self.products[2])
+        }))
+        
+        alert.addAction(UIAlertAction(title: "12 карточек за \(products[1].price) руб.", style: .Default, handler: { _ in
+            self.buyProduct(self.products[1])
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Безлимит за \(products[0].price) руб.", style: .Default, handler: { _ in
+            self.buyProduct(self.products[0])
+        }))
+        alert.addAction(UIAlertAction(title: "Отмена", style: .Cancel, handler: nil))
+        
+        presentViewController(alert, animated: true, completion: nil)
     }
     
     private func exportPDF() {
-        drawCard(false)//
+        drawCard(safe: false)
         let data = NSData(contentsOfFile: pdfFilePath)!
         webView.loadData(data, MIMEType: "application/pdf", textEncodingName: "utf-8", baseURL: NSURL())
         
         let activityController = UIActivityViewController(activityItems: [data, "\(cardContent.card.gymName) \(cardContent.card.cardName)"], applicationActivities: nil)
         
-        //без этого работать не станет
-        if #available(iOS 8.0, *) {
+        if traitCollection.userInterfaceIdiom == .Pad {
             activityController.modalPresentationStyle = .Popover
+            activityController.popoverPresentationController?.barButtonItem = editButton
         }
-        //activityController.popoverPresentationController!.barButtonItem = editButton
         self.presentViewController(activityController, animated: true, completion: nil)
 
         GA.event("pdf_exportCard")
     }
     
-    private func drawCard(safe: Bool) {
+    private func drawCard(safe safe: Bool) {
         //будет хранить в папке кеша
         let cachesUrl = NSFileManager.defaultManager().URLsForDirectory(.CachesDirectory, inDomains: .UserDomainMask).first!
         pdfFilePath = cachesUrl.URLByAppendingPathComponent(cardContent.getName() + ".pdf")!.path!
@@ -283,32 +246,24 @@ class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaym
     }
     
     @IBAction func touchEditorButton(sender: AnyObject) {
-        let sheet = UIActionSheet()
-        sheet.addButtonWithTitle("Редактор")
-        sheet.addButtonWithTitle("Экспорт")
-        sheet.cancelButtonIndex = sheet.addButtonWithTitle("Отмена")
-        sheet.delegate = self
-        sheet.tag = Tags.Export
-        sheet.showInView(self.view)
-        GA.event("export_options")
-    }
-    
-    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
-        switch actionSheet.tag {
-        case Tags.Export:
-            switch buttonIndex {
-            case 0:
-                self.alertEdit()
-            case 1:
-                qq_dispatchAfter(0.5) {
-                    self.export()
-                }
-            default:
-                break
+        let sheet = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        sheet.addAction(UIAlertAction(title: "Редактор", style: .Default, handler: { _ in
+            self.alertEdit()
+        }))
+        sheet.addAction(UIAlertAction(title: "Экспорт", style: .Default, handler: { _ in
+            qq_dispatchAfter(0.5) {
+                self.export()
             }
-        default:
-            break
+        }))
+        sheet.addAction(UIAlertAction(title: "Отмена", style: .Cancel, handler: nil))
+        
+        if traitCollection.userInterfaceIdiom == .Pad {
+            sheet.modalPresentationStyle = .Popover
+            sheet.popoverPresentationController?.barButtonItem = editButton
         }
+        
+        presentViewController(sheet, animated: true, completion: nil)
+        GA.event("export_options")
     }
     
     private func alertEdit() {
@@ -359,74 +314,36 @@ class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaym
         image.drawInRect(rect)
     }
     
-//    private func getEmptyPDFImage() {
-//        let url = NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("empty", ofType:"pdf")!)
-//        let pdf = CGPDFDocumentCreateWithURL(url)
-//        let page = CGPDFDocumentGetPage(pdf, 1)
-//        let rect = CGPDFPageGetBoxRect(page, CGPDFBox.CropBox)
-//        
-//        //UIGraphicsBeginImageContext(rect.size)
-//        let context = UIGraphicsGetCurrentContext()
-//        
-//        CGContextSaveGState(context)
-//        CGContextTranslateCTM(context, 0.0, rect.size.height)
-//        CGContextScaleCTM(context, 1.0, -1.0)
-//        
-//        CGContextSetGrayFillColor(context, 1.0, 1.0)
-//        CGContextFillRect(context, rect)
-//        
-//        let transform = CGPDFPageGetDrawingTransform(page, CGPDFBox.CropBox, rect, 0, true)
-//        CGContextConcatCTM(context, transform)
-//        CGContextDrawPDFPage(context, page)
-//        
-//        //var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
-//        CGContextRestoreGState(context)
-//        //UIGraphicsEndImageContext()
-//        
-//        //return image;
-//    }
     
     //_______________________РАБОТА СО ВСТРОЕННЫМИ ПОКУПКАМИ_______________________________//
     
-    func requestProductData()
-    {
+    func requestProductData() {
         if SKPaymentQueue.canMakePayments() {
             let request = SKProductsRequest(productIdentifiers: self.productIdentifiers)
             request.delegate = self
             request.start()
         } else {
-            let alert = UIAlertView(title: "Встроенные покупки недоступны", message: "Пожалуйста включите Встроенные покупки в Настройках", delegate: self, cancelButtonTitle: "Отмена", otherButtonTitles: "Настройки")
-            alert.tag = Tags.InApp
-            alert.show()
+            let alert = UIAlertController(title: "Встроенные покупки недоступны", message: "Пожалуйста включите Встроенные покупки в Настройках", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "Отмена", style: .Cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Настройки", style: .Default, handler: { _ in
+                if let url = NSURL(string: UIApplicationOpenSettingsURLString) {
+                    UIApplication.sharedApplication().openURL(url)
+                }
+            }))
+            
+            presentViewController(alert, animated: true, completion: nil)
         }
     }
     
     func productsRequest(request: SKProductsRequest, didReceiveResponse response: SKProductsResponse) {
-        
-        var products = response.products
-        
-        if (products.count != 0) {
-            for i in 0 ..< products.count
-            {
-                self.product = products[i]
-                self.productsArray.append(product!)
-            }
-            productsArray.sortInPlace(orderBefore)
-            //подгрузить в алерты
-        } else {
-            print("No products found")
-        }
+        self.products = response.products
+        self.products.sortInPlace({ $0.price.doubleValue > $1.price.doubleValue })
     }
     
     func buyProduct(prod: SKProduct) {
         GA.event("pdf_clickBUY")
         let payment = SKPayment(product: prod)
         SKPaymentQueue.defaultQueue().addPayment(payment)
-    }
-    
-    func orderBefore (prod1: SKProduct, prod2: SKProduct) -> Bool {
-        if prod1.price.doubleValue  > prod2.price.doubleValue { return true }
-        return false
     }
     
     func paymentQueue(queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
@@ -452,27 +369,26 @@ class CardPDFViewController: UIViewController, SKProductsRequestDelegate, SKPaym
     func deliverProduct(transaction:SKPaymentTransaction) {
         var s = ""
         
-        if transaction.payment.productIdentifier == "me.rubtsova.gymnastics.inapp.unlimited.iphone"
-        {
-            userDef.setBool(true, forKey: "isUnlimited")
+        switch transaction.payment.productIdentifier {
+        case InappHelper.Identifier.unlimited:
+            InappHelper.shared.hasUnlimitedSubsription = true
             s = "бесконечность"
-        }
-        else if transaction.payment.productIdentifier == "me.rubtsova.gymnastics.inapp.cards10.iphone"
-        {
-            userDef.setInteger(12, forKey: cardNumber)
-            userDef.setBool(false, forKey: "isUnlimited")
+        case InappHelper.Identifier.cards10:
+            InappHelper.shared.purchasedCardsLeft += 12
             s = "12"
-        }
-        else if transaction.payment.productIdentifier == "me.rubtsova.gymnastics.inapp.cards3.iphone"
-        {
-            userDef.setInteger(4, forKey: cardNumber)
-            userDef.setBool(false, forKey: "isUnlimited")
+        case InappHelper.Identifier.cards3:
+            InappHelper.shared.purchasedCardsLeft += 4
             s = "4"
+        default:
+            break
         }
-        userDef.synchronize()
         
-        UIAlertView(title: "Спасибо", message: "Покупка завершена успешно\n Количество карточек для сохранения: " + s, delegate: nil, cancelButtonTitle: "OK").show()
-        cardsAreExist()
+        let alert = UIAlertController(title: "Спасибо", message: "Покупка завершена успешно\n Количество карточек для сохранения: \(s)", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "ОК", style: .Default, handler: { _ in
+            self.cardsAreExist()
+        }))
+        presentViewController(alert, animated: true, completion: nil)
+        
         GA.event("pdf_PURCHASEwasFINISHED_" + s)
     }
 

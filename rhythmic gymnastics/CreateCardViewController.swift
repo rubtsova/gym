@@ -8,6 +8,7 @@
 
 
 import UIKit
+import ACEDrawingView
 
 class CreateCardViewController: UIViewController, UITextFieldDelegate{
     
@@ -30,13 +31,13 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate{
         self.title = "Создание новой программы"
         createButton.setTitle("СОЗДАТЬ", forState: .Normal)
         
-        constraintFieldHeight.constant = UIDevice.dim(28, 26, 24)
+        constraintFieldHeight?.constant = UIDevice.dim(28, 26, 24)
         
-        for textF in fields {
+        for textF in fields ?? [] {
             textF.delegate = self
             textF.font = UIFont.systemFontOfSize(UIDevice.dim(16, 14, 12))
         }
-        for label in labels {
+        for label in labels ?? [] {
             label.font = UIFont.systemFontOfSize(UIDevice.dim(14, 12, 10))
         }
         if openedFromEditor {
@@ -92,7 +93,7 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate{
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
-        mainScroll.scrollToTextViewCursor(textField, inset: 0)
+        mainScroll?.scrollToTextViewCursor(textField, inset: 0)
     }
     
     @IBAction func subjectButTouch(sender: UIButton) {
@@ -200,12 +201,12 @@ class CreateCardViewController: UIViewController, UITextFieldDelegate{
     func keyboardWillShow(notification: NSNotification) {
         let keyboardSize = (notification.userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue().size
         
-        mainScroll.contentInset = UIEdgeInsetsMake(0, 0, keyboardSize.height, 0)
+        mainScroll?.contentInset = UIEdgeInsetsMake(0, 0, keyboardSize.height, 0)
     }
     
     func keyboardWillHide(notification: NSNotification) {
         UIView.animateWithDuration(0.3) {
-            self.mainScroll.contentInset = UIEdgeInsetsZero; return
+            self.mainScroll?.contentInset = UIEdgeInsetsZero; return
         }
     }
 }

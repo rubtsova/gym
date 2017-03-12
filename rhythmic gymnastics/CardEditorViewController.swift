@@ -7,16 +7,16 @@
 //
 
 /*Изменила окно создания новой карточки, чтобы клавиатура убиралась(но я не могу это потестить нормально)
-Самый главный краш попыталась исправить примерно таким же образом - как только редактирование заканчивается, выполняются там сразу все нужные операции, теперь невозможно сделать так, чтобы можно было пролистнуть эту редактируемую ячейку(опять же не могу потестить)*/
+ Самый главный краш попыталась исправить примерно таким же образом - как только редактирование заканчивается, выполняются там сразу все нужные операции, теперь невозможно сделать так, чтобы можно было пролистнуть эту редактируемую ячейку(опять же не могу потестить)*/
 
 import UIKit
 
 class CardEditorViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ElementsValuesTVCellDelegate, MainCardTVCellDelegate, UIAlertViewDelegate {
     
-//
-//    required init(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//    }
+    //
+    //    required init(coder aDecoder: NSCoder) {
+    //        super.init(coder: aDecoder)
+    //    }
     
     struct Tags {
         static let Disclaimer = 1
@@ -40,7 +40,7 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var deleteElementButton: UIButton!
     
     @IBOutlet weak var cardPropertiesView: PropertiesView!
-
+    
     var card: CardInfo!
     var allCardContent: CardContent!
     var currentCell = MainCardTVCell()
@@ -65,12 +65,11 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
     var arrayRiskDER: [[SimpleCellElement]] = []
     var arrayAddings: [[SimpleCellElement]] = []
     
+    #if IPAD
+    var iphone: Bool = false
+    #else
     var iphone: Bool = true
-    /*if UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad {
-     iphone = false
-    } else {
-     iphone = true
-    }*/
+    #endif
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,7 +108,7 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
         
         
         /*let recognizerScroll: UIPanGestureRecognizer = UIPanGestureRecognizer()
-        recognizerScroll.addTarget(cardTableView, action: "scrollCardTableView")*/
+         recognizerScroll.addTarget(cardTableView, action: "scrollCardTableView")*/
         cardTableView.dataSource = self
         cardTableView.delegate = self
         cardTableView.editing = true
@@ -119,12 +118,12 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
         cardPropertiesView.recountProperties(allCardContent)
         
         /*let recognizerSingleClick: UITapGestureRecognizer = UITapGestureRecognizer()
-        recognizerSingleClick.numberOfTapsRequired = 1
-        recognizerSingleClick.addTarget(self, action: "tapOrSwipe:")
-        self.view.addGestureRecognizer(recognizerSingleClick)
-        let recognizerSwipe: UISwipeGestureRecognizer = UISwipeGestureRecognizer()
-        recognizerSwipe.numberOfTouchesRequired = 1
-        recognizerSwipe.addTarget(self, action: "tapOrSwipe:")*/
+         recognizerSingleClick.numberOfTapsRequired = 1
+         recognizerSingleClick.addTarget(self, action: "tapOrSwipe:")
+         self.view.addGestureRecognizer(recognizerSingleClick)
+         let recognizerSwipe: UISwipeGestureRecognizer = UISwipeGestureRecognizer()
+         recognizerSwipe.numberOfTouchesRequired = 1
+         recognizerSwipe.addTarget(self, action: "tapOrSwipe:")*/
         
     }
     
@@ -144,7 +143,7 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
             return sectionHeaders()[support].count
         }
         else { return 1 }
-
+        
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -210,7 +209,7 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
                 if item.count != 0 {count += 1}
             }
         }
-
+        
         if main == 0 && support == 2 {
             for item in arrayRotate[section] {
                 if item.count != 0 {count += 1}
@@ -232,7 +231,7 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
         
         return count
     }
-
+    
     
     @IBAction func mainSegmentChanged(sender: AnyObject) {
         if tableView == cardTableView { return }
@@ -247,10 +246,10 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
     
     func reloadMainSegment(main: Int) {
         if !iphone {
-        for view in mainSegmentViews {
-            if view.tag == main {view.hidden = false}
-            else {view.hidden = true}
-        }
+            for view in mainSegmentViews {
+                if view.tag == main {view.hidden = false}
+                else {view.hidden = true}
+            }
         }
         
         if main == 2 || main == 3 {
@@ -282,60 +281,66 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
         
         self.tableView.reloadData()
     }
-
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
         
         if tableView == cardTableView {
-            return 61.0
-        }
-        
-        if iphone {
-        
-        let main = mainSegmentedControl.selectedSegmentIndex
-        let support = supportSegmentedControl.selectedSegmentIndex
-        
-        var elements = [SimpleCellElement]()
-        
-        if main == 0 {
-        switch support {
-        case 0:
-            elements = arrayLeaps[indexPath.section][findDifficultyElemForCell(indexPath,array: arrayLeaps)]
-        case 1:
-            elements = arrayBala[indexPath.section][findDifficultyElemForCell(indexPath,array: arrayBala)]
-        case 2:
-            elements = arrayRotate[indexPath.section][findDifficultyElemForCell(indexPath,array: arrayRotate)]
-        default: elements = [SimpleCellElement]()
-        }
-        }
-
-        if main == 1 {
-            
-            switch support {
-            case 0:
-                elements = arrayFandO[(indexPath.row)/2][(indexPath.row) % 2]
-            case 1:
-                elements = arrayMasterCriteria[indexPath.row]
-            case 2:
-                elements = arrayRiskDER[indexPath.row]
-            default: elements = [SimpleCellElement]()
+            if iphone {
+                return 61.0
+            } else {
+                return 73
             }
         }
         
-        if main == 2 {
-            elements = arrayAddings[indexPath.row]
-
-        }
-
-        if elements.count > 6 {
-            return 101.0
-        }
-        return 54.0
+        if iphone {
+            
+            let main = mainSegmentedControl.selectedSegmentIndex
+            let support = supportSegmentedControl.selectedSegmentIndex
+            
+            var elements = [SimpleCellElement]()
+            
+            if main == 0 {
+                switch support {
+                case 0:
+                    elements = arrayLeaps[indexPath.section][findDifficultyElemForCell(indexPath,array: arrayLeaps)]
+                case 1:
+                    elements = arrayBala[indexPath.section][findDifficultyElemForCell(indexPath,array: arrayBala)]
+                case 2:
+                    elements = arrayRotate[indexPath.section][findDifficultyElemForCell(indexPath,array: arrayRotate)]
+                default: elements = [SimpleCellElement]()
+                }
+            }
+            
+            if main == 1 {
+                
+                switch support {
+                case 0:
+                    elements = arrayFandO[(indexPath.row)/2][(indexPath.row) % 2]
+                case 1:
+                    elements = arrayMasterCriteria[indexPath.row]
+                case 2:
+                    elements = arrayRiskDER[indexPath.row]
+                default: elements = [SimpleCellElement]()
+                }
+            }
+            
+            if main == 2 {
+                elements = arrayAddings[indexPath.row]
+                
+            }
+            
+            if elements.count > 6 {
+                return 101.0
+            }
+            return 54.0
             
         }
-        else {return 54.0}
+        else {
+            return 73
+        }
     }
-
+    
     //UITableViewDelegate
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if tableView == cardTableView {
@@ -349,7 +354,7 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
                 }
                 cell.loadElements(allCardContent.content[indexPath.row], animatedTag: -1)
             }
-
+            
             if indexPath.row == 0 && indexPath.section == 0 && allCardContent.content.count <= 1 {
                 currentCell = cell
                 reSelectCellInMainTable(currentCell)
@@ -381,7 +386,7 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
                 cell.elements = arrayBala[indexPath.section][findDifficultyElemForCell(indexPath,array: arrayBala)]
             case 2:
                 cell.elements = arrayRotate[indexPath.section][findDifficultyElemForCell(indexPath,array: arrayRotate)]
-
+                
             default: cell = nil
             }
             
@@ -432,17 +437,17 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
             cell.headerImage.image = UIImage(named: "addheader_" + String(indexPath.row) + ".png")
             cell.delegate = self
             cell.selectionStyle = .None
-
+            
             cell.elements = arrayAddings[indexPath.row]
             cell.labelValue.hidden = true
             cell.headerImage.hidden = false
             
             return cell
         }
-
+        
         return UITableViewCell()
     }
-
+    
     
     func findDifficultyElemForCell(index: NSIndexPath, array: [[[SimpleCellElement]]]) -> Int {
         var k = 0 //счетчик
@@ -528,9 +533,9 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
             header?.text = currElement.name
         }
     }
-
     
-
+    
+    
     //2 клик по элементу в общей таблице всех элементов
     func doubleClickToElementInElValCell(currElement: SimpleCellElement) {
         if currentCell.imageViews == nil {
@@ -539,7 +544,7 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
             reSelectCellInMainTable(currentCell)
             resetHighlight()
         }
-
+        
         let indexPath = cardTableView.indexPathForCell(currentCell)
         if indexPath != nil {
             if currElement.imageName.hasPrefix("add_0_6") {
@@ -551,23 +556,23 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
                 }
             }
             else
-            if currentCell.addElement(currElement, animatedTag: currentCell.elements.count()) {
-                /*if currElement.imageName == "add_0_4" || currElement.imageName == "M_17" {
-                    firstStepView.hidden = true
-                    secondStepView.hidden = true
-                    masterShowView.hidden = false
-                }*/
-                allCardContent.content[indexPath!.row].addElement(currElement)
-                cardPropertiesView.TotalValueLabel.text = allCardContent.totalValue.description
-            }
-  
-            else {
-                UIAlertView(title: "Недостаточно места", message: "Границы строчек карточки не позволяют добавить элемент в данную строку",
-                            delegate: nil, cancelButtonTitle: "OK").show()
+                if currentCell.addElement(currElement, animatedTag: currentCell.elements.count()) {
+                    /*if currElement.imageName == "add_0_4" || currElement.imageName == "M_17" {
+                     firstStepView.hidden = true
+                     secondStepView.hidden = true
+                     masterShowView.hidden = false
+                     }*/
+                    allCardContent.content[indexPath!.row].addElement(currElement)
+                    cardPropertiesView.TotalValueLabel.text = allCardContent.totalValue.description
+                }
+                    
+                else {
+                    UIAlertView(title: "Недостаточно места", message: "Границы строчек карточки не позволяют добавить элемент в данную строку",
+                                delegate: nil, cancelButtonTitle: "OK").show()
             }
             allCardContent.blocked = true
             
-        //пересчет показателей карточки
+            //пересчет показателей карточки
             cardPropertiesView.recountProperties(allCardContent)
         }
     }
@@ -586,8 +591,8 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
             if imView.tag == index {
                 //imView.highlightedImage = imView.image!.imageWithTint(/*UIColor.redColor()*/"red")
                 //imView.highlightedImage = imView.image.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-                    //[theImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-            
+                //[theImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+                
                 //[theImageView setTintColor:[UIColor redColor]];
                 //imView.highlighted = true
                 imView.image = imView.image!.imageWithRenderingMode(.AlwaysTemplate)
@@ -613,11 +618,11 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
     func dragElementInElValCell(recognizer: UIPanGestureRecognizer, currElement: SimpleCellElement, cell: MainCardTVCell) {
         currentCell = cell
         reSelectCellInMainTable(cell)
-
+        
         
         let translation = recognizer.translationInView(recognizer.view!.superview!)
         let draggingView = recognizer.view! as! UIImageView
-       
+        
         
         if recognizer.state == UIGestureRecognizerState.Began {
             currentCell.contentView.bringSubviewToFront(recognizer.view!)
@@ -632,7 +637,7 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
         {
             if let view = recognizer.view {
                 view.center = CGPoint(x:view.center.x + translation.x,
-                    y:view.center.y + translation.y)
+                                      y:view.center.y + translation.y)
                 
                 for imView in currentCell.imageViews {
                     let intersectionRect = CGRectIntersection(imView.frame, draggingView.frame)
@@ -696,10 +701,10 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
         allCardContent.content[cardTableView.indexPathForCell(currentCell)!.row].removeElement(selectedElement)
         
         /*if selectedElement.imageName.hasPrefix("M_M") {
-            firstStepView.hidden = true
-            secondStepView.hidden = true
-            masterShowView.hidden = false
-        }*/
+         firstStepView.hidden = true
+         secondStepView.hidden = true
+         masterShowView.hidden = false
+         }*/
         
         allCardContent.blocked = true
         cardPropertiesView.recountProperties(allCardContent)
@@ -711,7 +716,7 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var secondStepView: UIView!
     
     @IBOutlet weak var masterShowView: UIView!
-
+    
     @IBAction func touchMasterAddButton(sender: UIButton) {
         masterShowView.hidden = true
         firstStepView.hidden = false
@@ -733,7 +738,7 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
         GA.event("masterPush")
     }
     
-
+    
     
     @IBAction func saveButtonClick(sender: AnyObject) {
         allCardContent.countF = cardPropertiesView.countF
@@ -798,7 +803,7 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
     func go () {
         self.performSegueWithIdentifier("saveAndShow", sender: allCardContent)
     }
-
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
             switch identifier {
@@ -809,17 +814,17 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
                     GA.event("editor_pdf")
                 }
             case "editCardInfo":
-            if let controller = segue.destinationViewController as? CreateCardViewController{
-                controller.cardInf = sender as! CardInfo
-                controller.openedFromEditor = true
-                controller.cardContent = allCardContent
-                GA.event("editor_editInfo_createCard")
+                if let controller = segue.destinationViewController as? CreateCardViewController{
+                    controller.cardInf = sender as! CardInfo
+                    controller.openedFromEditor = true
+                    controller.cardContent = allCardContent
+                    GA.event("editor_editInfo_createCard")
                 }
-               default: break
+            default: break
                 
             }
             
-
+            
         }
     }
     
@@ -860,7 +865,7 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
         let bundleRoot: NSString = NSBundle .mainBundle().bundlePath
         let fm: NSFileManager = NSFileManager.defaultManager()
         let dirContent: NSArray = try! fm.contentsOfDirectoryAtPath(bundleRoot as String)
-
+        
         for imageName in dirContent as! [String] {  //$$ если сразу написать as [String] - будет проще
             if imageName.hasPrefix(difficultyType) && !imageName.hasSuffix("_pic.png") {  //$$ и нужно убрать _pic
                 //убираем из имени .png
@@ -883,7 +888,7 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
                 simpElem.name = loadNameFromList(difficultyType, key: simpElem.imageName)
                 
                 let mainImage: UIImage = UIImage(named: imageName)!
-
+                
                 //TODO ПРОВЕРИТЬ НЕ ДОБАВЛЯЕТСЯ ЛИ ТЕПЕРЬ pic после .png. да так и будет:(
                 let supImName = imName[0] + "_pic.png"
                 let supportImage: UIImage? = UIImage(named: supImName)
@@ -903,181 +908,181 @@ class CardEditorViewController: UIViewController, UITableViewDataSource, UITable
         
         return difficultyArray
     }
-
-
-
-func loadFandO() -> [[[SimpleCellElement]]] {
-    var subjectGroupArray: [[[SimpleCellElement]]] = [[[]]]
     
-    let bundleRoot: NSString = NSBundle .mainBundle().bundlePath
-    let fm: NSFileManager = NSFileManager.defaultManager()
-    let dirContent: NSArray = try! fm.contentsOfDirectoryAtPath(bundleRoot as String)
     
-    for imageName in dirContent as! [String] {
-        if imageName.hasPrefix("sub_") {
-            //убираем из имени .png
-            let imName = imageName.componentsSeparatedByString(".")
-            let nameComponents = imName[0].componentsSeparatedByString("_")
-            let simpElem: SimpleCellElement = SimpleCellElement()
-            
-            simpElem.imageName = imName[0]
-            
-            if imageName[8] == "F" {
-                simpElem.functional = true
+    
+    func loadFandO() -> [[[SimpleCellElement]]] {
+        var subjectGroupArray: [[[SimpleCellElement]]] = [[[]]]
+        
+        let bundleRoot: NSString = NSBundle .mainBundle().bundlePath
+        let fm: NSFileManager = NSFileManager.defaultManager()
+        let dirContent: NSArray = try! fm.contentsOfDirectoryAtPath(bundleRoot as String)
+        
+        for imageName in dirContent as! [String] {
+            if imageName.hasPrefix("sub_") {
+                //убираем из имени .png
+                let imName = imageName.componentsSeparatedByString(".")
+                let nameComponents = imName[0].componentsSeparatedByString("_")
+                let simpElem: SimpleCellElement = SimpleCellElement()
+                
+                simpElem.imageName = imName[0]
+                
+                if imageName[8] == "F" {
+                    simpElem.functional = true
+                }
+                if imageName[8] == "O" {
+                    simpElem.functional = false
+                }
+                
+                //индексы по которым заполняем массивы
+                //номер предмета
+                let ind1 = Int(nameComponents[1])!
+                //functional or other
+                let ind2 = nameComponents[3] == "O" ? 1: 0
+                //номер элемента в строке (+1 тк первой будет другая картинка)
+                let ind3 = Int(nameComponents[2])! + 1
+                
+                //это когда я заполню массив всеми определениями элементов
+                simpElem.name = loadNameFromList("sub", key: simpElem.imageName)
+                
+                let mainImage: UIImage = UIImage(named: imageName)!
+                simpElem.imageForCard = mainImage
+                
+                while subjectGroupArray.count < ind1 + 1 {
+                    subjectGroupArray.append([[SimpleCellElement]]()) }
+                
+                while subjectGroupArray[ind1].count < ind2 + 1 { subjectGroupArray[ind1].append([SimpleCellElement]()) }
+                
+                if subjectGroupArray[ind1][ind2].count < ind3 + 1 { subjectGroupArray[ind1][ind2].append(simpElem) }
+                else { subjectGroupArray[ind1][ind2].insert(simpElem, atIndex: ind3) }
             }
-            if imageName[8] == "O" {
-                simpElem.functional = false
-            }
-            
-            //индексы по которым заполняем массивы
-            //номер предмета
-            let ind1 = Int(nameComponents[1])!
-            //functional or other
-            let ind2 = nameComponents[3] == "O" ? 1: 0
-            //номер элемента в строке (+1 тк первой будет другая картинка)
-            let ind3 = Int(nameComponents[2])! + 1
-            
-            //это когда я заполню массив всеми определениями элементов
-            simpElem.name = loadNameFromList("sub", key: simpElem.imageName)
-            
-            let mainImage: UIImage = UIImage(named: imageName)!
-            simpElem.imageForCard = mainImage
-            
-            while subjectGroupArray.count < ind1 + 1 {
-                subjectGroupArray.append([[SimpleCellElement]]()) }
-            
-            while subjectGroupArray[ind1].count < ind2 + 1 { subjectGroupArray[ind1].append([SimpleCellElement]()) }
-            
-            if subjectGroupArray[ind1][ind2].count < ind3 + 1 { subjectGroupArray[ind1][ind2].append(simpElem) }
-            else { subjectGroupArray[ind1][ind2].insert(simpElem, atIndex: ind3) }
         }
+        
+        return subjectGroupArray
+        
     }
     
-    return subjectGroupArray
-
-}
-
-func loadMaster() -> [[SimpleCellElement]] {
-    var masterArray: [[SimpleCellElement]] = [[]]
-    
-    let bundleRoot: NSString = NSBundle .mainBundle().bundlePath
-    let fm: NSFileManager = NSFileManager.defaultManager()
-    let dirContent: NSArray = try! fm.contentsOfDirectoryAtPath(bundleRoot as String)
-    
-    for imageName in dirContent as! [String] {
-        if imageName.hasPrefix("M_") && !imageName.hasSuffix("M.png"){
-            //убираем из имени .png
-            let imName = imageName.componentsSeparatedByString(".")
-            let nameComponents = imName[0].componentsSeparatedByString("_")
-            let simpElem: SimpleCellElement = SimpleCellElement()
-            
-            simpElem.imageName = imName[0]
-            
-            //индексы по которым заполняем массивы
-            let ind = Int(nameComponents[1])!
-            var ind1 = 0
-            var ind2 = 0
-            
-            if ind > 8 {
-                ind1 = 1
-                ind2 = ind - 9
+    func loadMaster() -> [[SimpleCellElement]] {
+        var masterArray: [[SimpleCellElement]] = [[]]
+        
+        let bundleRoot: NSString = NSBundle .mainBundle().bundlePath
+        let fm: NSFileManager = NSFileManager.defaultManager()
+        let dirContent: NSArray = try! fm.contentsOfDirectoryAtPath(bundleRoot as String)
+        
+        for imageName in dirContent as! [String] {
+            if imageName.hasPrefix("M_") && !imageName.hasSuffix("M.png"){
+                //убираем из имени .png
+                let imName = imageName.componentsSeparatedByString(".")
+                let nameComponents = imName[0].componentsSeparatedByString("_")
+                let simpElem: SimpleCellElement = SimpleCellElement()
+                
+                simpElem.imageName = imName[0]
+                
+                //индексы по которым заполняем массивы
+                let ind = Int(nameComponents[1])!
+                var ind1 = 0
+                var ind2 = 0
+                
+                if ind > 8 {
+                    ind1 = 1
+                    ind2 = ind - 9
+                }
+                else {
+                    ind1 = 0
+                    ind2 = ind
+                }
+                
+                //это когда я заполню массив всеми определениями элементов
+                simpElem.name = loadNameFromList("M", key: simpElem.imageName)
+                
+                let mainImage: UIImage = UIImage(named: imageName)!
+                simpElem.imageForCard = mainImage
+                
+                while masterArray.count < ind1 + 1 {
+                    masterArray.append([SimpleCellElement]())
+                }
+                
+                if masterArray[ind1].count < ind2 + 1 { masterArray[ind1].append(simpElem) }
+                else { masterArray[ind1].insert(simpElem, atIndex: ind2) }
             }
-            else {
-                ind1 = 0
-                ind2 = ind
-            }
-            
-            //это когда я заполню массив всеми определениями элементов
-            simpElem.name = loadNameFromList("M", key: simpElem.imageName)
-            
-            let mainImage: UIImage = UIImage(named: imageName)!
-            simpElem.imageForCard = mainImage
-            
-            while masterArray.count < ind1 + 1 {
-                masterArray.append([SimpleCellElement]())
-            }
-            
-            if masterArray[ind1].count < ind2 + 1 { masterArray[ind1].append(simpElem) }
-            else { masterArray[ind1].insert(simpElem, atIndex: ind2) }
         }
+        
+        return masterArray
     }
     
-    return masterArray
-}
-
-func loadRisks() -> [[SimpleCellElement]] {
-    var riskArray: [[SimpleCellElement]] = [[]]
-    
-    let bundleRoot: NSString = NSBundle .mainBundle().bundlePath
-    let fm: NSFileManager = NSFileManager.defaultManager()
-    let dirContent: NSArray = try! fm.contentsOfDirectoryAtPath(bundleRoot as String)
-    
-    for imageName in dirContent as! [String] {
-        if imageName.hasPrefix("DER_"){
-            //убираем из имени .png
-            let imName = imageName.componentsSeparatedByString(".")
-            let nameComponents = imName[0].componentsSeparatedByString("_")
-            let simpElem: SimpleCellElement = SimpleCellElement()
-            
-            simpElem.imageName = imName[0]
-            
-            //индексы по которым заполняем массив
-            let ind1 = Int(nameComponents[1])!
-            let ind2 = Int(nameComponents[2])!
-            
-            //это когда я заполню массив всеми определениями элементов
-            simpElem.name = loadNameFromList("DER", key: simpElem.imageName)
-            
-            let mainImage: UIImage = UIImage(named: imageName)!
-            simpElem.imageForCard = mainImage
-            
-            while riskArray.count < ind1 + 1 {
-                riskArray.append([SimpleCellElement]())
+    func loadRisks() -> [[SimpleCellElement]] {
+        var riskArray: [[SimpleCellElement]] = [[]]
+        
+        let bundleRoot: NSString = NSBundle .mainBundle().bundlePath
+        let fm: NSFileManager = NSFileManager.defaultManager()
+        let dirContent: NSArray = try! fm.contentsOfDirectoryAtPath(bundleRoot as String)
+        
+        for imageName in dirContent as! [String] {
+            if imageName.hasPrefix("DER_"){
+                //убираем из имени .png
+                let imName = imageName.componentsSeparatedByString(".")
+                let nameComponents = imName[0].componentsSeparatedByString("_")
+                let simpElem: SimpleCellElement = SimpleCellElement()
+                
+                simpElem.imageName = imName[0]
+                
+                //индексы по которым заполняем массив
+                let ind1 = Int(nameComponents[1])!
+                let ind2 = Int(nameComponents[2])!
+                
+                //это когда я заполню массив всеми определениями элементов
+                simpElem.name = loadNameFromList("DER", key: simpElem.imageName)
+                
+                let mainImage: UIImage = UIImage(named: imageName)!
+                simpElem.imageForCard = mainImage
+                
+                while riskArray.count < ind1 + 1 {
+                    riskArray.append([SimpleCellElement]())
+                }
+                
+                if riskArray[ind1].count < ind2 + 1 { riskArray[ind1].append(simpElem) }
+                else { riskArray[ind1].insert(simpElem, atIndex: ind2) }
             }
-            
-            if riskArray[ind1].count < ind2 + 1 { riskArray[ind1].append(simpElem) }
-            else { riskArray[ind1].insert(simpElem, atIndex: ind2) }
         }
+        
+        return riskArray
     }
     
-    return riskArray
-}
-
-func loadAddings() -> [[SimpleCellElement]] {
-    var addArray: [[SimpleCellElement]] = [[]]
-    
-    let bundleRoot: NSString = NSBundle .mainBundle().bundlePath
-    let fm: NSFileManager = NSFileManager.defaultManager()
-    let dirContent: NSArray = try! fm.contentsOfDirectoryAtPath(bundleRoot as String)
-    
-    for imageName in dirContent as! [String] {
-        if imageName.hasPrefix("add_"){
-            if imageName.hasPrefix("add_probel") {continue}
-            //убираем из имени .png
-            let imName = imageName.componentsSeparatedByString(".")
-            let nameComponents = imName[0].componentsSeparatedByString("_")
-            let simpElem: SimpleCellElement = SimpleCellElement()
-            
-            //индексы по которым заполняем массивы
-            
-            let ind1 = Int(nameComponents[1])!
-            let ind2 = Int(nameComponents[2])!
-            
-            let mainImage: UIImage = UIImage(named: imageName)!
-            simpElem.imageForCard = mainImage
-            simpElem.imageName = imName[0]
-            
-            while addArray.count < ind1 + 1 {
-                addArray.append([SimpleCellElement]())
+    func loadAddings() -> [[SimpleCellElement]] {
+        var addArray: [[SimpleCellElement]] = [[]]
+        
+        let bundleRoot: NSString = NSBundle .mainBundle().bundlePath
+        let fm: NSFileManager = NSFileManager.defaultManager()
+        let dirContent: NSArray = try! fm.contentsOfDirectoryAtPath(bundleRoot as String)
+        
+        for imageName in dirContent as! [String] {
+            if imageName.hasPrefix("add_"){
+                if imageName.hasPrefix("add_probel") {continue}
+                //убираем из имени .png
+                let imName = imageName.componentsSeparatedByString(".")
+                let nameComponents = imName[0].componentsSeparatedByString("_")
+                let simpElem: SimpleCellElement = SimpleCellElement()
+                
+                //индексы по которым заполняем массивы
+                
+                let ind1 = Int(nameComponents[1])!
+                let ind2 = Int(nameComponents[2])!
+                
+                let mainImage: UIImage = UIImage(named: imageName)!
+                simpElem.imageForCard = mainImage
+                simpElem.imageName = imName[0]
+                
+                while addArray.count < ind1 + 1 {
+                    addArray.append([SimpleCellElement]())
+                }
+                
+                if addArray[ind1].count < ind2 + 1 { addArray[ind1].append(simpElem) }
+                else { addArray[ind1].insert(simpElem, atIndex: ind2) }
             }
-            
-            if addArray[ind1].count < ind2 + 1 { addArray[ind1].append(simpElem) }
-            else { addArray[ind1].insert(simpElem, atIndex: ind2) }
         }
+        
+        return addArray
     }
-    
-    return addArray
-}
     
     func loadNameFromList (keyDictionary: String, key: String) -> String {
         if let path = NSBundle.mainBundle().pathForResource("DescriptionElementList", ofType: "plist") {
@@ -1090,47 +1095,47 @@ func loadAddings() -> [[SimpleCellElement]] {
         }
         return ""
     }
-
-func sectionHeaders() -> [[String]] {
-    var sectionHeaders: [[String]] = [[]]
     
-    sectionHeaders.append([String]())
-    
-    sectionHeaders[0].append("1. Вертикальные прыжки с вращением всего тела на 180, а также на 360")
-    sectionHeaders[0].append("2. \"Кабриоль\"(вперед, в сторону, назад), \"прогнувшись\"")
-    sectionHeaders[0].append("3. Прыжки со сменой ног в различных положениях")
-    sectionHeaders[0].append("4. \"Щука\", прыжок ноги врозь с наклоном туловища вперед")
-    sectionHeaders[0].append( "5. \"Казак\" ноги в различных положениях, в кольцо")
-    sectionHeaders[0].append( "6. Кольцо")
-    sectionHeaders[0].append("7. \"Фуэте\" ноги в различных положениях")
-    sectionHeaders[0].append("8. Перекидной ноги в различных положениях")
-    sectionHeaders[0].append("9. Прыжки с шагом и подбивной: \nв кольцо, с наклоном туловища назад, с вращением туловища (толчком с 1 или 2 ног)")
-    sectionHeaders[0].append("10. Прыжки жете ан турнан - ноги в различных положениях")
-    sectionHeaders[0].append("11. \"Баттерфляй\"")
-    
-    sectionHeaders.append([String]())
-    
-    sectionHeaders[1].append("1. Свободная нога ниже горизонтали или пассе (с наклоном туловища вперед, назад или без)")
-    sectionHeaders[1].append("2. Свободная нога горизонтально в различных направлениях;\n наклон туловища вперед, назад, в сторону")
-    sectionHeaders[1].append("3. Свободная нога вверх в разных направлениях; наклон туловища вперед, назад, в сторону")
-    sectionHeaders[1].append("4. \"Фуэте\" (мин 3 разные формы на релеве с мин 1 поворотом на 90 или 180)")
-    sectionHeaders[1].append("5. \"Казак\" свободная нога горизонтально или выше; с изменением уровня гимнастки")
-    sectionHeaders[1].append("6. Равновесие с опорой на различные части тела")
-    sectionHeaders[1].append("7. Динамическое равновесие с полной волной телом")
-    sectionHeaders[1].append("8. Динамическое равновесие с движением или без движения ног с опорой на различные части тела")
-    
-    sectionHeaders.append([String]())
-    
-    sectionHeaders[2].append("1. Свободная нога ниже горизонтали; пассе; наклон туловища вперед или назад; спиральный поворот с волной")
-    sectionHeaders[2].append("2. Свободная нога выпрямлена или согнута горизонтально;\n наклон туловища горизонтально")
-    sectionHeaders[2].append("3. Свободная нога вверх с помощью или без помощи рук; туловище горизонтально или выше")
-    sectionHeaders[2].append("4. \"Казак\" (свободная нога горизонтально); наклон туловища")
-    sectionHeaders[2].append("5. \"Фуэте\"")
-    sectionHeaders[2].append("6. Циркуль вперед, в сторону, назад; спиральный поворот с полной волной; вращение \"penche\"")
-    sectionHeaders[2].append("7. Вращения на различных частях тела")
-    
-    return sectionHeaders
-}
+    func sectionHeaders() -> [[String]] {
+        var sectionHeaders: [[String]] = [[]]
+        
+        sectionHeaders.append([String]())
+        
+        sectionHeaders[0].append("1. Вертикальные прыжки с вращением всего тела на 180, а также на 360")
+        sectionHeaders[0].append("2. \"Кабриоль\"(вперед, в сторону, назад), \"прогнувшись\"")
+        sectionHeaders[0].append("3. Прыжки со сменой ног в различных положениях")
+        sectionHeaders[0].append("4. \"Щука\", прыжок ноги врозь с наклоном туловища вперед")
+        sectionHeaders[0].append( "5. \"Казак\" ноги в различных положениях, в кольцо")
+        sectionHeaders[0].append( "6. Кольцо")
+        sectionHeaders[0].append("7. \"Фуэте\" ноги в различных положениях")
+        sectionHeaders[0].append("8. Перекидной ноги в различных положениях")
+        sectionHeaders[0].append("9. Прыжки с шагом и подбивной: \nв кольцо, с наклоном туловища назад, с вращением туловища (толчком с 1 или 2 ног)")
+        sectionHeaders[0].append("10. Прыжки жете ан турнан - ноги в различных положениях")
+        sectionHeaders[0].append("11. \"Баттерфляй\"")
+        
+        sectionHeaders.append([String]())
+        
+        sectionHeaders[1].append("1. Свободная нога ниже горизонтали или пассе (с наклоном туловища вперед, назад или без)")
+        sectionHeaders[1].append("2. Свободная нога горизонтально в различных направлениях;\n наклон туловища вперед, назад, в сторону")
+        sectionHeaders[1].append("3. Свободная нога вверх в разных направлениях; наклон туловища вперед, назад, в сторону")
+        sectionHeaders[1].append("4. \"Фуэте\" (мин 3 разные формы на релеве с мин 1 поворотом на 90 или 180)")
+        sectionHeaders[1].append("5. \"Казак\" свободная нога горизонтально или выше; с изменением уровня гимнастки")
+        sectionHeaders[1].append("6. Равновесие с опорой на различные части тела")
+        sectionHeaders[1].append("7. Динамическое равновесие с полной волной телом")
+        sectionHeaders[1].append("8. Динамическое равновесие с движением или без движения ног с опорой на различные части тела")
+        
+        sectionHeaders.append([String]())
+        
+        sectionHeaders[2].append("1. Свободная нога ниже горизонтали; пассе; наклон туловища вперед или назад; спиральный поворот с волной")
+        sectionHeaders[2].append("2. Свободная нога выпрямлена или согнута горизонтально;\n наклон туловища горизонтально")
+        sectionHeaders[2].append("3. Свободная нога вверх с помощью или без помощи рук; туловище горизонтально или выше")
+        sectionHeaders[2].append("4. \"Казак\" (свободная нога горизонтально); наклон туловища")
+        sectionHeaders[2].append("5. \"Фуэте\"")
+        sectionHeaders[2].append("6. Циркуль вперед, в сторону, назад; спиральный поворот с полной волной; вращение \"penche\"")
+        sectionHeaders[2].append("7. Вращения на различных частях тела")
+        
+        return sectionHeaders
+    }
 }
 
 

@@ -79,7 +79,7 @@ class PropertiesView: UIView {
                 countDer += 1
                 setDER(countDer)
             }
-            if element.imageName.hasPrefix("M_18") {//мастерство
+            if element.imageName.hasPrefix("M_M") {//мастерство
                 countMaster += 1
                 setM(countMaster)
             }

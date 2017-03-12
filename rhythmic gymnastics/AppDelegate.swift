@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         Fabric.with([Crashlytics.self])
         
         let defaults = NSUserDefaults.standardUserDefaults()
-        if defaults.objectForKey("free_cards") == nil {
-            defaults.setInteger(2, forKey: "free_cards")
+        if InappHelper.shared.freeCardsLeft == nil {
+            InappHelper.shared.freeCardsLeft = 2
         }
         if defaults.objectForKey(names) == nil {
             defaults.setObject([String](), forKey: names)
